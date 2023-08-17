@@ -1,0 +1,2 @@
+https://api.chatanywhere.cn/v1
+https://api.openai.com/v1
