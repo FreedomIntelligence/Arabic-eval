@@ -27,8 +27,9 @@ python generate.py \
     --data_name ${data_name=vicuna80} \
     --batch_size ${batch_size=1}
 You have to change some information if you need to try other models and datasets.
-    
+****
 ## How to evaluate the performance of different models?
 
-
-
+You can go to this page to learn:https://github.com/FreedomIntelligence/GPTReview
+To run this model,you can run it on machine at ``gpt_eval/NLU``,then start a ``terminal``,and Run the following code:  python gpt4.py
+If there is no metrics,it means that some results are missing ,just repeat the code until you get metrics.
