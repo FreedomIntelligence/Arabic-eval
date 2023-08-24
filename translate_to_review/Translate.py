@@ -18,9 +18,6 @@ import ssl
 import sys
 
 from gpt import GPT
-YOUDAO_URL = 'https://openapi.youdao.com/v2/api'
-APP_KEY = '12a26fe7221551a3'
-APP_SECRET = 'o8QZOrfTI5nTAkDrW1n43EjzCSLbXfLa'
 data = 0
 lang = 'Chinese'
 mul = 5
@@ -163,9 +160,6 @@ def create_json(file2):
 if __name__ == '__main__':
     answer1,answer2,assistant1,assistant2,output,query,label= getqArray()
     #要运行程序，需要修改处：
-    #1.修改main中的path1，path1路径下存放两个jsonl文件：combine和outputs0
-    #2.若要处理classfication_cot结果，运行classification_cot(),处理scoring结果，运行scoring()
-    # scoring()
-    # sortup_scoring()
-    # string1,string2=scoring()
-    # sortup(string1,string2)
+    #1.修改path，path路径下存放两个jsonl文件：combine和outputs0
+    #2.若要处理classfication_cot结果，运行classification_cot(),处理scoring结果，运行sortup(scoring())
+    # sortup(scoring())
