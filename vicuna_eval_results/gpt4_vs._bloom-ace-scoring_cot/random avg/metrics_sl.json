@@ -1,0 +1,122 @@
+{
+    "Total": {
+        "gpt4": {
+            "Avg Score 1": 9.113924050632912,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.9113924050632911
+        },
+        "bloom-ace": {
+            "Avg Score 1": 6.493670886075949,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.08860759493670886
+        }
+    },
+    "coding": {
+        "gpt4": {
+            "Avg Score 1": 9.5,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.8571428571428571
+        },
+        "bloom-ace": {
+            "Avg Score 1": 6.0,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.14285714285714285
+        }
+    },
+    "common-sense": {
+        "gpt4": {
+            "Avg Score 1": 8.95,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.8
+        },
+        "bloom-ace": {
+            "Avg Score 1": 7.35,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.2
+        }
+    },
+    "counterfactual": {
+        "gpt4": {
+            "Avg Score 1": 8.9,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.9
+        },
+        "bloom-ace": {
+            "Avg Score 1": 6.2,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.1
+        }
+    },
+    "fermi": {
+        "gpt4": {
+            "Avg Score 1": 9.11111111111111,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.7777777777777778
+        },
+        "bloom-ace": {
+            "Avg Score 1": 7.277777777777778,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.2222222222222222
+        }
+    },
+    "generic": {
+        "gpt4": {
+            "Avg Score 1": 9.15,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.9
+        },
+        "bloom-ace": {
+            "Avg Score 1": 6.9,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.1
+        }
+    },
+    "knowledge": {
+        "gpt4": {
+            "Avg Score 1": 9.05,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 1.0
+        },
+        "bloom-ace": {
+            "Avg Score 1": 7.5,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.0
+        }
+    },
+    "math": {
+        "gpt4": {
+            "Avg Score 1": 10.0,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 1.0
+        },
+        "bloom-ace": {
+            "Avg Score 1": 1.6666666666666667,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.0
+        }
+    },
+    "roleplay": {
+        "gpt4": {
+            "Avg Score 1": 9.1,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 1.0
+        },
+        "bloom-ace": {
+            "Avg Score 1": 5.8,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.0
+        }
+    },
+    "writing": {
+        "gpt4": {
+            "Avg Score 1": 9.0,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 1.0
+        },
+        "bloom-ace": {
+            "Avg Score 1": 6.3,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.0
+        }
+    }
+}

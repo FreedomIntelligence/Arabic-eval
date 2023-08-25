@@ -1,0 +1,122 @@
+{
+    "Total": {
+        "gpt4": {
+            "Avg Score 1": 9.14375,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.9625
+        },
+        "llama-7b_hf": {
+            "Avg Score 1": 5.1875,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.0125
+        }
+    },
+    "coding": {
+        "gpt4": {
+            "Avg Score 1": 9.714285714285714,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.8571428571428571
+        },
+        "llama-7b_hf": {
+            "Avg Score 1": 3.2857142857142856,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.0
+        }
+    },
+    "common-sense": {
+        "gpt4": {
+            "Avg Score 1": 9.1,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 1.0
+        },
+        "llama-7b_hf": {
+            "Avg Score 1": 6.5,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.0
+        }
+    },
+    "counterfactual": {
+        "gpt4": {
+            "Avg Score 1": 8.9,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.9
+        },
+        "llama-7b_hf": {
+            "Avg Score 1": 4.2,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.0
+        }
+    },
+    "fermi": {
+        "gpt4": {
+            "Avg Score 1": 9.3,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 1.0
+        },
+        "llama-7b_hf": {
+            "Avg Score 1": 5.7,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.0
+        }
+    },
+    "generic": {
+        "gpt4": {
+            "Avg Score 1": 9.2,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 1.0
+        },
+        "llama-7b_hf": {
+            "Avg Score 1": 5.6,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.0
+        }
+    },
+    "knowledge": {
+        "gpt4": {
+            "Avg Score 1": 9.05,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 1.0
+        },
+        "llama-7b_hf": {
+            "Avg Score 1": 6.2,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.0
+        }
+    },
+    "math": {
+        "gpt4": {
+            "Avg Score 1": 8.333333333333334,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.6666666666666666
+        },
+        "llama-7b_hf": {
+            "Avg Score 1": 5.0,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.3333333333333333
+        }
+    },
+    "roleplay": {
+        "gpt4": {
+            "Avg Score 1": 9.1,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 1.0
+        },
+        "llama-7b_hf": {
+            "Avg Score 1": 5.5,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.0
+        }
+    },
+    "writing": {
+        "gpt4": {
+            "Avg Score 1": 9.2,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 1.0
+        },
+        "llama-7b_hf": {
+            "Avg Score 1": 4.0,
+            "Avg STD 1": 0.0,
+            "Win Rate 1": 0.0
+        }
+    }
+}

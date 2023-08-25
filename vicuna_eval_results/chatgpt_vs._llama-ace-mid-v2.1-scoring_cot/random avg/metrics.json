@@ -1,0 +1,222 @@
+{
+    "Total": {
+        "chatgpt": {
+            "Avg Score": {
+                "AVG 1": 8.975,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.9125,
+                "STD 1": 0.0
+            }
+        },
+        "llama-ace-mid": {
+            "Avg Score": {
+                "AVG 1": 6.08125,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.0625,
+                "STD 1": 0.0
+            }
+        }
+    },
+    "coding": {
+        "chatgpt": {
+            "Avg Score": {
+                "AVG 1": 8.714285714285714,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 1.0,
+                "STD 1": 0.0
+            }
+        },
+        "llama-ace-mid": {
+            "Avg Score": {
+                "AVG 1": 5.142857142857143,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.0,
+                "STD 1": 0.0
+            }
+        }
+    },
+    "common-sense": {
+        "chatgpt": {
+            "Avg Score": {
+                "AVG 1": 8.8,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.9,
+                "STD 1": 0.0
+            }
+        },
+        "llama-ace-mid": {
+            "Avg Score": {
+                "AVG 1": 6.5,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.1,
+                "STD 1": 0.0
+            }
+        }
+    },
+    "counterfactual": {
+        "chatgpt": {
+            "Avg Score": {
+                "AVG 1": 9.0,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 1.0,
+                "STD 1": 0.0
+            }
+        },
+        "llama-ace-mid": {
+            "Avg Score": {
+                "AVG 1": 4.55,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.0,
+                "STD 1": 0.0
+            }
+        }
+    },
+    "fermi": {
+        "chatgpt": {
+            "Avg Score": {
+                "AVG 1": 8.75,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.9,
+                "STD 1": 0.0
+            }
+        },
+        "llama-ace-mid": {
+            "Avg Score": {
+                "AVG 1": 3.8,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.1,
+                "STD 1": 0.0
+            }
+        }
+    },
+    "generic": {
+        "chatgpt": {
+            "Avg Score": {
+                "AVG 1": 8.85,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.8,
+                "STD 1": 0.0
+            }
+        },
+        "llama-ace-mid": {
+            "Avg Score": {
+                "AVG 1": 6.75,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.2,
+                "STD 1": 0.0
+            }
+        }
+    },
+    "knowledge": {
+        "chatgpt": {
+            "Avg Score": {
+                "AVG 1": 8.8,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.9,
+                "STD 1": 0.0
+            }
+        },
+        "llama-ace-mid": {
+            "Avg Score": {
+                "AVG 1": 7.75,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.1,
+                "STD 1": 0.0
+            }
+        }
+    },
+    "math": {
+        "chatgpt": {
+            "Avg Score": {
+                "AVG 1": 10.0,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.6666666666666666,
+                "STD 1": 0.0
+            }
+        },
+        "llama-ace-mid": {
+            "Avg Score": {
+                "AVG 1": 5.333333333333333,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.0,
+                "STD 1": 0.0
+            }
+        }
+    },
+    "roleplay": {
+        "chatgpt": {
+            "Avg Score": {
+                "AVG 1": 9.1,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 1.0,
+                "STD 1": 0.0
+            }
+        },
+        "llama-ace-mid": {
+            "Avg Score": {
+                "AVG 1": 6.2,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.0,
+                "STD 1": 0.0
+            }
+        }
+    },
+    "writing": {
+        "chatgpt": {
+            "Avg Score": {
+                "AVG 1": 9.4,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.9,
+                "STD 1": 0.0
+            }
+        },
+        "llama-ace-mid": {
+            "Avg Score": {
+                "AVG 1": 7.9,
+                "STD 1": 0.0
+            },
+            "Win Rate": {
+                "AVG 1": 0.0,
+                "STD 1": 0.0
+            }
+        }
+    }
+}
