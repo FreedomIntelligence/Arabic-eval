@@ -1,6 +1,6 @@
 # How to use translate_to_review  
 
-If you want to translate GPTreview into Chinese or anthing else:    
+If you want to translate GPTreview into Chinese or anything else:    
 
   
 1.Rewrite the '``path``',this is the folder where the program read the input files and where you will save your translate result.  
