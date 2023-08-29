@@ -30,25 +30,8 @@ lang = 'Chinese'
 mul = 5
 blo = True
 path = "llama-v2.1-scoring/"
-# def connect(idx,answer):
-#     text = answer[idx]
-#     prompt = "Help me translate the original text to {} following " \
-#              "(1) output the result directly without additional information; " \
-#              "(2) do not output any prefix, e.g., `The following is the translation`;" \
-#              "(3) translate according to the context to confirm the translated texts make sense; " \
-#              "(4) do not modify the format, e.g., the markdown format; " \
-#              "(5) Titles of references or books are not required to be translated. \n\n" \
-#              "The original text is:\n\n{}"
-#     model = GPT(user_name='songdj_arabic_trans', new_version='0.1.0')
-#     # print(prompt.format(lang, text))
-#     flag, trans_text = model.call(prompt.format(lang, text))
-#     # print(flag, trans_text)
-#     if not flag:
-#         raise ValueError(f"Failed: {trans_text}")
-#     return trans_text
-def connect():
-    # text = answer[idx]
-    t = "please translate the whole following sentence into Arabic:\nPlease select {neutral,contradiction,entailment} which  relation is processed by sentence1 and sentence2.Please answer the question concisely, without explanation or additional information."
+def connect(idx,answer):
+    text = answer[idx]
     prompt = "Help me translate the original text to {} following " \
              "(1) output the result directly without additional information; " \
              "(2) do not output any prefix, e.g., `The following is the translation`;" \
@@ -58,11 +41,28 @@ def connect():
              "The original text is:\n\n{}"
     model = GPT(user_name='songdj_arabic_trans', new_version='0.1.0')
     # print(prompt.format(lang, text))
-    flag, trans_text = model.call(t)
+    flag, trans_text = model.call(prompt.format(lang, text))
     # print(flag, trans_text)
     if not flag:
         raise ValueError(f"Failed: {trans_text}")
     return trans_text
+# def connect():
+#     # text = answer[idx]
+#     t = "please translate the whole following sentence into Arabic:\nPlease select {neutral,contradiction,entailment} which  relation is processed by sentence1 and sentence2.Please answer the question concisely, without explanation or additional information."
+#     prompt = "Help me translate the original text to {} following " \
+#              "(1) output the result directly without additional information; " \
+#              "(2) do not output any prefix, e.g., `The following is the translation`;" \
+#              "(3) translate according to the context to confirm the translated texts make sense; " \
+#              "(4) do not modify the format, e.g., the markdown format; " \
+#              "(5) Titles of references or books are not required to be translated. \n\n" \
+#              "The original text is:\n\n{}"
+#     model = GPT(user_name='songdj_arabic_trans', new_version='0.1.0')
+#     # print(prompt.format(lang, text))
+#     flag, trans_text = model.call(t)
+#     # print(flag, trans_text)
+#     if not flag:
+#         raise ValueError(f"Failed: {trans_text}")
+#     return trans_text
 
 def getqArray():#get instruction from the file
     path1 = path+"combine.jsonl"
