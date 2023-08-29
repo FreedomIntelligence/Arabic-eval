@@ -1,0 +1,18 @@
+请分析以下句子，并返回包含的情绪标签（anger, anticipation, disgust, fear, joy, love, optimism, pessimism, sadness, surprise, trust）：
+"{sentence}"
+
+方法2:
+以下句子包含哪些情绪？请从这些选项中选择（anger, anticipation, disgust, fear, joy, love, optimism, pessimism, sadness, surprise, trust）：
+"{sentence}"
+
+方法3:
+请识别并返回以下句子所表达的情绪（anger, anticipation, disgust, fear, joy, love, optimism, pessimism, sadness, surprise, trust）：
+"{sentence}"
+
+方法4:
+这个句子包含哪些情感？请从anger, anticipation, disgust, fear, joy, love, optimism, pessimism, sadness, surprise, trust中选择。
+"{sentence}"
+
+方法5:
+请阅读以下句子，并告诉我它所包含的情绪（anger, anticipation, disgust, fear, joy, love, optimism, pessimism, sadness, surprise, trust）：
+"{sentence}"
