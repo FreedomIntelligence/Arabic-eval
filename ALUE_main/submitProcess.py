@@ -11,7 +11,7 @@ from sklearn.preprocessing import LabelEncoder
 #
 #
 class change_to_test(object):
-    def prosec(self,path= "./data_generate/SEC_test.jsonl",df_test = pd.read_csv("./private_datasets/emotion/emotion_no_labels_v1.0.tsv", sep="\t"),output_path = "./predictions/E_c.tsv"):
+    def prosec(self,path= "./data_generate/SEC_test.jsonl",df_test = pd.read_csv("./SEC/SEC_test.tsv", sep="\t"),output_path = "./predictions/E_c.tsv"):
         data = pd.read_json(path,lines=True)
         idx = data["id"]
         all_out = []
@@ -37,9 +37,8 @@ class change_to_test(object):
         if not os.path.exists("predictions"):
             os.mkdir("predictions")
         df_preds.to_csv(output_path, index=False, sep="\t")
-        print(df_preds.head())
-
-    def promq2q(self,path = "./data_generate/MQ2Q_test.jsonl",df_test = pd.read_csv("./private_datasets/q2q/q2q_no_labels_v1.0.tsv", sep="\t"),output_path = "./predictions/q2q.tsv"):
+        print("prosec finished")
+    def promq2q(self,path = "./data_generate/MQ2Q_test.jsonl",df_test = pd.read_csv("./MQ2Q/q2q_no_labels_v1.0.tsv", sep="\t"),output_path = "./predictions/q2q.tsv"):
         data = pd.read_json(path,lines = True)
         pre = []
         for i in range(len(data)):
@@ -51,12 +50,10 @@ class change_to_test(object):
         if not os.path.exists("predictions"):
             os.mkdir("predictions")
         df_preds.to_csv(output_path, index=False, sep="\t")
-        print(df_preds)
-
-    def profid(self,path = "./data_generate/FID_test.jsonl",df_test = pd.read_csv("./data/idat/IDAT_test_text.csv"),output_path = "./predictions/irony.tsv"):
+        print("promq2q finished")
+    def profid(self,path = "./data_generate/FID_test.jsonl",df_test = pd.read_csv("./FID/IDAT_test_text.csv"),output_path = "./predictions/irony.tsv"):
         data = pd.read_json(path,lines = True)
         pre = data["output"].tolist()
-        print(pre)
         ind = data["id"].tolist()
         for i in range(len(ind)):
             ind[i]=ind[i]-1
@@ -66,17 +63,17 @@ class change_to_test(object):
         if not os.path.exists("predictions"):
             os.mkdir("predictions")
         df_preds.to_csv(output_path, index=False, sep="\t")
-    def promdd(self,path = "./data_generate/MDD_test.jsonl",df_test = pd.read_csv("./data/madar-1/MADAR-Corpus-26-test.tsv", sep="\t", header=None, names=["Text", "label"]),output_path = "./predictions/madar.tsv"):
+        print("profid finished")
+    def promdd(self,path = "./data_generate/MDD_test.jsonl",df_test = pd.read_csv("./MDD/MADAR-Corpus-26-test.tsv", sep="\t", header=None, names=["Text", "label"]),output_path = "./predictions/madar.tsv"):
         
         data = pd.read_json(path,lines = True)
         pre = data["output"].tolist()
-        print(pre)
         ind = data["id"].tolist()
         df_preds = pd.DataFrame(data=pre)
         if not os.path.exists("predictions"):
             os.mkdir("predictions")
         df_preds.to_csv(output_path, index=False, header=False, sep="\t")
-
+        print("promdd finished")
     def prooold(self,path = "./data_generate/OOLD_test.jsonl",output_path = "./predictions/offensive.tsv"):
         
         data = pd.read_json(path,lines = True)
@@ -88,7 +85,7 @@ class change_to_test(object):
         if not os.path.exists("predictions"):
             os.mkdir("predictions")
         df_preds.to_csv(output_path, index=False, header=False, sep="\t")
-
+        print("prooold finished")
     def proohsd(self,path = "./data_generate/OHSD_test.jsonl",output_path = "./predictions/hate.tsv"):
         data = pd.read_json(path,lines = True)
         pre = []
@@ -99,8 +96,8 @@ class change_to_test(object):
         if not os.path.exists("predictions"):
             os.mkdir("predictions")
         df_preds.to_csv(output_path, index=False, header=False, sep="\t")
-
-    def prosvreg(self,path = "./data_generate/SVREG_test.jsonl",df_test = pd.read_csv("./private_datasets/vreg/vreg_no_labels_v1.0.tsv", sep="\t"),output_path = "./predictions/v_reg.tsv"):
+        print("proohsd finished")
+    def prosvreg(self,path = "./data_generate/SVREG_test.jsonl",df_test = pd.read_csv("./SVREg/VREG_test.tsv", sep="\t"),output_path = "./predictions/v_reg.tsv"):
         
         data = pd.read_json(path,lines = True)
         pre = []
@@ -124,10 +121,10 @@ class change_to_test(object):
         if not os.path.exists("predictions"):
             os.mkdir("predictions")
         df_preds.to_csv(output_path, index=False, sep="\t")
+        print("prosvreg finished")
 
 
-
-    def proxnli(self,path = "./data_generate/XNLI_test.jsonl",df_test = pd.read_csv("./data/xnli/arabic_dev.tsv", sep="\t"),output_path = "./predictions/xnli.tsv"):
+    def proxnli(self,path = "./data_generate/XNLI_test.jsonl",df_test = pd.read_csv("./XNLI/arabic_dev.tsv", sep="\t"),output_path = "./predictions/xnli.tsv"):
         
         data = pd.read_json(path,lines = True)
         pre = []
@@ -140,10 +137,10 @@ class change_to_test(object):
         if not os.path.exists("predictions"):
             os.mkdir("predictions")
         df_preds.to_csv(output_path, index=False, sep="\t")
+        print("proxnli finished")
 
 
-
-    def prodiag(self,path = "./data_generate/DIAG_test.jsonl",df_test = pd.read_csv("./private_datasets/diagnostic.tsv", sep="\t"),output_path = "./predictions/diagnostic.tsv"):
+    def prodiag(self,path = "./data_generate/DIAG_test.jsonl",df_test = pd.read_csv("./DIAG/diagnostic.tsv", sep="\t"),output_path = "./predictions/diagnostic.tsv"):
         
         data = pd.read_json(path,lines = True)
         pre = []
@@ -156,11 +153,4 @@ class change_to_test(object):
         if not os.path.exists("predictions"):
             os.mkdir("predictions")
         df_preds.to_csv(output_path, index=False, sep="\t")
-class change_to_test1(object):
-    @classmethod
-    def aa(cls,path):
-        print(path)
-    # @classmethod
-    # def bb(path1):
-    #     print(path1)
-    
+        print("prodiag finished")
