@@ -4,7 +4,7 @@ import jsonlines
 import os
 import random
 arabic = "يرجى الإجابة على السؤال بإيجاز، دون توضيح أو معلومات إضافية."
-path_to_save = "train_all1/"
+path_to_save = "train/"
 path_to_save_dev = "dev/"
 path_to_save_original_dev = "original_dev/"
 path_to_save_test = "test/"
