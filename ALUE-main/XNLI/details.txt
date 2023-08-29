@@ -1,3 +1,0 @@
-In NLI, a system is tasked with reading two
-sentences and determining whether one entails the
-other, contradicts it, or neither (neutral)
