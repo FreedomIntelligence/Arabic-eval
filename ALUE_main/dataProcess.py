@@ -11,7 +11,7 @@ path_to_save_test = "test/"
 def proXNLI_train_dev():#处理tsv、csv原始数据
     path1 = "XNLI/arabic_train.tsv"
     path2 = path_to_save +"XNLI_train.jsonl"
-    path3 = path_to_save_dev+"XNLI_dev.jsonl"
+    path3 = path_to_save_dev+"XNLI_train_dev.jsonl"
     quotechar=None
     delimiter="\t"
     with open(path1, "r", encoding="utf-8-sig") as f:
@@ -30,19 +30,20 @@ def proXNLI_train_dev():#处理tsv、csv原始数据
                 if i%10!=0:
                     writer.write(da)
                 else:
+                    da["processed_query"]=da["query"]
+                    del da["query"]
                     dev.append(da)
                     continue
     with jsonlines.open(path3,'w') as writer:
         for i in range(len(dev)):
             writer.write(dev[i])
     print("proXNLI_train_dev finished")
-proXNLI_train_dev()
 
 
 def proSVREG_train_dev():#path1 是原始数据文件，path2是生成的文件,处理txt原始数据
      path1 = "SVREG/2018-Valence-reg-Ar-train.txt"
      path2 = path_to_save +"SVREG_train.jsonl"
-     path3 = path_to_save_dev+"SVREG_dev.jsonl"
+     path3 = path_to_save_dev+"SVREG_train_dev.jsonl"
      data = pd.read_csv(path1,sep = '\t')#读入数据
      prompt = 'يرجى تسجيل شدة المشاعر، والتي تعني شدة العاطفة في الجملة التالية على مقياس من 0 إلى 1.'+arabic#模板
      dev = []
@@ -56,6 +57,8 @@ def proSVREG_train_dev():#path1 是原始数据文件，path2是生成的文件,
             if i%10!=0:
                 writer.write(da)
             else:
+                da["processed_query"]=da["query"]
+                del da["query"]
                 dev.append(da)
                 continue
      with jsonlines.open(path3,'w') as writer:
@@ -67,7 +70,7 @@ def proSVREG_train_dev():#path1 是原始数据文件，path2是生成的文件,
 def proSEC_train_dev():#path1 是原始数据文件，path2是生成的文件,处理txt原始数据
      path1 = "SEC/2018-E-c-Ar-train.txt"
      path2 = path_to_save +"SEC_train.jsonl"
-     path3 = path_to_save_dev+"SEC_dev.jsonl"
+     path3 = path_to_save_dev+"SEC_train_dev.jsonl"
      data = pd.read_csv(path1,sep = '\t')#读入数据
      prompt = 'ما هي المشاعر التي يحتويها الجملة التالية؟ الرجاء الاختيار من بين هذه الخيارات: (الغضب، الترقب، الاشمئزاز، الخوف، الفرح، الحب، التفاؤل، التشاؤم، الحزن، المفاجأة، الثقة).'+arabic#模板
      labels = ['anger','anticipation', 'disgust', 'fear', 'joy', 'love', 'optimism', 'pessimism', 'sadness', 'surprise', 'trust']
@@ -87,6 +90,8 @@ def proSEC_train_dev():#path1 是原始数据文件，path2是生成的文件,�
             if i%10!=0:
                 writer.write(da)
             else:
+                da["processed_query"]=da["query"]
+                del da["query"]
                 dev.append(da)
                 continue
      with jsonlines.open(path3,'w') as writer:#打开jsonlines写入
@@ -98,7 +103,7 @@ def proSEC_train_dev():#path1 是原始数据文件，path2是生成的文件,�
 def proMQ2Q_train_dev():#path1 是原始数据文件，path2是生成的文件,处理txt原始数据
      path1 = "MQ2Q/q2q_similarity_workshop_v2.1.tsv"
      path2 = path_to_save +"MQ2Q_train.jsonl"
-     path3 = path_to_save_dev+"MQ2Q_dev.jsonl"
+     path3 = path_to_save_dev+"MQ2Q_train_dev.jsonl"
      quotechar=None
      delimiter="\t"
      prompt = "ل تعبر هاتان الجملتان عن نفس المعنى؟ إذا كانت تعني نفس الشيء، يجب أن تكون إجابتك 1، وإلا فإنها تكون 0."+arabic
@@ -116,6 +121,8 @@ def proMQ2Q_train_dev():#path1 是原始数据文件，path2是生成的文件,�
             if i%10!=0:
                 writer.write(da)
             else:
+                da["processed_query"]=da["query"]
+                del da["query"]
                 dev.append(da)
      with jsonlines.open(path3,'w') as writer:
          for j in dev:
@@ -125,7 +132,7 @@ def proMQ2Q_train_dev():#path1 是原始数据文件，path2是生成的文件,�
 def proFID_train_dev():#path1 是原始数据文件，path2是生成的文件,处理txt原始数据
      path1 = "FID/IDAT_training_text.csv"
      path2 = path_to_save +"FID_train.jsonl"
-     path3 = path_to_save_dev+"FID_dev.jsonl"
+     path3 = path_to_save_dev+"FID_train_dev.jsonl"
      quotechar=None
      delimiter=","
      prompt = "يرجى تحديد ما إذا كان هناك أي جزء من الجملة التالية يحتوي على إيرونيا، والتي تشير إلى استخدام الكلمة للتعبير عن شيء آخر غير المعنى الحرفي وخاصة عكسه.  إذا كان يحتوي على ذلك، يجب أن تكون الإجابة 1.  وإلا، يجب أن تكون الإجابة 0."+arabic
@@ -142,6 +149,8 @@ def proFID_train_dev():#path1 是原始数据文件，path2是生成的文件,�
             if i%10!=0:
                 writer.write(da)
             else:
+                da["processed_query"]=da["query"]
+                del da["query"]
                 dev.append(da)
                 continue
      with jsonlines.open(path3,'w') as writer:
@@ -152,7 +161,7 @@ def proFID_train_dev():#path1 是原始数据文件，path2是生成的文件,�
 def proMDD_train_dev():
     path1 = "MDD/MADAR-Corpus-26-train.tsv"
     path2 = path_to_save +"MDD_train.jsonl"
-    path3 = path_to_save_dev+"MDD_dev.jsonl"
+    path3 = path_to_save_dev+"MDD_train_dev.jsonl"
     data = pd.read_csv(path1,sep = '\t', header=None).values.tolist()
     dev = []
     with jsonlines.open(path2,'w') as writer: 
@@ -166,6 +175,8 @@ def proMDD_train_dev():
             if i%10!=0:
                 writer.write(da)
             else:
+                da["processed_query"]=da["query"]
+                del da["query"]
                 dev.append(da)
                 continue
     with jsonlines.open(path3,'w') as writer: 
@@ -176,7 +187,7 @@ def proMDD_train_dev():
 def proOHSD_train_dev():#处理tsv、csv原始数据
     path1 = "OOLD/OSACT2020-sharedTask-train.txt"
     path2 = path_to_save +"OHSD_train.jsonl"
-    path3 = path_to_save_dev+"OHSD_dev.jsonl"
+    path3 = path_to_save_dev+"OHSD_train_dev.jsonl"
     quotechar=None
     delimiter="\t"
     with open(path1, "r", encoding="utf-8-sig") as f:
@@ -193,6 +204,8 @@ def proOHSD_train_dev():#处理tsv、csv原始数据
                 if i %10!=0:
                     writer.write(da)
                 else:
+                    da["processed_query"]=da["query"]
+                    del da["query"]
                     dev.append(da)
     with jsonlines.open(path3,'w') as writer:
         for j in dev:
@@ -203,7 +216,7 @@ def proOHSD_train_dev():#处理tsv、csv原始数据
 def proOOLD_train_dev():#处理tsv、csv原始数据
     path1 = "OOLD/OSACT2020-sharedTask-train.txt"
     path2 = path_to_save +"OOLD_train.jsonl"
-    path3 = path_to_save_dev+"OOLD_dev.jsonl"
+    path3 = path_to_save_dev+"OOLD_train_dev.jsonl"
     quotechar=None
     delimiter="\t"
     with open(path1, "r", encoding="utf-8-sig") as f:
@@ -220,6 +233,8 @@ def proOOLD_train_dev():#处理tsv、csv原始数据
                 if i %10!=0:
                     writer.write(da)
                 else:
+                    da["processed_query"]=da["query"]
+                    del da["query"]
                     dev.append(da)
     with jsonlines.open(path3,'w') as writer:
         for j in dev:
@@ -243,7 +258,7 @@ def proXNLI_dev():#处理tsv、csv原始数据
                 da = {}
                 da["id"] = int(data[i][0])
                 da["label"] = "XNLI"
-                da["query"] =  prompt+'\n'+'\n'+sentence1+'\n'+sentence2
+                da["processed_query"] =  prompt+'\n'+'\n'+sentence1+'\n'+sentence2
                 da["answer"] = data[i][3]
                 writer.write(da)
     print("proXNLI_dev finished")
@@ -258,7 +273,7 @@ def proSVREG_dev():#path1 是原始数据文件，path2是生成的文件,处理
             sentence = data["Tweet"][i]
             da = {}
             da["id"] = (data['ID'][i])
-            da["query"] =  prompt+"\n"+"\n"+sentence
+            da["processed_query"] =  prompt+"\n"+"\n"+sentence
             da["answer"] = (str(data['Intensity Score'][i]))
             writer.write(da)
      print("proSVREG_dev finished")
@@ -276,7 +291,7 @@ def proSEC_dev():#path1 是原始数据文件，path2是生成的文件,处理tx
             sentence = data["Tweet"][i]
             da = {}
             da["id"] = (data['ID'][i])
-            da["query"] =  prompt+"\n"+"\n"+sentence
+            da["processed_query"] =  prompt+"\n"+"\n"+sentence
             output =""
             for j in labels:
                 if int(data[j][i]) == 1 :
@@ -297,7 +312,7 @@ def proMDD_dev():
             prompt ="من فضلك قم بتحديد الجملة التالية إلى أي مدينة عربية تنتمي؟"+arabic
             da["id"] = int(i)
             da["label"] = "MDD"
-            da ["query"] = prompt+'\n'+"\n"+data[i][0]
+            da ["processed_query"] = prompt+'\n'+"\n"+data[i][0]
             da["answer"] = data[i][1]
             writer.write(da)
     print("proMDD_dev finished")
@@ -317,7 +332,7 @@ def proOHSD_dev():
                 da = {}
                 da["id"] = i
                 da["label"] = "OHSD"
-                da["query"] =  prompt+"\n"+"\n"+data[i][0]
+                da["processed_query"] =  prompt+"\n"+"\n"+data[i][0]
                 da["answer"] = data[i][2]
                 writer.write(da)
     print("proOHSD_dev finished")
@@ -337,7 +352,7 @@ def proOOLD_dev():
                 da = {}
                 da["id"] = i
                 da["label"] = "OOLD"
-                da["query"] =  prompt+"\n"+"\n"+data[i][0]
+                da["processed_query"] =  prompt+"\n"+"\n"+data[i][0]
                 da["answer"] = data[i][1]
                 writer.write(da)
     print("proOOLD_dev finished")
@@ -358,7 +373,7 @@ def proDIAG_dev():#处理tsv、csv原始数据
                 da = {}
                 da["id"] = int(data[i][0])
                 da["label"] = "DIAG"
-                da["query"] =  prompt+'\n'+'\n'+sentence1+'\n'+sentence2
+                da["processed_query"] =  prompt+'\n'+'\n'+sentence1+'\n'+sentence2
                 da["answer"] = data[i][3]
                 writer.write(da)
     print("proDIAG_dev finished")
@@ -375,7 +390,7 @@ def proSVREG_test():#path1 是原始数据文件，path2是生成的文件,处�
             da = {}
             da["id"] = (data['ID'][i])
             da["label"] = "SVREG"
-            da["query"] =  prompt+"\n"+"\n"+sentence
+            da["processed_query"] =  prompt+"\n"+"\n"+sentence
             writer.write(da)
      print("proSVREG_test finished ")
 
@@ -393,7 +408,7 @@ def proSEC_test():#path1 是原始数据文件，path2是生成的文件,处理t
             da = {}
             da["id"] = int((data['ID'][i]))
             da["label"]="SEC"
-            da["query"] =  prompt+"\n"+"\n"+sentence
+            da["processed_query"] =  prompt+"\n"+"\n"+sentence
             writer.write(da)
      print("proSEC_test finished ")
 
@@ -412,7 +427,7 @@ def proMQ2Q_test():#path1 是原始数据文件，path2是生成的文件,处理
             da = {}
             da["id"] = int(i)
             da["label"] = "MQ2Q"
-            da["query"] =  prompt+"\n"+"\n"+'ملة1: '+sentence1+"\n"+'ملة2: '+sentence2
+            da["processed_query"] =  prompt+"\n"+"\n"+'ملة1: '+sentence1+"\n"+'ملة2: '+sentence2
             writer.write(da)
      print("proMQ2Q_test finished ")
 
@@ -430,7 +445,7 @@ def proFID_test():#path1 是原始数据文件，path2是生成的文件,处理t
             da = {}
             da["id"] = int(data[i][0]+1)
             da["label"] = "FID"
-            da["query"] =  prompt+"\n"+"\n"+sentence
+            da["processed_query"] =  prompt+"\n"+"\n"+sentence
             writer.write(da)
      print("proFID_test finished ")
 
@@ -443,7 +458,7 @@ def proMDD_test():
             prompt ="من فضلك قم بتحديد الجملة التالية إلى أي مدينة عربية تنتمي؟"+arabic
             da["id"] = int(i)
             da["label"] = "MDD"
-            da ["query"] = prompt+'\n'+"\n"+data[i][0]
+            da ["processed_query"] = prompt+'\n'+"\n"+data[i][0]
             writer.write(da)
     print("proMDD_test finished")
 def proOHSD_test():
@@ -459,7 +474,7 @@ def proOHSD_test():
             da = {}
             da["id"] = i
             da["label"] = "OHSD"
-            da["query"] =  prompt+data[i][0]
+            da["processed_query"] =  prompt+data[i][0]
             writer.write(da)
     print("proOHSD_test finished")
 def proOOLD_test():
@@ -475,7 +490,7 @@ def proOOLD_test():
             da = {}
             da["id"] = i
             da["label"] = "OOLD"
-            da["query"] =  prompt+data[i][0]
+            da["processed_query"] =  prompt+data[i][0]
             writer.write(da)
     print("proOOLD_test finished")
 def proDIAG_test():#处理tsv、csv原始数据
@@ -493,7 +508,7 @@ def proDIAG_test():#处理tsv、csv原始数据
                 da = {}
                 da["id"] = int(data[i][0])
                 da["label"] = "DIAG"
-                da["query"] =  prompt+'\n'+'\n'+sentence1+'\n'+sentence2
+                da["processed_query"] =  prompt+'\n'+'\n'+sentence1+'\n'+sentence2
                 writer.write(da)
     print("proDIAG_dev finished")
 def proXNLI_test():#处理tsv、csv原始数据
@@ -511,7 +526,7 @@ def proXNLI_test():#处理tsv、csv原始数据
                 da = {}
                 da["id"] = int(data[i][0])
                 da["label"] = "XNLI"
-                da["query"] =  prompt+sentence1+sentence2
+                da["processed_query"] =  prompt+sentence1+sentence2
                 writer.write(da)
     print("proXNLI_test finished")
 def merge_all(path):
