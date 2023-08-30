@@ -20,7 +20,7 @@
 try:
     from scipy.stats import pearsonr, spearmanr
     from sklearn.metrics import f1_score, accuracy_score, jaccard_score
-
+    from sklearn.metrics import matthews_corrcoef
     _has_sklearn = True
 except (AttributeError, ImportError):
     _has_sklearn = False
@@ -39,6 +39,9 @@ if _has_sklearn:
             "f1": f1,
             "acc": acc,
         }
+    def matthewsf(preds, labels):
+        matthews = matthews_corrcoef(preds, labels)
+        return {"matthews":matthews}
 
     def pearson_and_spearman(preds, labels):
         pearson_corr = pearsonr(preds, labels)[0]
@@ -83,6 +86,6 @@ if _has_sklearn:
         elif task_name == "xnli":
             return acc_and_f1(preds, labels, average="macro")
         elif task_name =="diag":
-            return acc_and_f1(preds, labels, average="macro")
+            return matthewsf(preds, labels)
         else:
             raise KeyError(task_name)
