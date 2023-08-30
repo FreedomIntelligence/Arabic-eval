@@ -38,7 +38,7 @@ Then you have to set this augment to the path where you save the base label data
 
 ## generate_dir
 Set this augment to the path where you save the generate dataset.  
-## generate_dir
+## output_dir
 Set this augment to decide where you will save the metric.
 ## There is an integrity example:  
 ```dos
