@@ -1,9 +1,3 @@
-# Huggingface BERT Fine-tuning
-This is an implementation based on [Huggingface Transformers](https://github.com/huggingface/transformers) for fine-tuning BERT models on [Arabic Language Understanding Evaluation (ALUE) Benchmark](https://www.alue.org/) tasks, the implementation is an adaptation from the library's [`run_glue.py`](https://github.com/huggingface/transformers/blob/v2.7.0/examples/run_glue.py) script from version `v2.7.0`.
-
-Fine-tuning using this script will re-produce the baselines results reported in [ALUE leaderboard](https://www.alue.org/leaderboard).
-
-
 # Prerequisites
 Install python dependencies:
 
@@ -15,47 +9,43 @@ pip install -r requirements.txt
 
 Code was tested on `Python3.6` and `Ubuntu 18.04`
 
-# Download datasets
-Check the instructions in the repository [README.md](https://github.com/Alue-Benchmark/alue_baselines/blob/master/README.md) file.
+# How to run
+There are 4 arguments you have to prepare before run `run_alue.py`.    
 
-# Fine-tuning
-
-## Tasks
-Choose the task for fine-tuning by exporting the task name as an environment variable:
-
+## task_name
+This argument is which task you want to test.  You can check the following to decied which name is needed:
+```python
+alue_output_modes = {
+    "mq2q": "classification",
+    "mdd": "classification",
+    "fid": "classification",
+    "svreg": "regression",
+    "sec": "multilabel",
+    "oold": "classification",
+    "ohsd": "classification",
+    "xnli": "classification",
+    "diag": "classification"
+}
 ```
-export TASK_NAME=MQ2Q
-```
+## base_dir
+This argument attach to the base label dataset which you will compare with your generate results.  
 
-- MQ2Q: [NSURL 2019: Task8 Semantic Question Similarity in Arabic](https://www.kaggle.com/c/nsurl-2019-task8/)
-- MDD: [WANLP 2019: Subtask 1: MADAR Travel Domain Dialect Identification](https://sites.google.com/view/madar-shared-task)
-- FID: [IDAT@FIRE 2019: Irony Detection in Arabic Tweets](https://www.irit.fr/IDAT2019/)
-- SVREG: [SemEval-2018 Task 1: Affect in Tweets: Task V-reg: Detecting Valence or Sentiment Intensity (regression)](https://competitions.codalab.org/competitions/17751)
-- SEC: [SemEval-2018 Task 1: Affect in Tweets: Task E-c: Detecting Emotions (multi-label classification)](https://competitions.codalab.org/competitions/17751)
-- OOLD: [OSACT4 2020: Offensive Language Detection](http://edinburghnlp.inf.ed.ac.uk/workshops/OSACT4/)
-- OHSD: [OSACT4 2020: Hate Speech Detection](http://edinburghnlp.inf.ed.ac.uk/workshops/OSACT4/)
-- XNLI: [The Cross-Lingual NLI Corpus (XNLI)](https://cims.nyu.edu/~sbowman/xnli/)
+#### 1.Task has original dev dataset or test dataset with labels
+ Just set this argument to `dev` or `test` depend on your will.  
 
-## Model
-Choose the pre-trained model, baselines report results on both `bert-base-multilingual-uncased` and `asafaya/bert-base-arabic`, although any other huggingface pre-trained BERT model would also work.
+#### 2.Dataset is not original
+Then you have to set this augment to the path where you save the base label dataset.    
 
-```
-export MODEL_NAME=bert-base-multilingual-uncased
-```
-
-## Running Script
-Run the script `run_alue.py`:
-
-```
+## generate_dir
+Set this augment to the path where you save the generate dataset.  
+## generate_dir
+Set this augment to decide where you will save the metric.
+## There is an integrity example:  
+```dos
 python run_alue.py \
-  --model_type bert \
-  --model_name_or_path $MODEL_NAME \
-  --task_name $TASK_NAME \
-  --output_dir results/$TASK_NAME/ \
-  --do_train \
-  --do_eval \
-  --eval_all_checkpoints
+--task_name diag \
+--base_dir dev \
+--generate_dir v2/diag_dev.jsonl \
+--output_dir results/diag_v2
 ```
-Submission files will be generated in `results/` folder.
-
-Check `python run_alue.py -h` for more information on hyperparameters and options.
+    
