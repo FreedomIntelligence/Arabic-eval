@@ -25,9 +25,8 @@ import json
 import logging
 import os
 import random
-
-import numpy as np
 import torch
+import numpy as np
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler, TensorDataset
 from torch.utils.data.distributed import DistributedSampler
 from tqdm import tqdm, trange
@@ -96,8 +95,8 @@ def evaluate(args,test=False):
 
 
 def load_and_cache_examples(args, task,  evaluate=False):
-    if args.local_rank not in [-1, 0] and not evaluate:
-        torch.distributed.barrier()  # Make sure only the first process in distributed training process the dataset, and the others will use the cache
+    # if args.local_rank not in [-1, 0] and not evaluate:
+    #     torch.distributed.barrier()  # Make sure only the first process in distributed training process the dataset, and the others will use the cache
     processor = processors[task]()
     output_mode = output_modes[task]
     eval_data = processor.get_eval_data(args = args)
@@ -133,14 +132,26 @@ def main():
         "--task_name",
         default="diag",
         type=str,
-        # required=True,
+        required=True,
         help="The name of the task to train selected in the list: " + ", ".join(processors.keys()),
+    )
+    parser.add_argument(
+        "--base_dir",
+        default="dev",
+        type=str,
+        required=True,
+    )
+    parser.add_argument(
+        "--generate_dir",
+        default="v2/diag_dev.jsonl",
+        type=str,
+        required=True,
     )
     parser.add_argument(
         "--output_dir",
         default="results/diag_v2",
         type=str,
-        # required=True,
+        required=True,
         help="The output directory where the model predictions and checkpoints will be written.",
     )
 

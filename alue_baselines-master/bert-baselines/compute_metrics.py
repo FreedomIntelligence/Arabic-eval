@@ -33,7 +33,6 @@ def is_sklearn_available():
 if _has_sklearn:
 
     def acc_and_f1(preds, labels, average="binary",pos_label ="entailment"):
-        print(preds)
         f1 = f1_score(y_true=labels, y_pred=preds, average=average,pos_label= pos_label)
         acc = accuracy_score(preds, labels)
         return {
@@ -72,7 +71,7 @@ if _has_sklearn:
         elif task_name == "mdd":
             return acc_and_f1(preds, labels, average="macro")
         elif task_name == "fid":
-            return acc_and_f1(preds, labels)
+            return acc_and_f1(preds, labels,pos_label=1)
         elif task_name == "svreg":
             return pearson_and_spearman(preds, labels)
         elif task_name == "sec":

@@ -193,13 +193,13 @@ class Mq2qProcessor(DataProcessor):
 
     def get_train_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/nsurl/q2q_similarity_workshop_v2.1.tsv"), "train")
+        return self._create_examples(self._read_tsv("./data/nsurl/q2q_similarity_workshop_v2.1.tsv"), "train")
     def get_test_examples(self):
-        return self._create_examples(self._read_tsv("../private_datasets/q2q/q2q_no_labels_v1.0.tsv"), "test")
+        return self._create_examples(self._read_tsv("./private_datasets/q2q/q2q_no_labels_v1.0.tsv"), "test")
 
     def create_submission(self, results_dir, preds):
         """Associate predictions with the input IDs to create submission file"""
-        lines = self._read_tsv("../private_datasets/q2q/q2q_no_labels_v1.0.tsv")
+        lines = self._read_tsv("./private_datasets/q2q/q2q_no_labels_v1.0.tsv")
 
         label_map = {i: label for i, label in enumerate(self.get_labels())}
 
@@ -207,7 +207,7 @@ class Mq2qProcessor(DataProcessor):
         for (i, line) in enumerate(lines[1:]):
             rows.append((line[0], label_map[preds[i]]))
 
-        self._write_tsv(os.path.join(results_dir, "../q2q.tsv"), rows, delimiter="\t")
+        self._write_tsv(os.path.join(results_dir, "./q2q.tsv"), rows, delimiter="\t")
 
     def get_labels(self):
         """See base class."""
@@ -232,12 +232,14 @@ class Mq2qProcessor(DataProcessor):
         return examples
     def get_eval_data(self,args,path = None):
         self.path = "./v2/"
-        if path == None:    
+        if args.base_dir=="test":   
             data = self.get_test_examples()
+        else:
+            data = self._read_jsonl(args.base_dir)
+            data = self._create_examples(data,"dev_matched","jsonl")
         return data
     def get_gen_data(self,args):#读取生成文件
-        a = self.path+args.task_name + ".jsonl"
-        data = self._read_jsonl(self.path+args.task_name + "dev.jsonl")
+        data = self._read_jsonl(args.generate_dir)
         data =  self._create_examples(data,"dev_matched","jsonl")
         return data
 
@@ -246,18 +248,18 @@ class MddProcessor(DataProcessor):
     
     def get_train_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/madar-1/MADAR-Corpus-26-train.tsv"), "train")
+        return self._create_examples(self._read_tsv("./data/madar-1/MADAR-Corpus-26-train.tsv"), "train")
 
     def get_dev_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/madar-1/MADAR-Corpus-26-dev.tsv"), "dev_matched")
+        return self._create_examples(self._read_tsv("./data/madar-1/MADAR-Corpus-26-dev.tsv"), "dev_matched")
     def get_test_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/madar-1/MADAR-Corpus-26-test.tsv"), "dev_matched")
+        return self._create_examples(self._read_tsv("./data/madar-1/MADAR-Corpus-26-test.tsv"), "dev_matched")
 
     def create_submission(self, results_dir, preds):
         """Associate predictions with the input IDs to create submission file"""
-        lines = self._read_tsv("../data/madar-1/MADAR-Corpus-26-test.tsv")
+        lines = self._read_tsv("./data/madar-1/MADAR-Corpus-26-test.tsv")
 
         label_map = {i: label for i, label in enumerate(self.get_labels())}
 
@@ -265,7 +267,7 @@ class MddProcessor(DataProcessor):
         for (i, line) in enumerate(lines):
             rows.append((label_map[preds[i]],))
 
-        self._write_tsv(os.path.join(results_dir, "../madar.tsv"), rows)
+        self._write_tsv(os.path.join(results_dir, "./madar.tsv"), rows)
 
     def get_labels(self):
         """See base class."""
@@ -283,12 +285,17 @@ class MddProcessor(DataProcessor):
         return examples
     def get_eval_data(self,args,path = None):
         self.path = "./v2/"
-        if path == None:    
-            data = self.get_test_examples()#返回原始数据
+        if args.base_dir=="test":   
+            data = self.get_test_examples()
+        elif args.base_dir=="dev":
+            data = self.get_dev_examples()
+        else:
+            data = self._read_jsonl(args.base_dir)
+            data = self._create_examples(data,"dev_matched","jsonl")
         return data
     def get_gen_data(self,args):#读取生成文件
-        data = self._read_jsonl(self.path+args.task_name+"_dev.jsonl")
-        data =  self._create_examples(data,"dev_matched")
+        data = self._read_jsonl(args.generate_dir)
+        data =  self._create_examples(data,"dev_matched","jsonl")
         return data
 
 
@@ -299,17 +306,17 @@ class FidProcessor(DataProcessor):
 
     def get_train_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/idat/IDAT_training_text.csv",
+        return self._create_examples(self._read_tsv("./data/idat/IDAT_training_text.csv",
                                                     quotechar="\"", delimiter=","), "train")
 
     def get_test_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/idat/IDAT_test_text.csv",
+        return self._create_examples(self._read_tsv("./data/idat/IDAT_test_text.csv",
                                                     quotechar="\"", delimiter=","), "dev_matched")
 
     def create_submission(self, results_dir, preds):
         """Associate predictions with the input IDs to create submission file"""
-        lines = self._read_tsv("../data/idat/IDAT_test_text.csv", quotechar="\"", delimiter=",")
+        lines = self._read_tsv("./data/idat/IDAT_test_text.csv", quotechar="\"", delimiter=",")
 
         label_map = {i: label for i, label in enumerate(self.get_labels())}
 
@@ -317,7 +324,7 @@ class FidProcessor(DataProcessor):
         for (i, line) in enumerate(lines[1:]):
             rows.append((i, label_map[preds[i]]))
 
-        self._write_tsv(os.path.join(results_dir, "../irony.tsv"), rows, delimiter="\t")
+        self._write_tsv(os.path.join(results_dir, "./irony.tsv"), rows, delimiter="\t")
 
     def get_labels(self):
         """See base class."""
@@ -335,13 +342,14 @@ class FidProcessor(DataProcessor):
     
     def get_eval_data(self,args,path = None):
         self.path = "./v2/"
-        if path == None:    
+        if args.base_dir=="test":   
             data = self.get_test_examples()
+        else:
+            data = self._read_jsonl(args.base_dir)
+            data = self._create_examples(data,"dev_matched")
         return data
     def get_gen_data(self,args):#读取生成文件
-        data = self._read_jsonl(self.path+args.task_name+"_dev.jsonl")
-        for i in range(len(data)):
-            data[i][2] = str(data[i][2])
+        data = self._read_jsonl(args.generate_dir)
         data =  self._create_examples(data,"dev_matched")
         return data
 
@@ -351,24 +359,24 @@ class SvregProcessor(DataProcessor):
     
     def get_train_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/affect-in-tweets/V-reg/2018-Valence-reg-Ar-train.txt"), "train")
+        return self._create_examples(self._read_tsv("./data/affect-in-tweets/V-reg/2018-Valence-reg-Ar-train.txt"), "train")
 
     def get_dev_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/affect-in-tweets/V-reg/2018-Valence-reg-Ar-dev.txt"), "dev_matched")
+        return self._create_examples(self._read_tsv("./data/affect-in-tweets/V-reg/2018-Valence-reg-Ar-dev.txt"), "dev_matched")
 
     def get_test_examples(self):
-        return self._create_examples(self._read_tsv("../private_datasets/vreg/vreg_no_labels_v1.0.tsv"), "test")
+        return self._create_examples(self._read_tsv("./private_datasets/vreg/vreg_no_labels_v1.0.tsv"), "test")
 
     def create_submission(self, results_dir, preds):
         """Associate predictions with the input IDs to create submission file"""
-        lines = self._read_tsv("../private_datasets/vreg/vreg_no_labels_v1.0.tsv")
+        lines = self._read_tsv("./private_datasets/vreg/vreg_no_labels_v1.0.tsv")
 
         rows = [("ID", "prediction")]
         for (i, line) in enumerate(lines[1:]):
             rows.append((line[0], preds[i]))
 
-        self._write_tsv(os.path.join(results_dir, "../v_reg.tsv"), rows, delimiter="\t")
+        self._write_tsv(os.path.join(results_dir, "./v_reg.tsv"), rows, delimiter="\t")
 
     def get_labels(self):
         """See base class."""
@@ -397,11 +405,16 @@ class SvregProcessor(DataProcessor):
         return examples
     def get_eval_data(self,args,path = None):
         self.path = "./v2/"
-        if path == None:    
+        if args.base_dir=="test":   
+            data = self.get_test_examples()
+        elif args.base_dir=="dev":
             data = self.get_dev_examples()
+        else:
+            data = self._read_jsonl(args.base_dir)
+            data = self._create_examples(data,"dev_matched")
         return data
     def get_gen_data(self,args):#读取生成文件
-        data = self._read_jsonl(self.path+args.task_name+"_dev.jsonl")
+        data = self._read_jsonl(args.generate_dir)
         data =  self._create_examples(data,"dev_matched")
         return data
 
@@ -411,25 +424,25 @@ class SecProcessor(DataProcessor):
         
     def get_train_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/affect-in-tweets/emotion-c/2018-E-c-Ar-train.txt"), "train")
+        return self._create_examples(self._read_tsv("./data/affect-in-tweets/emotion-c/2018-E-c-Ar-train.txt"), "train")
 
     def get_dev_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/affect-in-tweets/emotion-c/2018-E-c-Ar-dev.txt"), "dev_matched")
+        return self._create_examples(self._read_tsv("./data/affect-in-tweets/emotion-c/2018-E-c-Ar-dev.txt"), "dev_matched")
 
     def get_test_examples(self):
-        return self._create_examples(self._read_tsv("../private_datasets/emotion/emotion_no_labels_v1.0.tsv"), "test")
+        return self._create_examples(self._read_tsv("./private_datasets/emotion/emotion_no_labels_v1.0.tsv"), "test")
 
     def create_submission(self, results_dir, preds):
         """Associate predictions with the input IDs to create submission file"""
-        lines = self._read_tsv("../private_datasets/emotion/emotion_no_labels_v1.0.tsv")
+        lines = self._read_tsv("./private_datasets/emotion/emotion_no_labels_v1.0.tsv")
 
         rows = [("ID", "anger", "anticipation", "disgust", "fear", "joy", "love",
                        "optimism", "pessimism", "sadness", "surprise", "trust")]
         for (i, line) in enumerate(lines[1:]):
             rows.append((line[0],) + tuple([int(pred) for pred in preds[i]]))
 
-        self._write_tsv(os.path.join(results_dir, "../E_c.tsv"), rows, delimiter="\t")
+        self._write_tsv(os.path.join(results_dir, "./E_c.tsv"), rows, delimiter="\t")
 
     def get_labels(self):
         """See base class."""
@@ -472,33 +485,36 @@ class SecProcessor(DataProcessor):
         return examples
     def get_eval_data(self,args,path = None):
         self.path = "./v2/"
-        if path == None:    
-            # data = self._read_tsv("../data/affect-in-tweets/emotion-c/2018-E-c-Ar-dev.txt")
+        if args.base_dir=="test":   
+            data = self.get_test_examples()
+        elif args.base_dir=="dev":
             data = self.get_dev_examples()
+        else:
+            data = self._read_jsonl(args.base_dir)
+            data = self._create_examples(data,"dev_matched","jsonl")
         return data
     def get_gen_data(self,args):#读取生成文件
-        data = self._read_jsonl(self.path+args.task_name+"_dev.jsonl")
-        data =  self._create_examples(data,"dev_matched","json")
+        data = self._read_jsonl(args.generate_dir)
+        data =  self._create_examples(data,"dev_matched","jsonl")
         return data
-
 
 class OoldProcessor(DataProcessor):
     """Processor for the OSACT4 Offensive Language Detection data set."""
 
     def get_train_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/osact4/OSACT2020-sharedTask-train.txt",name = "1"), "train")
+        return self._create_examples(self._read_tsv("./data/osact4/OSACT2020-sharedTask-train.txt",name = "1"), "train")
 
     def get_dev_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/osact4/OSACT2020-sharedTask-dev.txt",name = "1"), "dev_matched",)
+        return self._create_examples(self._read_tsv("./data/osact4/OSACT2020-sharedTask-dev.txt",name = "1"), "dev_matched",)
 
     def get_test_examples(self):
-        return self._create_examples(self._read_tsv("../private_datasets/offensive/tweets_v1.0.txt"), "test")
+        return self._create_examples(self._read_tsv("./private_datasets/offensive/tweets_v1.0.txt"), "test")
 
     def create_submission(self, results_dir, preds):
         """Associate predictions with the input IDs to create submission file"""
-        lines = self._read_tsv("../private_datasets/offensive/tweets_v1.0.txt")
+        lines = self._read_tsv("./private_datasets/offensive/tweets_v1.0.txt")
 
         label_map = {i: label for i, label in enumerate(self.get_labels())}
 
@@ -506,7 +522,7 @@ class OoldProcessor(DataProcessor):
         for (i, line) in enumerate(lines):
             rows.append((label_map[preds[i]],))
 
-        self._write_tsv(os.path.join(results_dir, "../offensive.tsv"), rows)
+        self._write_tsv(os.path.join(results_dir, "./offensive.tsv"), rows)
 
     def get_labels(self):
         """See base class."""
@@ -530,11 +546,16 @@ class OoldProcessor(DataProcessor):
         return examples
     def get_eval_data(self,args,path = None):
         self.path = "./v2/"
-        if path == None:    
+        if args.base_dir=="test":   
+            data = self.get_test_examples()
+        elif args.base_dir=="dev":
             data = self.get_dev_examples()
+        else:
+            data = self._read_jsonl(args.base_dir)
+            data = self._create_examples(data,"dev_matched","jsonl")
         return data
     def get_gen_data(self,args):#读取生成文件
-        data = self._read_jsonl(self.path+args.task_name+"_dev.jsonl")
+        data = self._read_jsonl(args.generate_dir)
         data =  self._create_examples(data,"dev_matched","jsonl")
         return data
 
@@ -544,18 +565,18 @@ class OhsdProcessor(DataProcessor):
 
     def get_train_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/osact4/OSACT2020-sharedTask-train.txt"), "train")
+        return self._create_examples(self._read_tsv("./data/osact4/OSACT2020-sharedTask-train.txt"), "train")
 
     def get_dev_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/osact4/OSACT2020-sharedTask-dev.txt",name = "1"), "dev_matched","1")
+        return self._create_examples(self._read_tsv("./data/osact4/OSACT2020-sharedTask-dev.txt",name = "1"), "dev_matched","1")
 
     def get_test_examples(self):
-        return self._create_examples(self._read_tsv("../private_datasets/offensive/tweets_v1.0.txt"), "test")
+        return self._create_examples(self._read_tsv("./private_datasets/offensive/tweets_v1.0.txt"), "test")
 
     def create_submission(self, results_dir, preds):
         """Associate predictions with the input IDs to create submission file"""
-        lines = self._read_tsv("../private_datasets/offensive/tweets_v1.0.txt")
+        lines = self._read_tsv("./private_datasets/offensive/tweets_v1.0.txt")
 
         label_map = {i: label for i, label in enumerate(self.get_labels())}
 
@@ -563,7 +584,7 @@ class OhsdProcessor(DataProcessor):
         for (i, line) in enumerate(lines):
             rows.append((label_map[preds[i]],))
 
-        self._write_tsv(os.path.join(results_dir, "../hate.tsv"), rows)
+        self._write_tsv(os.path.join(results_dir, "./hate.tsv"), rows)
 
     def get_labels(self):
         """See base class."""
@@ -596,11 +617,16 @@ class OhsdProcessor(DataProcessor):
         return examples
     def get_eval_data(self,args,path = None):
         self.path = "./v2/"
-        if path == None:    
+        if args.base_dir=="test":   
+            data = self.get_test_examples()
+        elif args.base_dir=="dev":
             data = self.get_dev_examples()
+        else:
+            data = self._read_jsonl(args.base_dir)
+            data = self._create_examples(data,"dev_matched","jsonl")
         return data
     def get_gen_data(self,args):#读取生成文件
-        data = self._read_jsonl(self.path+args.task_name+"_dev.jsonl")
+        data = self._read_jsonl(args.generate_dir)
         data =  self._create_examples(data,"dev_matched","jsonl")
         return data
 
@@ -609,18 +635,18 @@ class DiagProcessor(DataProcessor):
 
     def get_train_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/xnli/arabic_train.tsv"), "train")
+        return self._create_examples(self._read_tsv("./data/xnli/arabic_train.tsv"), "train")
 
     def get_dev_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/xnli/diagnostic.tsv"), "dev_matched")
+        return self._create_examples(self._read_tsv("./data/xnli/diagnostic.tsv"), "dev_matched")
 
     def get_test_examples(self):
-        return self._create_examples(self._read_tsv("../private_datasets/diagnostic.tsv"), "test")
+        return self._create_examples(self._read_tsv("./private_datasets/diagnostic.tsv"), "test")
 
     def create_submission(self, results_dir, preds, test=True):
         """Associate predictions with the input IDs to create submission file"""
-        lines = self._read_tsv("../private_datasets/diagnostic.tsv" if test else "../data/xnli/arabic_dev.tsv")
+        lines = self._read_tsv("./private_datasets/diagnostic.tsv" if test else "./data/xnli/arabic_dev.tsv")
         lines = lines[1:]
 
         label_map = {i: label for i, label in enumerate(self.get_labels())}
@@ -630,7 +656,7 @@ class DiagProcessor(DataProcessor):
         for (i, line) in enumerate(lines):
             rows.append((i if test else line[0], label_map[preds[i]]))
 
-        self._write_tsv(os.path.join(results_dir, "../diagnostic.tsv" if test else "../xnli.tsv"), rows, delimiter="\t")
+        self._write_tsv(os.path.join(results_dir, "./diagnostic.tsv" if test else "./xnli.tsv"), rows, delimiter="\t")
 
     def get_labels(self):
         """See base class."""
@@ -660,14 +686,19 @@ class DiagProcessor(DataProcessor):
                 examples.append(Getdata(guid=guid, text_a=text_a, text_b=text_b, label=label))
             
         return examples
-    def get_eval_data(self,args,path = None):#读取原始文件
+    def get_eval_data(self,args,path = None):
         self.path = "./v2/"
-        if path == None:    
+        if args.base_dir=="test":   
+            data = self.get_test_examples()
+        elif args.base_dir=="dev":
             data = self.get_dev_examples()
+        else:
+            data = self._read_jsonl(args.base_dir)
+            data = self._create_examples(data,"dev_matched","jsonl")
         return data
     def get_gen_data(self,args):#读取生成文件
-        data = self._read_jsonl(self.path+args.task_name+"_dev.jsonl")
-        data =  self._create_examples(data,"dev_matched","json")
+        data = self._read_jsonl(args.generate_dir)
+        data =  self._create_examples(data,"dev_matched","jsonl")
         return data
     
 class XnliProcessor(DataProcessor):
@@ -675,18 +706,18 @@ class XnliProcessor(DataProcessor):
 
     def get_train_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/xnli/arabic_train.tsv"), "train")
+        return self._create_examples(self._read_tsv("./data/xnli/arabic_train.tsv"), "train")
 
     def get_dev_examples(self):
         """See base class."""
-        return self._create_examples(self._read_tsv("../data/xnli/arabic_dev.tsv"), "dev_matched")
+        return self._create_examples(self._read_tsv("./data/xnli/arabic_dev.tsv"), "dev_matched")
 
     def get_test_examples(self):
-        return self._create_examples(self._read_tsv("../private_datasets/diagnostic.tsv"), "test")
+        return self._create_examples(self._read_tsv("./private_datasets/diagnostic.tsv"), "test")
 
     def create_submission(self, results_dir, preds, test=True):
         """Associate predictions with the input IDs to create submission file"""
-        lines = self._read_tsv("../private_datasets/diagnostic.tsv" if test else "../data/xnli/arabic_dev.tsv")
+        lines = self._read_tsv("./private_datasets/diagnostic.tsv" if test else "./data/xnli/arabic_dev.tsv")
         lines = lines[1:]
 
         label_map = {i: label for i, label in enumerate(self.get_labels())}
@@ -696,7 +727,7 @@ class XnliProcessor(DataProcessor):
         for (i, line) in enumerate(lines):
             rows.append((i if test else line[0], label_map[preds[i]]))
 
-        self._write_tsv(os.path.join(results_dir, "../diagnostic.tsv" if test else "../xnli.tsv"), rows, delimiter="\t")
+        self._write_tsv(os.path.join(results_dir, "./diagnostic.tsv" if test else "./xnli.tsv"), rows, delimiter="\t")
 
     def get_labels(self):
         """See base class."""
@@ -722,14 +753,19 @@ class XnliProcessor(DataProcessor):
                 examples.append(Getdata(guid=guid, text_a=text_a, text_b=text_b, label=label))
             
         return examples
-    def get_eval_data(self,args,path = None):#读取原始文件
+    def get_eval_data(self,args,path = None):
         self.path = "./v2/"
-        if path == None:    
+        if args.base_dir=="test":   
+            data = self.get_test_examples()
+        elif args.base_dir=="dev":
             data = self.get_dev_examples()
+        else:
+            data = self._read_jsonl(args.base_dir)
+            data = self._create_examples(data,"dev_matched","jsonl")
         return data
     def get_gen_data(self,args):#读取生成文件
-        data = self._read_jsonl(self.path+args.task_name+"_dev.jsonl")
-        data =  self._create_examples(data,"dev_matched","json")
+        data = self._read_jsonl(args.generate_dir)
+        data =  self._create_examples(data,"dev_matched","jsonl")
         return data
 
 
