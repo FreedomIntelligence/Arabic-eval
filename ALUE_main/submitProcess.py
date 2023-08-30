@@ -102,6 +102,7 @@ class change_to_test(object):
         data = pd.read_json(path,lines = True)
         pre = []
         for (k,line) in enumerate(data["output"]):
+                line = str(line)
                 s = ""
                 flag = False
                 for i in line:
