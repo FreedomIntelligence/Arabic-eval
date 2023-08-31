@@ -392,7 +392,7 @@ def proDIAG_dev():#处理tsv、csv原始数据
                 da["id"] = int(data[i][0])
                 da["label"] = "DIAG"
                 da["processed_query"] = prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
-                da["answer"] = data[i][3]
+                da["answer"] = XNLI_answer_change[data[i][3]]
                 writer.write(da)
     print("proDIAG_dev finished")
 
@@ -464,7 +464,7 @@ def proFID_test():#path1 是原始数据文件，path2是生成的文件,处理t
             da["id"] = int(data[i][0]+1)
             da["label"] = "FID"
             da["processed_query"] = prompt+"\n"+"\n"+sentence
-            da["answer"] = data[i][2]
+            da["answer"] = FID_answer_change[str(data[i][2])]
             writer.write(da)
      print("proFID_test finished ")
 
@@ -478,7 +478,7 @@ def proMDD_test():
             da["id"] = int(i)
             da["label"] = "MDD"
             da ["processed_query"] = prompt+'\n'+"\n"+preprocess_v3(data[i][0])
-            da["answer"] = data[i][1]
+            da["answer"] = MDD_answer_change[data[i][1]]
             writer.write(da)
     print("proMDD_test finished")
 def proOHSD_test():
