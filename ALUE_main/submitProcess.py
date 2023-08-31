@@ -1,9 +1,8 @@
 import json
 import pandas as pd
-import osالمفاجئة
 import jsonlines
 from sklearn.preprocessing import LabelEncoder
-from preprocess import ArabertPreprocessor
+# from preprocess import ArabertPreprocessor
 import os
 #
 #
@@ -80,7 +79,10 @@ class change_to_test(object):
         for item in labels_change.items():
             labels_change1[item[1]]=item[0]
         for i in range(len(pre)):
-            pre[i] = labels_change1[pre[i]]
+            if pre[i] in labels_change1.keys():
+                pre[i] = labels_change1[pre[i]]
+            else:
+                pre[i] ='SFX'
         ind = data["id"].tolist()
         df_preds = pd.DataFrame(data=pre)
         if not os.path.exists("predictions"):
