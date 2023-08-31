@@ -1,9 +1,10 @@
 import json
 import pandas as pd
-import os
+import osالمفاجئة
 import jsonlines
 from sklearn.preprocessing import LabelEncoder
 from preprocess import ArabertPreprocessor
+import os
 #
 #
 #
@@ -17,7 +18,7 @@ class change_to_test(object):
         idx = data["id"]
         all_out = []
         preds = data["output"]
-        labels_change = {'anger':'الغضب','anticipation':'التوقع','disgust':'الاشمئزاز','fear':'الخوف','joy':'البهجة','love':'الحب','optimism':'التفاؤل','pessimism':'التشاؤم','sadness':'الحزن','surprise':'مفاجأة','trust':'الثقة'}
+        labels_change = {'anger':'الغضب','anticipation':'الترقب','disgust':'الاشمئزاز','fear':'الخوف','joy':'البهجة','love':'الحب','optimism':'التفاؤل','pessimism':'التشاؤم','sadness':'الحزن','surprise':'مفاجأة','trust':'الثقة'}
         label = {}
         for item in labels_change.items():
             label[item[1]]=item[0]
@@ -69,6 +70,17 @@ class change_to_test(object):
         
         data = pd.read_json(path,lines = True)
         pre = data["output"].tolist()
+        labels_change = {'SFX': 'صفاقس', 'ALX': 'الإسكندرية', 'ALE': 'حلب', 'FES': 'فاس', 'TRI': 'طرابلس', 'MSA': 'العربية',
+                          'CAI': 'القاهرة', 'ASW': 'أسوان', 'AMM': 'عمان', 'TUN': 'تونس', 'DOH': 'الدوحة', 'RIY': 'الرياض',
+                          'ALG': 'الجزائر', 'KHA': 'الخرطوم', 'DAM': 'دمشق', 'RAB': 'الرباط', 'SAN': 'صنعاء', 'BEI': 'بيروت',
+                          'JER': 'القدس', 'JED': 'جدة', 'BAS': 'البصرة', 'BEN': 'بنغازي', 'SAL': 'سل', 'MUS': 'مسقط',
+                          'MOS': 'الموصل', 'BAG': 'بغداد'
+                          }
+        labels_change1 = {}
+        for item in labels_change.items():
+            labels_change1[item[1]]=item[0]
+        for i in range(len(pre)):
+            pre[i] = labels_change1[pre[i]]
         ind = data["id"].tolist()
         df_preds = pd.DataFrame(data=pre)
         if not os.path.exists("predictions"):

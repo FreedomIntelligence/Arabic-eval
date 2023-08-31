@@ -16,7 +16,7 @@ path_to_save_original_dev = "original_dev/"
 path_to_save_test = "test/"
 prompt_XNLI = "جى تحديد العلاقة {علاقة متناقضة,علاقة مترابطة,علاقة غير مترابطة} التي يتم معالجتها بواسطة الجملة 1 والجملة 2."
 prompt_SVREG = 'يرجى تسجيل شدة المشاعر، والتي تعني شدة العاطفة في الجملة التالية على مقياس من 0 إلى 1.'
-prompt_SEC = 'ما هي المشاعر التي يحتويها الجملة التالية؟ الرجاء الاختيار من بين هذه الخيارات: (الغضب، الترقب، الاشمئزاز، الخوف، الفرح، الحب، التفاؤل، التشاؤم، الحزن، الترقب، الثقة).'
+prompt_SEC = 'ما هي المشاعر التي يحتويها الجملة التالية؟ الرجاء الاختيار من بين هذه الخيارات: (الغضب, الترقب, الإشمئزاز, الخوف, الفرح, الحب, التفاؤل, التشاؤم, الحزن, المفاجئة, الثقة).'  
 prompt_MQ2Q = "ل تعبر هاتان الجملتان عن نفس المعنى؟ إذا كانت تعني نفس الشيء، يجب أن تكون إجابتك مكرر، وإلا فإنها تكون غير مكرر."
 prompt_DIAG = prompt_XNLI
 prompt_MDD = "يرجى تحديد الجملة التالية إلى أي مدينة تنتمي لغتها، الخيارات المتاحة هي {صفاقس, الإسكندرية, حلب, فاس, طرابلس, العربية, القاهرة, أسوان, عمان, تونس, الدوحة, الرياض, الجزائر, الخرطوم, دمشق, الرباط, صنعاء, بيروت, القدس, جدة, البصرة, بنغازي, سل, مسقط, الموصل, بغداد}"
@@ -31,6 +31,7 @@ MDD_answer_change = {'SFX': 'صفاقس', 'ALX': 'الإسكندرية', 'ALE': 
                           'MOS': 'الموصل', 'BAG': 'بغداد'
                           }
 s = ""
+
 for item in MDD_answer_change.items():
     s += item[1]+','
 print(s[:-1])
@@ -51,13 +52,11 @@ def proXNLI_train_dev():#处理tsv、csv原始数据
                 da = {}
                 da["id"] = int(data[i][0])
                 da["label"] = "XNLI"
-                da["query"] =  prompt+'\n'+'\n'+sentence1+'\n'+sentence2
+                da["processed_query"] =  prompt+'\n'+'\n'+sentence1+'\n'+sentence2
                 da["answer"] = XNLI_answer_change[data[i][3]]
                 if i%10!=0:
                     writer.write(da)
                 else:
-                    da["processed_query"]=da["query"]
-                    del da["query"]
                     dev.append(da)
                     continue
     with jsonlines.open(path3,'w') as writer:
@@ -78,13 +77,11 @@ def proSVREG_train_dev():#path1 是原始数据文件，path2是生成的文件,
             sentence = preprocess_v3(data["Tweet"][i])
             da = {}
             da["id"] = (data['ID'][i])
-            da["query"] =  prompt+"\n"+"\n"+sentence
+            da["processed_query"] =  prompt+"\n"+"\n"+sentence
             da["answer"] = (str(data['Intensity Score'][i]))
             if i%10!=0:
                 writer.write(da)
             else:
-                da["processed_query"]=da["query"]
-                del da["query"]
                 dev.append(da)
                 continue
      with jsonlines.open(path3,'w') as writer:
@@ -107,7 +104,7 @@ def proSEC_train_dev():#path1 是原始数据文件，path2是生成的文件,�
             sentence = preprocess_v3(data["Tweet"][i])
             da = {}
             da["id"] = (data['ID'][i])
-            da["query"] = prompt+"\n"+"\n"+sentence
+            da["processed_query"] = prompt+"\n"+"\n"+sentence
             output =""
             for j in labels:
                 if int(data[j][i]) == 1 :
@@ -116,8 +113,6 @@ def proSEC_train_dev():#path1 是原始数据文件，path2是生成的文件,�
             if i%10!=0:
                 writer.write(da)
             else:
-                da["processed_query"]=da["query"]
-                del da["query"]
                 dev.append(da)
                 continue
      with jsonlines.open(path3,'w') as writer:#打开jsonlines写入
@@ -142,13 +137,11 @@ def proMQ2Q_train_dev():#path1 是原始数据文件，path2是生成的文件,�
             sentence2 = preprocess_v3(data[i][1])
             da = {}
             da["id"] = int(i)
-            da["query"] =  prompt+"\n"+"\n"+'ملة1: '+sentence1+"\n"+'ملة2: '+sentence2
+            da["processed_query"] =  prompt+"\n"+"\n"+'ملة1: '+sentence1+"\n"+'ملة2: '+sentence2
             da["answer"] = data[i][2]
             if i%10!=0:
                 writer.write(da)
             else:
-                da["processed_query"]=da["query"]
-                del da["query"]
                 dev.append(da)
      with jsonlines.open(path3,'w') as writer:
          for j in dev:
@@ -170,13 +163,11 @@ def proFID_train_dev():#path1 是原始数据文件，path2是生成的文件,�
             sentence = preprocess_v3(data[i][1])
             da = {}
             da["id"] = int(data[i][0]+1)
-            da["query"] = prompt+"\n"+"\n"+sentence
+            da["processed_query"] = prompt+"\n"+"\n"+sentence
             da["answer"] = data[i][2]
             if i%10!=0:
                 writer.write(da)
             else:
-                da["processed_query"]=da["query"]
-                del da["query"]
                 dev.append(da)
                 continue
      with jsonlines.open(path3,'w') as writer:
@@ -196,13 +187,11 @@ def proMDD_train_dev():
             da = {}
             da["id"] = int(i)
             da["label"] = "MDD"
-            da ["query"] = prompt+'\n'+"\n"+preprocess_v3(data[i][0])
+            da ["processed_query"] = prompt+'\n'+"\n"+preprocess_v3(data[i][0])
             da["answer"] = MDD_answer_change[data[i][1]]
             if i%10!=0:
                 writer.write(da)
             else:
-                da["processed_query"]=da["query"]
-                del da["query"]
                 dev.append(da)
                 continue
     with jsonlines.open(path3,'w') as writer: 
@@ -225,13 +214,11 @@ def proOHSD_train_dev():#处理tsv、csv原始数据
                 da = {}
                 da["id"] = i
                 da["label"] = "OHSD"
-                da["query"] =  prompt+"\n"+"\n"+preprocess_v3(data[i][0])
+                da["processed_query"] =  prompt+"\n"+"\n"+preprocess_v3(data[i][0])
                 da["answer"] = data[i][2]
                 if i %10!=0:
                     writer.write(da)
                 else:
-                    da["processed_query"]=da["query"]
-                    del da["query"]
                     dev.append(da)
     with jsonlines.open(path3,'w') as writer:
         for j in dev:
@@ -254,13 +241,11 @@ def proOOLD_train_dev():#处理tsv、csv原始数据
                 da = {}
                 da["id"] = i
                 da["label"] = "OOLD"
-                da["query"] =  prompt+"\n"+"\n"+preprocess_v3(data[i][0])
+                da["processed_query"] =  prompt+"\n"+"\n"+preprocess_v3(data[i][0])
                 da["answer"] = data[i][1]
                 if i %10!=0:
                     writer.write(da)
                 else:
-                    da["processed_query"]=da["query"]
-                    del da["query"]
                     dev.append(da)
     with jsonlines.open(path3,'w') as writer:
         for j in dev:
@@ -311,7 +296,7 @@ def proSEC_dev():#path1 是原始数据文件，path2是生成的文件,处理tx
      data = pd.read_csv(path1,sep = '\t')#读入数据
      prompt = prompt_SEC+arabic
      labels = ['anger','anticipation', 'disgust', 'fear', 'joy', 'love', 'optimism', 'pessimism', 'sadness', 'surprise', 'trust']
-     labels_change = {'anger':'الغضب','anticipation':'التوقع','disgust':'الاشمئزاز','fear':'الخوف','joy':'البهجة','love':'الحب','optimism':'التفاؤل','pessimism':'التشاؤم','sadness':'الحزن','surprise':'مفاجأة','trust':'الثقة'}
+     labels_change = {'anger':'الغضب','anticipation':'الترقب','disgust':'الاشمئزاز','fear':'الخوف','joy':'البهجة','love':'الحب','optimism':'التفاؤل','pessimism':'التشاؤم','sadness':'الحزن','surprise':'مفاجأة','trust':'الثقة'}
      with jsonlines.open(path2,'w') as writer:#打开jsonlines写入
         for i in range(len(data)):#遍历原始数据
             sentence = preprocess_v3(data["Tweet"][i])
@@ -559,15 +544,16 @@ def merge_all(path):
     dirs = os.listdir(path)
     with jsonlines.open(path+'/final.jsonl','w')as writer:
         for dir in dirs:
-            start = 1
-            data = pd.read_json(path+'/'+dir,lines = True)
-            dir_name = dir.split('.')[0]
-            for i in range(len(data)):
-                da = {}
-                id = dir_name+f"-{start}"
-                da["id"] =str(id)
-                start+=1
-                da["query"] = data["query"][i]
-                da["answer"]=str(data["answer"][i])
-                writer.write(da)
+            if dir!="fin.jsonl":
+                start = 1
+                data = pd.read_json(path+'/'+dir,lines = True)
+                dir_name = dir.split('.')[0]
+                for i in range(len(data)):
+                    da = {}
+                    id = dir_name+f"-{start}"
+                    da["id"] =str(id)
+                    start+=1
+                    da["processed_query"] = data["processed_query"][i]
+                    da["answer"]=str(data["answer"][i])
+                    writer.write(da)
     print("merge finished")

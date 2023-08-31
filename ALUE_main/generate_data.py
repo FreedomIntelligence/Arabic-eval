@@ -117,7 +117,6 @@ LABEL_TO_TEXT = {"MQ2Q": {0: "غير مكرر", 1: "مكرر"},
                           'MOS': 'الموصل', 'BAG': 'بغداد'
                           }
                  }
-
 MLC_LBL_DICT = {"SEC": ['الغضب', 'الترقب', 'الإشمئزاز', 'الخوف', 'الفرح', 'الحب', 'التفاؤل', 'التشاؤم', 'الحزن', 'المفاجئة', 'الثقة']}
 for tn, lst in MLC_LBL_DICT.items():
     LABEL_TO_TEXT[tn] = {i: name for i, name in enumerate(lst)}
