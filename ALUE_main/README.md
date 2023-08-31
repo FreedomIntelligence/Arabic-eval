@@ -10,14 +10,15 @@
 
 #### test:  
       Test datasets from ALUE.org  
-
-#### submit_run.py:  
+#### final
+      100% train data merge for training
+#### test_run.py:  
       This file is used to process the generate results into suitable format to submit to ALUE.org.  
       To run thsi file,you have to:  
       1.Put your generate data into data_generate.  
       2.Rename the file into a right name:"{task}_test.jsonl"  
       3.There is a list about right names:["SEC_test.jsonl","MQ2Q_test.jsonl","FID_test.jsonl","MDD_test.jsonl","OOLD_test.jsonl","OHSD_test.jsonl","SVREG_test.jsonl","XNLI_test.jsonl","DIAG_test.jsonl"]  
-      4.The right format files which are suitabel for ALUE.org will be saved in  ``predictions``  after runing the submit_sun.py
+      4.The right format files which are suitabel for ALUE.org will be saved in  ``predictions``  after runing the test_run.py
 
 
 #### To generate data:  
