@@ -11,6 +11,12 @@ import os
 #
 #
 #
+
+MQ2Q_answer_change = { "غير مكرر":'0', "مكرر":'1'}
+FID_answer_change = { "سخرية":'0', "ليس سخرية":'1'}
+OOLD_answer_change = {"غير مهين":"NOT_OFF", "مهين":"OFF"}
+OHSD_answer_change = {"لا يحض على الكراهية":"NOT_HS", "خطاب كراهية":"HS"}
+XNLI_answer_change = {"علاقة غير مترابطة":"neutral","علاقة مترابطة":'entailment',"علاقة متناقضة":'contradiction'}
 class change_to_test(object):
     def prosec(self,path= "./data_generate/SEC_test.jsonl",df_test = pd.read_csv("./SEC/SEC_test.tsv", sep="\t"),output_path = "./predictions/E_c.tsv"):
         data = pd.read_json(path,lines=True)
@@ -43,7 +49,10 @@ class change_to_test(object):
         data = pd.read_json(path,lines = True)
         pre = []
         for i in range(len(data)):
-            pre.append(data["output"][i])
+            if data["output"][i] in MQ2Q_answer_change.keys():
+                pre.append(MQ2Q_answer_change[data["output"][i]])
+            else:
+                pre.append('0')
         idx = data["id"]
 
         df_preds = pd.DataFrame(data=pre, columns=["prediction"], index=df_test["QuestionPairID"])
@@ -55,6 +64,11 @@ class change_to_test(object):
     def profid(self,path = "./data_generate/FID_test.jsonl",df_test = pd.read_csv("./FID/IDAT_test_text.csv"),output_path = "./predictions/irony.tsv"):
         data = pd.read_json(path,lines = True)
         pre = data["output"].tolist()
+        for i in range(len(pre)):
+            if pre[i] in FID_answer_change.keys():
+                pre[i]=FID_answer_change[pre[i]]
+            else:
+                pre[i]='0'
         ind = data["id"].tolist()
         for i in range(len(ind)):
             ind[i]=ind[i]-1
@@ -94,7 +108,10 @@ class change_to_test(object):
         data = pd.read_json(path,lines = True)
         pre = []
         for i in range(len(data)):
-            pre.append(data["output"][i])
+            if data["output"][i] in OOLD_answer_change.keys():
+                pre.append(OOLD_answer_change[data["output"][i]])
+            else:
+                pre.append('NOT_OFF')
         idx = data["id"]
         df_preds = pd.DataFrame(data=pre, columns=["prediction"])
         if not os.path.exists("predictions"):
@@ -105,14 +122,17 @@ class change_to_test(object):
         data = pd.read_json(path,lines = True)
         pre = []
         for i in range(len(data)):
-            pre.append(data["output"][i])
+            if data["output"][i] in OHSD_answer_change.keys():
+                pre.append(OHSD_answer_change[data["output"][i]])
+            else:
+                pre.append('NOT_HS')
         idx = data["id"]
         df_preds = pd.DataFrame(data=pre, columns=["prediction"])
         if not os.path.exists("predictions"):
             os.mkdir("predictions")
         df_preds.to_csv(output_path, index=False, header=False, sep="\t")
         print("proohsd finished")
-        
+
     def prosvreg(self,path = "./data_generate/SVREG_test.jsonl",df_test = pd.read_csv("./SVREG/VREG_test.tsv", sep="\t"),output_path = "./predictions/v_reg.tsv"):
         
         data = pd.read_json(path,lines = True)
@@ -148,8 +168,11 @@ class change_to_test(object):
         
         data = pd.read_json(path,lines = True)
         pre = []
-        la = {"علاقة غير مترابطة":"neutral","علاقة مترابطة":'entailment',"علاقة متناقضة":'contradiction'}
-
+        for i in range(len(data)):
+            if data["output"][i] in XNLI_answer_change.keys():
+                pre.append(XNLI_answer_change[data["output"][i]])
+            else:
+                pre.append('entailment')
         idx = data["id"]
         df_preds = pd.DataFrame(data=pre, columns=["prediction"],index=df_test["pairID"])
         df_preds.reset_index(inplace=True)
@@ -163,10 +186,10 @@ class change_to_test(object):
         
         data = pd.read_json(path,lines = True)
         pre = []
-        la = la = {"علاقة غير مترابطة":"neutral","علاقة مترابطة":'entailment',"علاقة متناقضة":'contradiction'}
+        
         for i in range(len(data)):
-            if data["output"][i] in la.keys():
-                pre.append(la[data["output"][i]])
+            if data["output"][i] in XNLI_answer_change.keys():
+                pre.append(XNLI_answer_change[data["output"][i]])
             else:
                 pre.append('entailment')
         idx = data["id"]
