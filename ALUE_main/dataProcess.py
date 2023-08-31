@@ -76,6 +76,7 @@ def proSVREG_train_dev():#path1 是原始数据文件，path2是生成的文件,
             sentence = preprocess_v3(data["Tweet"][i])
             da = {}
             da["id"] = (data['ID'][i])
+            da["label"] = "SVREG"
             da["processed_query"] =  prompt+"\n"+"\n"+sentence
             da["answer"] = (str(data['Intensity Score'][i]))
             if i%10!=0:
@@ -103,6 +104,7 @@ def proSEC_train_dev():#path1 是原始数据文件，path2是生成的文件,�
             sentence = preprocess_v3(data["Tweet"][i])
             da = {}
             da["id"] = (data['ID'][i])
+            da["label"] = "SEC"
             da["processed_query"] = prompt+"\n"+"\n"+sentence
             output =""
             for j in labels:
@@ -136,6 +138,7 @@ def proMQ2Q_train_dev():#path1 是原始数据文件，path2是生成的文件,�
             sentence2 = preprocess_v3(data[i][1])
             da = {}
             da["id"] = int(i)
+            da["label"] = "MQ2Q"
             da["processed_query"] =  prompt+"\n"+"\n"+'ملة1: '+sentence1+"\n"+'ملة2: '+sentence2
             da["answer"] = MQ2Q_answer_change[data[i][2]]
             if i%10!=0:
@@ -162,6 +165,7 @@ def proFID_train_dev():#path1 是原始数据文件，path2是生成的文件,�
             sentence = preprocess_v3(data[i][1])
             da = {}
             da["id"] = int(data[i][0]+1)
+            da["label"] = "FID"
             da["processed_query"] = prompt+"\n"+"\n"+sentence
             da["answer"] = FID_answer_change[str(data[i][2])]
             if i%10!=0:
@@ -283,6 +287,7 @@ def proSVREG_dev():#path1 是原始数据文件，path2是生成的文件,处理
             sentence = preprocess_v3(data["Tweet"][i])
             da = {}
             da["id"] = (data['ID'][i])
+            da["label"] = "SVREG"
             da["processed_query"] =  prompt+"\n"+"\n"+sentence
             da["answer"] = (str(data['Intensity Score'][i]))
             writer.write(da)
@@ -301,6 +306,7 @@ def proSEC_dev():#path1 是原始数据文件，path2是生成的文件,处理tx
             sentence = preprocess_v3(data["Tweet"][i])
             da = {}
             da["id"] = (data['ID'][i])
+            da["label"] = "SEC"
             da["processed_query"] =  prompt+"\n"+"\n"+sentence
             output =""
             for j in labels:
@@ -542,9 +548,9 @@ def proXNLI_test():#处理tsv、csv原始数据
 def merge_all(path,path1):
     dirs = os.listdir(path)
     dirs1 = os.listdir(path1)
-    with jsonlines.open(path+'/final.jsonl','w')as writer:
+    with jsonlines.open('./final//final.jsonl','w')as writer:
         for dir in dirs:
-            if dir!="fin.jsonl":
+            if dir!="final.jsonl":
                 start = 1
                 data = pd.read_json(path+'/'+dir,lines = True)
                 dir_name = dir.split('.')[0]
@@ -557,7 +563,7 @@ def merge_all(path,path1):
                     da["answer"]=str(data["answer"][i])
                     writer.write(da)
         for dir in dirs1:
-            if dir!="fin.jsonl":
+            if dir!="final.jsonl":
                 start = 1
                 data = pd.read_json(path1+'/'+dir,lines = True)
                 dir_name = dir.split('.')[0]
