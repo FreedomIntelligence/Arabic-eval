@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import jsonlines
 from sklearn.preprocessing import LabelEncoder
+from preprocess import ArabertPreprocessor
 #
 #
 #
