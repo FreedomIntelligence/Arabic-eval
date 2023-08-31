@@ -98,7 +98,7 @@ class change_to_test(object):
             os.mkdir("predictions")
         df_preds.to_csv(output_path, index=False, header=False, sep="\t")
         print("proohsd finished")
-    def prosvreg(self,path = "./data_generate/SVREG_test.jsonl",df_test = pd.read_csv("./SVREg/VREG_test.tsv", sep="\t"),output_path = "./predictions/v_reg.tsv"):
+    def prosvreg(self,path = "./data_generate/SVREG_test.jsonl",df_test = pd.read_csv("./SVREG/VREG_test.tsv", sep="\t"),output_path = "./predictions/v_reg.tsv"):
         
         data = pd.read_json(path,lines = True)
         pre = []
