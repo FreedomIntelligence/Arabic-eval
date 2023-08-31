@@ -112,6 +112,7 @@ class change_to_test(object):
             os.mkdir("predictions")
         df_preds.to_csv(output_path, index=False, header=False, sep="\t")
         print("proohsd finished")
+        
     def prosvreg(self,path = "./data_generate/SVREG_test.jsonl",df_test = pd.read_csv("./SVREG/VREG_test.tsv", sep="\t"),output_path = "./predictions/v_reg.tsv"):
         
         data = pd.read_json(path,lines = True)
@@ -129,7 +130,10 @@ class change_to_test(object):
                         flag = True
                         continue
                     break
-                label = float(s)
+                if s == "":
+                    label = 0.0
+                else:
+                    label = float(s)
                 pre.append(label)
         idx = data["id"]
         df_preds = pd.DataFrame(data=pre, columns=["prediction"],index=df_test["ID"])
@@ -144,9 +148,8 @@ class change_to_test(object):
         
         data = pd.read_json(path,lines = True)
         pre = []
-        la = {"محايدة":"neutral","ضمنية":'entailment',"تناقض":'contradiction'}
-        for i in range(len(data)):
-            pre.append(la[data["output"][i]])
+        la = {"علاقة غير مترابطة":"neutral","علاقة مترابطة":'entailment',"علاقة متناقضة":'contradiction'}
+
         idx = data["id"]
         df_preds = pd.DataFrame(data=pre, columns=["prediction"],index=df_test["pairID"])
         df_preds.reset_index(inplace=True)
@@ -160,9 +163,12 @@ class change_to_test(object):
         
         data = pd.read_json(path,lines = True)
         pre = []
-        la = {"محايدة":"neutral","ضمنية":'entailment',"تناقض":'contradiction'}
+        la = la = {"علاقة غير مترابطة":"neutral","علاقة مترابطة":'entailment',"علاقة متناقضة":'contradiction'}
         for i in range(len(data)):
-            pre.append(la[data["output"][i]])
+            if data["output"][i] in la.keys():
+                pre.append(la[data["output"][i]])
+            else:
+                pre.append('entailment')
         idx = data["id"]
         df_preds = pd.DataFrame(data=pre, columns=["prediction"],index=df_test["pairID"])
         df_preds.reset_index(inplace=True)

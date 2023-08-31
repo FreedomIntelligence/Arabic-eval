@@ -8,7 +8,7 @@ import html
 import logging
 import re
 from typing import List
-from preprocess1 import *
+from preprocess import *
 arabic = "يرجى الإجابة على السؤال بإيجاز، دون توضيح أو معلومات إضافية."
 path_to_save = "train/"
 path_to_save_dev = "dev/"
@@ -30,11 +30,10 @@ MDD_answer_change = {'SFX': 'صفاقس', 'ALX': 'الإسكندرية', 'ALE': 
                           'JER': 'القدس', 'JED': 'جدة', 'BAS': 'البصرة', 'BEN': 'بنغازي', 'SAL': 'سل', 'MUS': 'مسقط',
                           'MOS': 'الموصل', 'BAG': 'بغداد'
                           }
-s = ""
-
-for item in MDD_answer_change.items():
-    s += item[1]+','
-print(s[:-1])
+MQ2Q_answer_change =  {'0': "غير مكرر", '1': "مكرر"}
+FID_answer_change = {'0': "سخرية", '1': "ليس سخرية"}
+OOLD_answer_change = {"NOT_OFF": "غير مهين", "OFF": "مهين"}
+OHSD_answer_change = {"NOT_HS": "لا يحض على الكراهية", "HS": "خطاب كراهية"}
 def proXNLI_train_dev():#处理tsv、csv原始数据
     path1 = "XNLI/arabic_train.tsv"
     path2 = path_to_save +"XNLI_train.jsonl"
@@ -138,7 +137,7 @@ def proMQ2Q_train_dev():#path1 是原始数据文件，path2是生成的文件,�
             da = {}
             da["id"] = int(i)
             da["processed_query"] =  prompt+"\n"+"\n"+'ملة1: '+sentence1+"\n"+'ملة2: '+sentence2
-            da["answer"] = data[i][2]
+            da["answer"] = MQ2Q_answer_change[data[i][2]]
             if i%10!=0:
                 writer.write(da)
             else:
@@ -164,7 +163,7 @@ def proFID_train_dev():#path1 是原始数据文件，path2是生成的文件,�
             da = {}
             da["id"] = int(data[i][0]+1)
             da["processed_query"] = prompt+"\n"+"\n"+sentence
-            da["answer"] = data[i][2]
+            da["answer"] = FID_answer_change[str(data[i][2])]
             if i%10!=0:
                 writer.write(da)
             else:
@@ -215,7 +214,7 @@ def proOHSD_train_dev():#处理tsv、csv原始数据
                 da["id"] = i
                 da["label"] = "OHSD"
                 da["processed_query"] =  prompt+"\n"+"\n"+preprocess_v3(data[i][0])
-                da["answer"] = data[i][2]
+                da["answer"] = OHSD_answer_change[data[i][2]]
                 if i %10!=0:
                     writer.write(da)
                 else:
@@ -242,7 +241,7 @@ def proOOLD_train_dev():#处理tsv、csv原始数据
                 da["id"] = i
                 da["label"] = "OOLD"
                 da["processed_query"] =  prompt+"\n"+"\n"+preprocess_v3(data[i][0])
-                da["answer"] = data[i][1]
+                da["answer"] = OOLD_answer_change[data[i][1]]
                 if i %10!=0:
                     writer.write(da)
                 else:
@@ -344,7 +343,7 @@ def proOHSD_dev():
                 da["id"] = i
                 da["label"] = "OHSD"
                 da["processed_query"] = prompt+"\n"+"\n"+preprocess_v3(data[i][0])
-                da["answer"] = data[i][2]
+                da["answer"] = OHSD_answer_change[data[i][2]]
                 writer.write(da)
     print("proOHSD_dev finished")
 
@@ -364,7 +363,7 @@ def proOOLD_dev():
                 da["id"] = i
                 da["label"] = "OOLD"
                 da["processed_query"] =  prompt+"\n"+"\n"+preprocess_v3(data[i][0])
-                da["answer"] = data[i][1]
+                da["answer"] = OOLD_answer_change[data[i][1]]
                 writer.write(da)
     print("proOOLD_dev finished")
 
@@ -540,13 +539,27 @@ def proXNLI_test():#处理tsv、csv原始数据
                 da["processed_query"] = prompt+'\n'+'\n'+sentence1+'\n'+sentence2
                 writer.write(da)
     print("proXNLI_test finished")
-def merge_all(path):
+def merge_all(path,path1):
     dirs = os.listdir(path)
+    dirs1 = os.listdir(path1)
     with jsonlines.open(path+'/final.jsonl','w')as writer:
         for dir in dirs:
             if dir!="fin.jsonl":
                 start = 1
                 data = pd.read_json(path+'/'+dir,lines = True)
+                dir_name = dir.split('.')[0]
+                for i in range(len(data)):
+                    da = {}
+                    id = dir_name+f"-{start}"
+                    da["id"] =str(id)
+                    start+=1
+                    da["processed_query"] = data["processed_query"][i]
+                    da["answer"]=str(data["answer"][i])
+                    writer.write(da)
+        for dir in dirs1:
+            if dir!="fin.jsonl":
+                start = 1
+                data = pd.read_json(path1+'/'+dir,lines = True)
                 dir_name = dir.split('.')[0]
                 for i in range(len(data)):
                     da = {}
