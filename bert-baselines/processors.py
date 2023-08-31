@@ -386,6 +386,7 @@ class SvregProcessor(DataProcessor):
         """Creates examples for the training and test sets."""
         examples = []
         for (i, line) in enumerate(lines):
+            line = str(line)
             guid = "%s-%s" % (set_type, line[0])
             text_a = line[1]
             number = 0.0
@@ -400,7 +401,10 @@ class SvregProcessor(DataProcessor):
                     flag = True
                     continue
                 break
-            label = float(s)
+            if s=="":
+                label = 0.0
+            else:
+                label = float(s)
             examples.append(Getdata(guid=guid, text_a=text_a, text_b=None, label=label))
         return examples
     def get_eval_data(self,args,path = None):
@@ -541,7 +545,7 @@ class OoldProcessor(DataProcessor):
             for (i, line) in enumerate(lines):
                 guid = "%s-%s" % (set_type, i)
                 text_a = line[0]
-                label = line[2] if set_type != "test" else None
+                label = line[3] if set_type != "test" else None
                 examples.append(Getdata(guid=guid, text_a=text_a, text_b=None, label=label))
         return examples
     def get_eval_data(self,args,path = None):
@@ -612,7 +616,7 @@ class OhsdProcessor(DataProcessor):
             for (i, line) in enumerate(lines):
                 guid = "%s-%s" % (set_type, i)
                 text_a = line[0]
-                label = line[2] if set_type != "test" else None
+                label = line[3] if set_type != "test" else None
                 examples.append(Getdata(guid=guid, text_a=text_a, text_b=None, label=label))
         return examples
     def get_eval_data(self,args,path = None):
@@ -675,14 +679,17 @@ class DiagProcessor(DataProcessor):
                 label = line[3]
                 examples.append(Getdata(guid=guid, text_a=text_a, text_b=text_b, label=label))
         else:
-            labels_change = {"محايدة":"neutral","ضمنية":'entailment',"تناقض":'contradiction'}
+            labels_change = { "علاقة غير مترابطة":"neutral", "علاقة مترابطة":"entailment",  "علاقة متناقضة":"contradiction"}
             for (i, line) in enumerate(lines):
                 if i == 0:
                     continue
                 guid = "%s-%s" % (set_type, line[0])
                 text_a = line[0]
                 text_b = line[0]
-                label =  labels_change[line[2]]
+                if line[2] in labels_change.keys():
+                    label =  labels_change[line[2]]
+                else:
+                    label = "entailment"
                 examples.append(Getdata(guid=guid, text_a=text_a, text_b=text_b, label=label))
             
         return examples
@@ -744,12 +751,15 @@ class XnliProcessor(DataProcessor):
                 label = line[3]
                 examples.append(Getdata(guid=guid, text_a=text_a, text_b=text_b, label=label))
         else:
-            labels_change = {"محايدة":"neutral","ضمنية":'entailment',"تناقض":'contradiction'}
+            labels_change = { "علاقة غير مترابطة":"neutral", "علاقة مترابطة":"entailment",  "علاقة متناقضة":"contradiction"}
             for (i, line) in enumerate(lines):
                 guid = "%s-%s" % (set_type, line[0])
                 text_a = line[0]
                 text_b = line[0]
-                label =  labels_change[line[2]]
+                if line[2] in labels_change.keys():
+                    label =  labels_change[line[2]]
+                else:
+                    label = "entailment"
                 examples.append(Getdata(guid=guid, text_a=text_a, text_b=text_b, label=label))
             
         return examples
