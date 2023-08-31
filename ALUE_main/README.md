@@ -11,7 +11,7 @@
 #### test:  
       Test datasets from ALUE.org  
 
-#### submit_run.py:  
+#### test_run.py:  
       This file is used to process the generate results into suitable format to submit to ALUE.org.  
       To run thsi file,you have to:  
       1.Put your generate data into data_generate.  
