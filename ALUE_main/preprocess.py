@@ -3,11 +3,13 @@ import pandas as pd
 import jsonlines
 import os
 import random
+import emoji
 import pyarabic.araby as araby
 import html
 import logging
 import re
 from typing import List
+from farasa.segmenter import FarasaSegmenter
 PREFIX_LIST = [
     "ال",
     "و",
@@ -158,10 +160,27 @@ def preprocess_v3(text: str) -> str:
     strip_tatweel = True,
     insert_white_spaces = True,
     remove_non_digit_repetition = True,
-    keep_emojis = None,
-    replace_slash_with_dash = None,
-    map_hindi_numbers_to_arabic = None,
-    apply_farasa_segmentation = None,
+    keep_emojis = True,
+    replace_slash_with_dash = True,
+    map_hindi_numbers_to_arabic = True,
+    apply_farasa_segmentation = True,
+    if keep_emojis:
+        import emoji
+
+        self_emoji = emoji
+        emoji_regex = "".join(list(self_emoji.UNICODE_EMOJI_ENGLISH.keys()))
+        # for (i,tt) in enumerate(self_emoji.get_emoji_unicode_dict("en").keys()):
+        #     if i==1016:
+        #         print(tt)
+        # print(emoji_regex)
+        sorted_chars_regexv2 = ''.join(sorted(CHARS_REGEXV2))
+        sorted_emoji_regex = ''.join(sorted(emoji_regex))
+        # print(sorted_chars_regexv2)
+        self_REJECTED_CHARS_REGEX = "[^%s%s]" % (CHARS_REGEXV2,emoji_regex)
+        print(self_REJECTED_CHARS_REGEX)
+        # self_REJECTED_CHARS_REGEX = '[^%s%s]' % (sorted_chars_regexv2, sorted_emoji_regex)
+        # print(self_REJECTED_CHARS_REGEX )
+
     text = str(text)
     text = html.unescape(text)
     if strip_tashkeel:
@@ -218,10 +237,20 @@ def preprocess_v3(text: str) -> str:
         )
 
     # remove unwanted characters
-    text = re.sub(REJECTED_CHARS_REGEX, " ", text)
+    text = re.sub(self_REJECTED_CHARS_REGEX, " ", text)
 
     # remove extra spaces
-    norm_text = " ".join(text.replace("\uFE0F", "").split())
+    text = " ".join(text.replace("\uFE0F", "").split())
+    farasa_segmenter1 = FarasaSegmenter(interactive=True)
+    if keep_emojis:
+        new_text = []
+        for word in text.split():
+            if word in list(self_emoji.get_emoji_unicode_dict("en").keys()):
+                new_text.append(word)
+            else:
+                new_text.append(farasa_segmenter1.segment(word))
+        text = " ".join(new_text)
+    norm_text = text
 
     if not norm_text.strip():
         norm_text = text1
@@ -230,3 +259,61 @@ def preprocess_v3(text: str) -> str:
     norm_text = norm_text.strip()
     # ALl the other models dont require Farasa Segmentation
     return norm_text
+# def _farasa_segment(text: str) -> str:
+#     line_farasa = text.split()
+#     segmented_line = []
+#     for index, word in enumerate(line_farasa):
+#         if word in ["[", "]"]:
+#             continue
+#         if word in ["رابط", "بريد", "مستخدم"] and line_farasa[index - 1] in [
+#             "[",
+#             "]",
+#         ]:
+#             segmented_line.append("[" + word + "]")
+#             continue
+#         if "+" not in word:
+#             segmented_line.append(word)
+#             continue
+#         segmented_word = _split_farasa_output(word)
+#         segmented_line.extend(segmented_word)
+
+#     return " ".join(segmented_line)
+# def _split_farasa_output(word: str) -> str:
+#     segmented_word = []
+#     temp_token = ""
+#     for i, c in enumerate(word):
+#         if c == "+":
+#             # if the token is KAF, it could be a suffix or prefix
+#             if temp_token == "ك":
+#                 # if we are at the second token, then KAF is surely a prefix
+#                 if i == 1:
+#                     segmented_word.append(temp_token + "+")
+#                     temp_token = ""
+#                 # If the KAF token is between 2 tokens
+#                 elif word[i - 2] == "+":
+#                     # if the previous token is prefix, then this KAF must be a prefix
+#                     if segmented_word[-1][-1] == "+":
+#                         segmented_word.append(temp_token + "+")
+#                         temp_token = ""
+#                     # else it is a suffix, this KAF could not be a second suffix
+#                     else:
+#                         segmented_word.append("+" + temp_token)
+#                         temp_token = ""
+#                 # if Kaf is at the end, this is handled with the statement after the loop
+#             elif temp_token in PREFIX_LIST:
+#                 segmented_word.append(temp_token + "+")
+#                 temp_token = ""
+#             elif temp_token in SUFFIX_LIST:
+#                 segmented_word.append("+" + temp_token)
+#                 temp_token = ""
+#             else:
+#                 segmented_word.append(temp_token)
+#                 temp_token = ""
+#             continue
+#         temp_token += c
+#     if temp_token != "":
+#         if temp_token in SUFFIX_LIST:
+#             segmented_word.append("+" + temp_token)
+#         else:
+#             segmented_word.append(temp_token)
+#     return segmented_word

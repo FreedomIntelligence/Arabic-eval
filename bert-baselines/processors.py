@@ -291,11 +291,11 @@ class MddProcessor(DataProcessor):
             data = self.get_dev_examples()
         else:
             data = self._read_jsonl(args.base_dir)
-            data = self._create_examples(data,"dev_matched","jsonl")
+            data = self._create_examples(data,"dev_matched")
         return data
     def get_gen_data(self,args):#读取生成文件
         data = self._read_jsonl(args.generate_dir)
-        data =  self._create_examples(data,"dev_matched","jsonl")
+        data =  self._create_examples(data,"dev_matched")
         return data
 
 
@@ -386,13 +386,13 @@ class SvregProcessor(DataProcessor):
         """Creates examples for the training and test sets."""
         examples = []
         for (i, line) in enumerate(lines):
-            line = str(line)
             guid = "%s-%s" % (set_type, line[0])
             text_a = line[1]
             number = 0.0
             s = ""
             flag = False
-            for i in line[-1]:
+            line[-2] = str(line[-2])
+            for i in line[-2]:
                 if i.isdigit():
                     s+=i
                     continue
@@ -545,7 +545,7 @@ class OoldProcessor(DataProcessor):
             for (i, line) in enumerate(lines):
                 guid = "%s-%s" % (set_type, i)
                 text_a = line[0]
-                label = line[3] if set_type != "test" else None
+                label = line[2] if set_type != "test" else None
                 examples.append(Getdata(guid=guid, text_a=text_a, text_b=None, label=label))
         return examples
     def get_eval_data(self,args,path = None):
@@ -616,7 +616,7 @@ class OhsdProcessor(DataProcessor):
             for (i, line) in enumerate(lines):
                 guid = "%s-%s" % (set_type, i)
                 text_a = line[0]
-                label = line[3] if set_type != "test" else None
+                label = line[2] if set_type != "test" else None
                 examples.append(Getdata(guid=guid, text_a=text_a, text_b=None, label=label))
         return examples
     def get_eval_data(self,args,path = None):

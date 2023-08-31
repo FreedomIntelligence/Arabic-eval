@@ -28,7 +28,18 @@ except (AttributeError, ImportError):
 
 def is_sklearn_available():
     return _has_sklearn
-
+LABEL_TO_TEXT = {"MQ2Q": {0: "غير مكرر", 1: "مكرر"},
+                 "FID":  {0: "سخرية", 1: "ليس سخرية"},
+                 "OOLD":  {"NOT_OFF": "غير مهين", "OFF": "مهين"},
+                 "OHSD": {"NOT_HS": "لا يحض على الكراهية", "HS": "خطاب كراهية"},
+                 "XNLI": {"neutral": "علاقة غير مترابطة", "entailment": "علاقة مترابطة", "contradiction": "علاقة متناقضة"},
+                 "MDD":  {'SFX': 'صفاقس', 'ALX': 'الإسكندرية', 'ALE': 'حلب', 'FES': 'فاس', 'TRI': 'طرابلس', 'MSA': 'العربية',
+                          'CAI': 'القاهرة', 'ASW': 'أسوان', 'AMM': 'عمان', 'TUN': 'تونس', 'DOH': 'الدوحة', 'RIY': 'الرياض',
+                          'ALG': 'الجزائر', 'KHA': 'الخرطوم', 'DAM': 'دمشق', 'RAB': 'الرباط', 'SAN': 'صنعاء', 'BEI': 'بيروت',
+                          'JER': 'القدس', 'JED': 'جدة', 'BAS': 'البصرة', 'BEN': 'بنغازي', 'SAL': 'سل', 'MUS': 'مسقط',
+                          'MOS': 'الموصل', 'BAG': 'بغداد'
+                          }
+                 }
 
 if _has_sklearn:
 
@@ -41,6 +52,7 @@ if _has_sklearn:
         }
 
     def pearson_and_spearman(preds, labels):
+        print(preds)
         pearson_corr = pearsonr(preds, labels)[0]
         spearman_corr = spearmanr(preds, labels)[0]
 
@@ -77,9 +89,9 @@ if _has_sklearn:
         elif task_name == "sec":
             return jaccard_and_f1(preds, labels)
         elif task_name == "oold":
-            return acc_and_f1(preds, labels,pos_label = "NOT_OFF")
+            return acc_and_f1(preds, labels,pos_label = LABEL_TO_TEXT["OOLD"]["NOT_OFF"])
         elif task_name == "ohsd":
-            return acc_and_f1(preds, labels,pos_label = "NOT_HS")
+            return acc_and_f1(preds, labels,pos_label = LABEL_TO_TEXT["OHSD"]["NOT_HS"])
         elif task_name == "xnli":
             return acc_and_f1(preds, labels, average="macro")
         elif task_name =="diag":

@@ -165,6 +165,7 @@ def proFID_train_dev():#path1 是原始数据文件，path2是生成的文件,�
      with jsonlines.open(path2,'w') as writer:#打开jsonlines写入
         for i in range(len(data)):#遍历原始数据
             sentence = preprocess_v3(data[i][1])
+            print(sentence)
             da = {}
             da["id"] = int(data[i][0]+1)
             da["processed_query"] = prompt+"\n"+"\n"+sentence
@@ -309,12 +310,13 @@ def proSEC_dev():#path1 是原始数据文件，path2是生成的文件,处理tx
             da = {}
             da["id"] = (data['ID'][i])
             da["processed_query"] =  prompt+"\n"+"\n"+sentence
-            da["label"] = "SEC"
+            
             output =""
             for j in labels:
                 if int(data[j][i]) == 1 :
                     output = output + labels_change[j] + ',' 
             da["answer"] = output[0:-1]
+            da["label"] = "SEC"
             writer.write(da)
      print("proSEC_dev finished")
 
