@@ -438,8 +438,8 @@ def proMQ2Q_test():#path1 是原始数据文件，path2是生成的文件,处理
         data = list(csv.reader(f, delimiter=delimiter, quotechar=quotechar))
      with jsonlines.open(path2,'w') as writer:#打开jsonlines写入
         for i in range(1,len(data)):#遍历原始数据
-            sentence1 = preprocess_v3(data[i][0])
-            sentence2 = preprocess_v3(data[i][1])
+            sentence1 = preprocess_v3(data[i][1])
+            sentence2 = preprocess_v3(data[i][2])
             da = {}
             da["id"] = int(i)
             da["label"] = "MQ2Q"
