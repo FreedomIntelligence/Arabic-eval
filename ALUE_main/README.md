@@ -1,4 +1,42 @@
 # ALUE
+
+## Tasks details
+*********
+#### FID
+**Instruction**: Please specify whether any part of the following sentence contains ironia, which refers to the use of the word for something other than the literal meaning and especially its opposite.  
+
+**Answer**: If contain:'1',else '0'.
+#### MDD
+**Instruction**:Please specify to which city the language belongs, the available options are {Sfax, Alexandria, Aleppo, Fez, Tripoli, Arabic, Cairo, Aswan, Amman, Tunisia, Doha, Riyadh, Algeria, Khartoum, Damascus, Rabat, Sana 'a, Beirut, Jerusalem, Jeddah, Basra, Benghazi, Sal, Muscat, Mosul and Baghdad}.  
+**Answer**: A city name.
+#### MQ2Q
+**Instruction**: Do these two sentences have the same meaning? If it means the same thing, your answer must be '1', otherwise it is '0'."  .
+
+**Answer**: Same meaning:'1' ,else  '0'.
+#### SEC
+**Instruction**: What emotions are involved in the following sentence Please choose from these options: anger, anticipation, disgust, fear, joy, love, optimism, pessimism, sadness, surprise, and confidence.  
+
+**Answer**: A list contains many emotions,we have to change it into a list made by 0 and 1.
+#### SVREG
+**Instruction**: Please record the intensity of emotion, which means the intensity of emotion in the following sentence on a scale from 0 to 1.   
+
+**Answer**: A float on a scale from 0 to 1.
+#### OOLD
+**Instruction**: Please assess whether or not the following sentence contains abusive comments. If it contains offensive comments, please respond with 'OFF', otherwise please respond with 'NOT_OFF'.  
+
+**Answer**:If contains:'OFF',else 'NOT_OFF'.
+#### OHSD
+**Instruction**: Please specify whether or not the following sentence contains hate speech. If it contains hate speech, please reply with 'HS'; otherwise, reply with 'NOT_HS'.  
+
+**Answer**:If contains:'HS',else 'NOT_HS'.
+#### XNLI
+**Instruction**: J Determine the relationship {contradictory, interdependent, unrelated} that is processed by sentence 1 and sentence 2.  
+
+**Answer**:A relationship word .
+#### DIAG
+As same as XNLI.
+*********
+## File 
 #### train:  
       90% of all train datasets,and a dataset named `final.jsonl` is the result of combining all the training data in train folder  
 
