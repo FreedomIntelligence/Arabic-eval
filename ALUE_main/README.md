@@ -10,7 +10,8 @@
 
 #### test:  
       Test datasets from ALUE.org  
-
+#### final
+      100% train data merge for training
 #### test_run.py:  
       This file is used to process the generate results into suitable format to submit to ALUE.org.  
       To run thsi file,you have to:  
