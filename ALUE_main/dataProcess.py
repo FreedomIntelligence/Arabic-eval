@@ -21,8 +21,8 @@ prompt_MQ2Q = "ل تعبر هاتان الجملتان عن نفس المعنى�
 prompt_DIAG = prompt_XNLI
 prompt_MDD = "يرجى تحديد الجملة التالية إلى أي مدينة تنتمي لغتها، الخيارات المتاحة هي {صفاقس, الإسكندرية, حلب, فاس, طرابلس, العربية, القاهرة, أسوان, عمان, تونس, الدوحة, الرياض, الجزائر, الخرطوم, دمشق, الرباط, صنعاء, بيروت, القدس, جدة, البصرة, بنغازي, سل, مسقط, الموصل, بغداد}"
 prompt_OHSD =" يرجى تحديد ما إذا كانت الجملة التالية تحتوي على خطاب كراهية أم لا. إذا كانت تحتوي على خطاب كراهية، يرجى الرد بـ 'خطاب كراهية'، وإلا فالرد بـ 'لا يحض على الكراهية'."
-prompt_OOLD="يرجى تقييم ما إذا كانت الجملة التالية تحتوي على تعليقات مسيئة أم لا.  إذا كانت تحتوي على تعليقات مسيئة، يرجى الرد بـ 'مهين'، وإلا يرجى الرد بـ 'غير مهين'."
-prompt_FID ="يرجى تحديد ما إذا كان هناك أي جزء من الجملة التالية يحتوي على إيرونيا، والتي تشير إلى استخدام الكلمة للتعبير عن شيء آخر غير المعنى الحرفي وخاصة عكسه.  إذا كان يحتوي على ذلك، يجب أن تكون الإجابةليس سخرية.  وإلا، يجب أن تكون الإجابة سخرية."
+prompt_OOLD="يرجى تقييم ما إذا كانت الجملة التالية تحتوي على تعليقات مسيئة أم لا. إذا كانت تحتوي على تعليقات مسيئة، يرجى الرد بـ 'مهين'، وإلا يرجى الرد بـ 'غير مهين'."
+prompt_FID ="يرجى تحديد ما إذا كان هناك أي جزء من الجملة التالية يحتوي على إيرونيا، والتي تشير إلى استخدام الكلمة للتعبير عن شيء آخر غير المعنى الحرفي وخاصة عكسه. إذا كان يحتوي على ذلك، يجب أن تكون الإجابةليس سخرية  وإلا، يجب أن تكون الإجابة سخرية."
 XNLI_answer_change={"neutral": "علاقة غير مترابطة", "entailment": "علاقة مترابطة", "contradiction": "علاقة متناقضة"}
 MDD_answer_change = {'SFX': 'صفاقس', 'ALX': 'الإسكندرية', 'ALE': 'حلب', 'FES': 'فاس', 'TRI': 'طرابلس', 'MSA': 'العربية',
                           'CAI': 'القاهرة', 'ASW': 'أسوان', 'AMM': 'عمان', 'TUN': 'تونس', 'DOH': 'الدوحة', 'RIY': 'الرياض',
@@ -34,6 +34,8 @@ MQ2Q_answer_change =  {'0': "غير مكرر", '1': "مكرر"}
 FID_answer_change = {'0': "سخرية", '1': "ليس سخرية"}
 OOLD_answer_change = {"NOT_OFF": "غير مهين", "OFF": "مهين"}
 OHSD_answer_change = {"NOT_HS": "لا يحض على الكراهية", "HS": "خطاب كراهية"}
+sen1 = "جملة"+" 1: "
+sen2 = "جملة"+" 2: "
 def proXNLI_train_dev():#处理tsv、csv原始数据
     path1 = "XNLI/arabic_train.tsv"
     path2 = path_to_save +"XNLI_train.jsonl"
@@ -46,12 +48,12 @@ def proXNLI_train_dev():#处理tsv、csv原始数据
     dev = []
     with jsonlines.open(path2,'w') as writer:
         for i in range(1,len(data)):
-                sentence1 = preprocess_v3("جملة1: "+data[i][1])
-                sentence2 = preprocess_v3("جملة2: "+data[i][2])
+                sentence1 = preprocess_v3(data[i][1])
+                sentence2 = preprocess_v3(data[i][2])
                 da = {}
                 da["id"] = int(data[i][0])
                 da["label"] = "XNLI"
-                da["processed_query"] =  prompt+'\n'+'\n'+sentence1+'\n'+sentence2
+                da["processed_query"] =  prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
                 da["answer"] = XNLI_answer_change[data[i][3]]
                 if i%10!=0:
                     writer.write(da)
@@ -139,7 +141,7 @@ def proMQ2Q_train_dev():#path1 是原始数据文件，path2是生成的文件,�
             da = {}
             da["id"] = int(i)
             da["label"] = "MQ2Q"
-            da["processed_query"] =  prompt+"\n"+"\n"+'ملة1: '+sentence1+"\n"+'ملة2: '+sentence2
+            da["processed_query"] =  prompt+"\n"+"\n"+sen1+sentence1+"\n"+sen2+sentence2
             da["answer"] = MQ2Q_answer_change[data[i][2]]
             if i%10!=0:
                 writer.write(da)
@@ -267,12 +269,12 @@ def proXNLI_dev():#处理tsv、csv原始数据
     prompt = prompt_XNLI+arabic
     with jsonlines.open(path2,'w') as writer:
         for i in range(1,len(data)):
-                sentence1 = preprocess_v3("جملة1: "+data[i][1])
-                sentence2 = preprocess_v3("جملة2: "+data[i][2])
+                sentence1 = preprocess_v3(data[i][1])
+                sentence2 = preprocess_v3(data[i][2])
                 da = {}
                 da["id"] = int(data[i][0])
                 da["label"] = "XNLI"
-                da["processed_query"] =  prompt+'\n'+'\n'+sentence1+'\n'+sentence2
+                da["processed_query"] =  prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
                 da["answer"] = XNLI_answer_change[data[i][3]]
                 writer.write(da)
     print("proXNLI_dev finished")
@@ -384,12 +386,12 @@ def proDIAG_dev():#处理tsv、csv原始数据
     prompt = prompt_DIAG+arabic
     with jsonlines.open(path2,'w') as writer:
         for i in range(1,len(data)):
-                sentence1 = preprocess_v3("جملة1: "+data[i][1])
-                sentence2 = preprocess_v3("جملة2: "+data[i][2])
+                sentence1 = preprocess_v3(data[i][1])
+                sentence2 = preprocess_v3(data[i][2])
                 da = {}
                 da["id"] = int(data[i][0])
                 da["label"] = "DIAG"
-                da["processed_query"] = prompt+'\n'+'\n'+sentence1+'\n'+sentence2
+                da["processed_query"] = prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
                 da["answer"] = data[i][3]
                 writer.write(da)
     print("proDIAG_dev finished")
@@ -443,7 +445,7 @@ def proMQ2Q_test():#path1 是原始数据文件，path2是生成的文件,处理
             da = {}
             da["id"] = int(i)
             da["label"] = "MQ2Q"
-            da["processed_query"] =  prompt+"\n"+"\n"+'ملة1: '+sentence1+"\n"+'ملة2: '+sentence2
+            da["processed_query"] =  prompt+"\n"+"\n"+sen1+sentence1+"\n"+sen2+sentence2
             writer.write(da)
      print("proMQ2Q_test finished ")
 
@@ -462,6 +464,7 @@ def proFID_test():#path1 是原始数据文件，path2是生成的文件,处理t
             da["id"] = int(data[i][0]+1)
             da["label"] = "FID"
             da["processed_query"] = prompt+"\n"+"\n"+sentence
+            da["answer"] = data[i][2]
             writer.write(da)
      print("proFID_test finished ")
 
@@ -469,12 +472,13 @@ def proMDD_test():
     path1 = "MDD/MADAR-Corpus-26-test.tsv"
     data = pd.read_csv(path1,sep = '\t', header=None).values.tolist()
     prompt = prompt_MDD+arabic
-    with jsonlines.open("MDD/MDD_test.jsonl",'w') as writer: 
+    with jsonlines.open("test/MDD_test.jsonl",'w') as writer: 
         for i in range(len(data)):
             da = {}
             da["id"] = int(i)
             da["label"] = "MDD"
             da ["processed_query"] = prompt+'\n'+"\n"+preprocess_v3(data[i][0])
+            da["answer"] = data[i][1]
             writer.write(da)
     print("proMDD_test finished")
 def proOHSD_test():
@@ -519,32 +523,32 @@ def proDIAG_test():#处理tsv、csv原始数据
     prompt = prompt_DIAG+arabic
     with jsonlines.open(path2,'w') as writer:
         for i in range(1,len(data)):
-                sentence1 = preprocess_v3("جملة1: "+data[i][1])
-                sentence2 = preprocess_v3("جملة2: "+data[i][2])
+                sentence1 = preprocess_v3(data[i][1])
+                sentence2 = preprocess_v3(data[i][2])
                 da = {}
                 da["id"] = int(data[i][0])
                 da["label"] = "DIAG"
-                da["processed_query"] =  prompt+'\n'+'\n'+sentence1+'\n'+sentence2
+                da["processed_query"] =  prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
                 writer.write(da)
     print("proDIAG_dev finished")
-def proXNLI_test():#处理tsv、csv原始数据
-    path1 = "XNLI/arabic_dev.tsv"
-    path2 = path_to_save_test +"XNLI_test.jsonl"
-    quotechar=None
-    delimiter="\t"
-    with open(path1, "r", encoding="utf-8-sig") as f:
-        data = list(csv.reader(f, delimiter=delimiter, quotechar=quotechar))
-    prompt = prompt_XNLI+arabic
-    with jsonlines.open(path2,'w') as writer:
-        for i in range(1,len(data)):
-                sentence1 = preprocess_v3("جملة1: "+data[i][1])
-                sentence2 = preprocess_v3("جملة2: "+data[i][2])
-                da = {}
-                da["id"] = int(data[i][0])
-                da["label"] = "XNLI"
-                da["processed_query"] = prompt+'\n'+'\n'+sentence1+'\n'+sentence2
-                writer.write(da)
-    print("proXNLI_test finished")
+# def proXNLI_test():#处理tsv、csv原始数据
+#     path1 = "XNLI/arabic_dev.tsv"
+#     path2 = path_to_save_test +"XNLI_test.jsonl"
+#     quotechar=None
+#     delimiter="\t"
+#     with open(path1, "r", encoding="utf-8-sig") as f:
+#         data = list(csv.reader(f, delimiter=delimiter, quotechar=quotechar))
+#     prompt = prompt_XNLI+arabic
+#     with jsonlines.open(path2,'w') as writer:
+#         for i in range(1,len(data)):
+#                 sentence1 = preprocess_v3(data[i][1])
+#                 sentence2 = preprocess_v3(data[i][2])
+#                 da = {}
+#                 da["id"] = int(data[i][0])
+#                 da["label"] = "XNLI"
+#                 da["processed_query"] = prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
+#                 writer.write(da)
+#     print("proXNLI_test finished")
 def merge_all(path,path1):
     dirs = os.listdir(path)
     dirs1 = os.listdir(path1)
