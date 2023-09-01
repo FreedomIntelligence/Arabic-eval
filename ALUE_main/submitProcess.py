@@ -164,7 +164,7 @@ class change_to_test(object):
         print("prosvreg finished")
 
 
-    def proxnli(self,path = "./data_generate/XNLI_test.jsonl",df_test = pd.read_csv("./XNLI/arabic_dev.tsv", sep="\t"),output_path = "./predictions/xnli.tsv"):
+    def proxnli(self,path = "./data_generate/XNLI_original_dev.jsonl",df_test = pd.read_csv("./XNLI/arabic_dev.tsv", sep="\t"),output_path = "./predictions/xnli.tsv"):
         
         data = pd.read_json(path,lines = True)
         pre = []
@@ -182,7 +182,7 @@ class change_to_test(object):
         print("proxnli finished")
 
 
-    def prodiag(self,path = "./data_generate/DIAG_test.jsonl",df_test = pd.read_csv("./DIAG/diagnostic.tsv", sep="\t"),output_path = "./predictions/diagnostic.tsv"):
+    def prodiag(self,path = "./data_generate/DIAG_original_dev.jsonl",df_test = pd.read_csv("./DIAG/diagnostic.tsv", sep="\t"),output_path = "./predictions/diagnostic.tsv"):
         
         data = pd.read_json(path,lines = True)
         pre = []

@@ -32,9 +32,9 @@ data = 0
 lang = 'Chinese'
 mul = 3
 blo = True
-path = "llama-ace-v5.0_vs._jais-13b-chat/"
-model1 = "llama-ace-v5.0"
-model2 =  "jais-13b-chat"
+path = "turbo_vs._llama-ace-v5.0/"
+model1 = "turbo"
+model2 =  "llama-ace-v5.0"
 def is_chinese(text):
     # 将文本分词，因为中文分词对后续判断很重要
     words = jieba.lcut(text)
