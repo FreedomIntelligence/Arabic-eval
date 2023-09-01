@@ -93,8 +93,8 @@ REDUNDANT_PUNCT_PATTERN = (
 REGEX_TATWEEL = r"(\D)\1{2,}"
 MULTIPLE_CHAR_PATTERN = re.compile(r"(\D)\1{2,}", re.DOTALL)
 
-REJECTED_CHARS_REGEX = r"[^0-9\u0621-\u063A\u0640-\u066C\u0671-\u0674a-zA-Z\[\]!\"#\$%\'\(\)\*\+,\.:;\-<=·>?@\[\\\]\^_ـ`{\|}~—٪’،؟`୍“؛”ۚ»؛\s+«–…‘]"
-REJECTED_CHARS_REGEXV2 = r"[^0-9\u0621-\u063A\u0641-\u066C\u0671-\u0674a-zA-Z\[\]!\"#\$%\'\(\)\*\+,\.:;\-<=·>?@\[\\\]\^_ـ`{\|}~—٪’،؟`୍“؛”ۚ»؛\s+«–…‘/]"
+REJECTED_CHARS_REGEX = r"[^0-9\u0621-\u063A\u0640-\u066C\u0671-\u0674\a-zA-Z\[\]!\"#\$%\'\(\)\*\+,\.:;\-<=·>?@\[\\\]\^_ـ`{\|}~—٪’،؟`୍“؛”ۚ»؛\s+«–…‘]"
+REJECTED_CHARS_REGEXV2 = r"[^0-9\u0621-\u063A\u0641-\u066C\u0671-\u0674\a-zA-Z\[\]!\"#\$%\'\(\)\*\+,\.:;\-<=·>?@\[\\\]\^_ـ`{\|}~—٪’،؟`୍“؛”ۚ»؛\s+«–…‘/]"
 
 REGEX_URL_STEP1 = r"(?=http)[^\s]+"
 REGEX_URL_STEP2 = r"(?=www)[^\s]+"
@@ -164,22 +164,13 @@ def preprocess_v3(text: str) -> str:
     replace_slash_with_dash = True,
     map_hindi_numbers_to_arabic = True,
     apply_farasa_segmentation = True,
-    if keep_emojis:
-        import emoji
+    # if keep_emojis:
+    #     import emoji
 
-        self_emoji = emoji
-        emoji_regex = "".join(list(self_emoji.UNICODE_EMOJI_ENGLISH.keys()))
-        # for (i,tt) in enumerate(self_emoji.get_emoji_unicode_dict("en").keys()):
-        #     if i==1016:
-        #         print(tt)
-        # print(emoji_regex)
-        sorted_chars_regexv2 = ''.join(sorted(CHARS_REGEXV2))
-        sorted_emoji_regex = ''.join(sorted(emoji_regex))
-        # print(sorted_chars_regexv2)
-        self_REJECTED_CHARS_REGEX = "[^%s%s]" % (CHARS_REGEXV2,emoji_regex)
-        print(self_REJECTED_CHARS_REGEX)
-        # self_REJECTED_CHARS_REGEX = '[^%s%s]' % (sorted_chars_regexv2, sorted_emoji_regex)
-        # print(self_REJECTED_CHARS_REGEX )
+    #     self_emoji = emoji
+    #     emoji_regex = "".join(list(self_emoji.get_emoji_unicode_dict("en").keys()))
+
+    #     self_REJECTED_CHARS_REGEX = "[^%s%s]" % (CHARS_REGEXV2,emoji_regex)
 
     text = str(text)
     text = html.unescape(text)
@@ -237,19 +228,19 @@ def preprocess_v3(text: str) -> str:
         )
 
     # remove unwanted characters
-    text = re.sub(self_REJECTED_CHARS_REGEX, " ", text)
+    # text = re.sub(self_REJECTED_CHARS_REGEX, " ", text)
 
     # remove extra spaces
     text = " ".join(text.replace("\uFE0F", "").split())
-    farasa_segmenter1 = FarasaSegmenter(interactive=True)
-    if keep_emojis:
-        new_text = []
-        for word in text.split():
-            if word in list(self_emoji.get_emoji_unicode_dict("en").keys()):
-                new_text.append(word)
-            else:
-                new_text.append(farasa_segmenter1.segment(word))
-        text = " ".join(new_text)
+    # farasa_segmenter1 = FarasaSegmenter(interactive=True)
+    # if keep_emojis:
+    #     new_text = []
+    #     for word in text.split():
+    #         if word in list(self_emoji.get_emoji_unicode_dict("en").keys()):
+    #             new_text.append(word)
+    #         else:
+    #             new_text.append(farasa_segmenter1.segment(word))
+    #     text = " ".join(new_text)
     norm_text = text
 
     if not norm_text.strip():
