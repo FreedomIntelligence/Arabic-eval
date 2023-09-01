@@ -110,7 +110,7 @@ def load_and_cache_examples(args, task,  evaluate=False):
     return eval_data_label,output_mode,gen_data_label
 
 
-def main():
+def run(task_name,base_dir,generate_dir,output_dir):
     parser = argparse.ArgumentParser()
 
     # Required parameters
@@ -130,28 +130,28 @@ def main():
     # )
     parser.add_argument(
         "--task_name",
-        default="diag",
+        default=task_name,
         type=str,
-        required=True,
+        # required=True,
         help="The name of the task to train selected in the list: " + ", ".join(processors.keys()),
     )
     parser.add_argument(
         "--base_dir",
-        default="dev",
+        default=base_dir,
         type=str,
-        required=True,
+        # required=True,
     )
     parser.add_argument(
         "--generate_dir",
-        default="v2/diag_dev.jsonl",
+        default=generate_dir,
         type=str,
-        required=True,
+        # required=True,
     )
     parser.add_argument(
         "--output_dir",
-        default="results/diag_v2",
+        default=output_dir,
         type=str,
-        required=True,
+        # required=True,
         help="The output directory where the model predictions and checkpoints will be written.",
     )
 
@@ -322,4 +322,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    run('diag','./v2/DIAG_original_dev.jsonl','./v2/DIAG_original_dev.jsonl','./results/fd')
