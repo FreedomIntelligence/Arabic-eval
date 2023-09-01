@@ -18,6 +18,8 @@ import ssl
 import sys
 import jieba
 import langid
+import os
+import sys
 from gpt import GPT
 '''
 如果没有这个包：
@@ -195,7 +197,6 @@ def create_json(file2):
     data = pd.read_json(path+file2,lines = True,encoding = 'utf-8')
     data.sort_values(by="id" , inplace=True, ascending=True)
     sort_data = json.loads(data.to_json(orient='records',force_ascii=False))
-    print(sort_data)
     data = []
     for j in sort_data:
         data.append(j)
@@ -205,10 +206,16 @@ def create_json(file2):
  
 if __name__ == '__main__':
     answer1,answer2,assistant1,assistant2,output,query,label= getqArray()
+    # result1,re2 = scoring()
+    # sorted_result = sortup(result1,re2)
     # #要运行程序，需要修改处：
     # #1.修改path，path路径下存放两个jsonl文件：combine和outputs0
     # #2.若要处理classfication_cot结果，运行classification_cot(),处理scoring结果，运行scoring()
     # #3.将model1 and model2修改，model1是combine里面answer1对应模型名字， model2是combine里面answer2对应模型名字，如果使用vs的命名方法，那么model1和model2分别是vs两边的名字
-    sortup(scoring())
+    try:
+        result1,result2 = scoring()
+        sorted_result = sortup(result1,result2)
+    except Exception as e:
+        print("Max retries exceeded with url: /v1/chat/completions (Caused by None",e)
+        os.system("python Translate.py")
     # print(connect())
-    scoring()
