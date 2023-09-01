@@ -53,7 +53,7 @@ def proXNLI_train_dev():#处理tsv、csv原始数据
                 da = {}
                 da["id"] = int(data[i][0])
                 da["label"] = "XNLI"
-                da["processed_query"] =  prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
+                da["query"] =  prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
                 da["answer"] = XNLI_answer_change[data[i][3]]
                 if i%10!=0:
                     writer.write(da)
@@ -78,7 +78,7 @@ def proSVREG_train_dev():#path1 是原始数据文件，path2是生成的文件,
             sentence = preprocess_v3(data["Tweet"][i])
             da = {}
             da["id"] = (data['ID'][i])
-            da["processed_query"] =  prompt+"\n"+"\n"+sentence
+            da["query"] =  prompt+"\n"+"\n"+sentence
             da["answer"] = (str(data['Intensity Score'][i]))
             da["label"] = "SVREG"
             if i%10!=0:
@@ -106,7 +106,7 @@ def proSEC_train_dev():#path1 是原始数据文件，path2是生成的文件,�
             sentence = preprocess_v3(data["Tweet"][i])
             da = {}
             da["id"] = (data['ID'][i])
-            da["processed_query"] = prompt+"\n"+"\n"+sentence
+            da["query"] = prompt+"\n"+"\n"+sentence
             output =""
             for j in labels:
                 if int(data[j][i]) == 1 :
@@ -140,7 +140,7 @@ def proMQ2Q_train_dev():#path1 是原始数据文件，path2是生成的文件,�
             sentence2 = preprocess_v3(data[i][1])
             da = {}
             da["id"] = int(i)
-            da["processed_query"] =  prompt+"\n"+"\n"+sen1+sentence1+"\n"+sen2+sentence2
+            da["query"] =  prompt+"\n"+"\n"+sen1+sentence1+"\n"+sen2+sentence2
             da["answer"] = MQ2Q_answer_change[data[i][2]]
             da["label"] = "MQ2Q"
             if i%10!=0:
@@ -165,10 +165,9 @@ def proFID_train_dev():#path1 是原始数据文件，path2是生成的文件,�
      with jsonlines.open(path2,'w') as writer:#打开jsonlines写入
         for i in range(len(data)):#遍历原始数据
             sentence = preprocess_v3(data[i][1])
-            print(sentence)
             da = {}
             da["id"] = int(data[i][0]+1)
-            da["processed_query"] = prompt+"\n"+"\n"+sentence
+            da["query"] = prompt+"\n"+"\n"+sentence
             da["answer"] = FID_answer_change[str(data[i][2])]
             da["label"] = "FID"
             if i%10!=0:
@@ -192,7 +191,7 @@ def proMDD_train_dev():
         for i in range(len(data)):
             da = {}
             da["id"] = int(i)
-            da ["processed_query"] = prompt+'\n'+"\n"+preprocess_v3(data[i][0])
+            da ["query"] = prompt+'\n'+"\n"+preprocess_v3(data[i][0])
             da["answer"] = MDD_answer_change[data[i][1]]
             da["label"] = "MDD"
             if i%10!=0:
@@ -219,7 +218,7 @@ def proOHSD_train_dev():#处理tsv、csv原始数据
         for i in range(0,len(data)):
                 da = {}
                 da["id"] = i
-                da["processed_query"] =  prompt+"\n"+"\n"+preprocess_v3(data[i][0])
+                da["query"] =  prompt+"\n"+"\n"+preprocess_v3(data[i][0])
                 da["answer"] = OHSD_answer_change[data[i][2]]
                 da["label"] = "OHSD"
                 if i %10!=0:
@@ -246,7 +245,7 @@ def proOOLD_train_dev():#处理tsv、csv原始数据
         for i in range(0,len(data)):
                 da = {}
                 da["id"] = i
-                da["processed_query"] =  prompt+"\n"+"\n"+preprocess_v3(data[i][0])
+                da["query"] =  prompt+"\n"+"\n"+preprocess_v3(data[i][0])
                 da["answer"] = OOLD_answer_change[data[i][1]]
                 da["label"] = "OOLD"
                 if i %10!=0:
@@ -274,7 +273,7 @@ def proXNLI_dev():#处理tsv、csv原始数据
                 sentence2 = preprocess_v3(data[i][2])
                 da = {}
                 da["id"] = int(data[i][0])
-                da["processed_query"] =  prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
+                da["query"] =  prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
                 da["answer"] = XNLI_answer_change[data[i][3]]
                 da["label"] = "XNLI"
                 writer.write(da)
@@ -290,7 +289,7 @@ def proSVREG_dev():#path1 是原始数据文件，path2是生成的文件,处理
             sentence = preprocess_v3(data["Tweet"][i])
             da = {}
             da["id"] = (data['ID'][i])
-            da["processed_query"] =  prompt+"\n"+"\n"+sentence
+            da["query"] =  prompt+"\n"+"\n"+sentence
             da["answer"] = (str(data['Intensity Score'][i]))
             da["label"] = "SVREG"
             writer.write(da)
@@ -309,7 +308,7 @@ def proSEC_dev():#path1 是原始数据文件，path2是生成的文件,处理tx
             sentence = preprocess_v3(data["Tweet"][i])
             da = {}
             da["id"] = (data['ID'][i])
-            da["processed_query"] =  prompt+"\n"+"\n"+sentence
+            da["query"] =  prompt+"\n"+"\n"+sentence
             
             output =""
             for j in labels:
@@ -331,7 +330,7 @@ def proMDD_dev():
         for i in range(len(data)):
             da = {}
             da["id"] = int(i)
-            da ["processed_query"] = prompt+'\n'+"\n"+preprocess_v3(data[i][0])
+            da ["query"] = prompt+'\n'+"\n"+preprocess_v3(data[i][0])
             da["answer"] = MDD_answer_change[data[i][1]]
             da["label"] = "MDD"
             writer.write(da)
@@ -351,7 +350,7 @@ def proOHSD_dev():
         for i in range(0,len(data)):
                 da = {}
                 da["id"] = i
-                da["processed_query"] = prompt+"\n"+"\n"+preprocess_v3(data[i][0])
+                da["query"] = prompt+"\n"+"\n"+preprocess_v3(data[i][0])
                 da["answer"] = OHSD_answer_change[data[i][2]]
                 da["label"] = "OHSD"
                 writer.write(da)
@@ -371,7 +370,7 @@ def proOOLD_dev():
         for i in range(0,len(data)):
                 da = {}
                 da["id"] = i
-                da["processed_query"] =  prompt+"\n"+"\n"+preprocess_v3(data[i][0])
+                da["query"] =  prompt+"\n"+"\n"+preprocess_v3(data[i][0])
                 da["answer"] = OOLD_answer_change[data[i][1]]
                 da["label"] = "OOLD"
                 writer.write(da)
@@ -392,7 +391,7 @@ def proDIAG_dev():#处理tsv、csv原始数据
                 sentence2 = preprocess_v3(data[i][2])
                 da = {}
                 da["id"] = int(data[i][0])
-                da["processed_query"] = prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
+                da["query"] = prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
                 da["answer"] = XNLI_answer_change[data[i][3]]
                 da["label"] = "DIAG"
                 writer.write(da)
@@ -410,7 +409,7 @@ def proSVREG_test():#path1 是原始数据文件，path2是生成的文件,处�
             da = {}
             da["id"] = (data['ID'][i])
             da["label"] = "SVREG"
-            da["processed_query"] = prompt+"\n"+"\n"+sentence
+            da["query"] = prompt+"\n"+"\n"+sentence
             writer.write(da)
      print("proSVREG_test finished ")
 
@@ -428,7 +427,7 @@ def proSEC_test():#path1 是原始数据文件，path2是生成的文件,处理t
             da = {}
             da["id"] = int((data['ID'][i]))
             da["label"]="SEC"
-            da["processed_query"] = prompt+"\n"+"\n"+sentence
+            da["query"] = prompt+"\n"+"\n"+sentence
             writer.write(da)
      print("proSEC_test finished ")
 
@@ -447,7 +446,7 @@ def proMQ2Q_test():#path1 是原始数据文件，path2是生成的文件,处理
             da = {}
             da["id"] = int(i)
             da["label"] = "MQ2Q"
-            da["processed_query"] =  prompt+"\n"+"\n"+sen1+sentence1+"\n"+sen2+sentence2
+            da["query"] =  prompt+"\n"+"\n"+sen1+sentence1+"\n"+sen2+sentence2
             writer.write(da)
      print("proMQ2Q_test finished ")
 
@@ -464,7 +463,7 @@ def proFID_test():#path1 是原始数据文件，path2是生成的文件,处理t
             sentence = preprocess_v3(data[i][1])
             da = {}
             da["id"] = int(data[i][0]+1)
-            da["processed_query"] = prompt+"\n"+"\n"+sentence
+            da["query"] = prompt+"\n"+"\n"+sentence
             da["answer"] = FID_answer_change[str(data[i][2])]
             da["label"] = "FID"
             writer.write(da)
@@ -478,7 +477,7 @@ def proMDD_test():
         for i in range(len(data)):
             da = {}
             da["id"] = int(i)
-            da ["processed_query"] = prompt+'\n'+"\n"+preprocess_v3(data[i][0])
+            da ["query"] = prompt+'\n'+"\n"+preprocess_v3(data[i][0])
             da["answer"] = MDD_answer_change[data[i][1]]
             da["label"] = "MDD"
             writer.write(da)
@@ -496,7 +495,7 @@ def proOHSD_test():
             da = {}
             da["id"] = i
             da["label"] = "OHSD"
-            da["processed_query"] = prompt+preprocess_v3(data[i][0])
+            da["query"] = prompt+preprocess_v3(data[i][0])
             writer.write(da)
     print("proOHSD_test finished")
 def proOOLD_test():
@@ -512,7 +511,7 @@ def proOOLD_test():
             da = {}
             da["id"] = i
             da["label"] = "OOLD"
-            da["processed_query"] = prompt+preprocess_v3(data[i][0])
+            da["query"] = prompt+preprocess_v3(data[i][0])
             writer.write(da)
     print("proOOLD_test finished")
 def proDIAG_test():#处理tsv、csv原始数据
@@ -530,7 +529,7 @@ def proDIAG_test():#处理tsv、csv原始数据
                 da = {}
                 da["id"] = int(data[i][0])
                 da["label"] = "DIAG"
-                da["processed_query"] =  prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
+                da["query"] =  prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
                 writer.write(da)
     print("proDIAG_dev finished")
 # def proXNLI_test():#处理tsv、csv原始数据
@@ -548,7 +547,7 @@ def proDIAG_test():#处理tsv、csv原始数据
 #                 da = {}
 #                 da["id"] = int(data[i][0])
 #                 da["label"] = "XNLI"
-#                 da["processed_query"] = prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
+#                 da["query"] = prompt+'\n'+'\n'+sen1+sentence1+'\n'+sen2+sentence2
 #                 writer.write(da)
 #     print("proXNLI_test finished")
 def merge_all(path,path1):
@@ -565,7 +564,7 @@ def merge_all(path,path1):
                     id = dir_name+f"-{start}"
                     da["id"] =str(id)
                     start+=1
-                    da["processed_query"] = data["processed_query"][i]
+                    da["query"] = data["query"][i]
                     da["answer"]=str(data["answer"][i])
                     writer.write(da)
         for dir in dirs1:
@@ -578,7 +577,7 @@ def merge_all(path,path1):
                     id = dir_name+f"-{start}"
                     da["id"] =str(id)
                     start+=1
-                    da["processed_query"] = data["processed_query"][i]
+                    da["query"] = data["query"][i]
                     da["answer"]=str(data["answer"][i])
                     writer.write(da)
     print("merge finished")

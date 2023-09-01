@@ -194,14 +194,13 @@ def preprocess_v3(text: str) -> str:
         text = re.sub("<br />", " ", text)
         # remove html markup
         text = re.sub("</?[^>]+>", " ", text)
-
+    # print(text)
     if map_hindi_numbers_to_arabic:
         text = text.translate(HINDI_TO_ARABIC_MAP)
-
     # remove repeated characters >2
-    if remove_non_digit_repetition:
-        text = _remove_non_digit_repetition(text)
-
+    # if remove_non_digit_repetition:
+    #     text = _remove_non_digit_repetition(text)   
+    # print(text)
     # insert whitespace before and after all non Arabic digits or English Digits and Alphabet and the 2 brackets
     if insert_white_spaces:
         text = re.sub(
@@ -242,7 +241,6 @@ def preprocess_v3(text: str) -> str:
     #             new_text.append(farasa_segmenter1.segment(word))
     #     text = " ".join(new_text)
     norm_text = text
-
     if not norm_text.strip():
         norm_text = text1
         # raise ValueError("Text `%s` cannot be processed!!!" % text)
@@ -250,61 +248,3 @@ def preprocess_v3(text: str) -> str:
     norm_text = norm_text.strip()
     # ALl the other models dont require Farasa Segmentation
     return norm_text
-# def _farasa_segment(text: str) -> str:
-#     line_farasa = text.split()
-#     segmented_line = []
-#     for index, word in enumerate(line_farasa):
-#         if word in ["[", "]"]:
-#             continue
-#         if word in ["رابط", "بريد", "مستخدم"] and line_farasa[index - 1] in [
-#             "[",
-#             "]",
-#         ]:
-#             segmented_line.append("[" + word + "]")
-#             continue
-#         if "+" not in word:
-#             segmented_line.append(word)
-#             continue
-#         segmented_word = _split_farasa_output(word)
-#         segmented_line.extend(segmented_word)
-
-#     return " ".join(segmented_line)
-# def _split_farasa_output(word: str) -> str:
-#     segmented_word = []
-#     temp_token = ""
-#     for i, c in enumerate(word):
-#         if c == "+":
-#             # if the token is KAF, it could be a suffix or prefix
-#             if temp_token == "ك":
-#                 # if we are at the second token, then KAF is surely a prefix
-#                 if i == 1:
-#                     segmented_word.append(temp_token + "+")
-#                     temp_token = ""
-#                 # If the KAF token is between 2 tokens
-#                 elif word[i - 2] == "+":
-#                     # if the previous token is prefix, then this KAF must be a prefix
-#                     if segmented_word[-1][-1] == "+":
-#                         segmented_word.append(temp_token + "+")
-#                         temp_token = ""
-#                     # else it is a suffix, this KAF could not be a second suffix
-#                     else:
-#                         segmented_word.append("+" + temp_token)
-#                         temp_token = ""
-#                 # if Kaf is at the end, this is handled with the statement after the loop
-#             elif temp_token in PREFIX_LIST:
-#                 segmented_word.append(temp_token + "+")
-#                 temp_token = ""
-#             elif temp_token in SUFFIX_LIST:
-#                 segmented_word.append("+" + temp_token)
-#                 temp_token = ""
-#             else:
-#                 segmented_word.append(temp_token)
-#                 temp_token = ""
-#             continue
-#         temp_token += c
-#     if temp_token != "":
-#         if temp_token in SUFFIX_LIST:
-#             segmented_word.append("+" + temp_token)
-#         else:
-#             segmented_word.append(temp_token)
-#     return segmented_word
