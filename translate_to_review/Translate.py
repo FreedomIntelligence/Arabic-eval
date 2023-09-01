@@ -16,7 +16,8 @@ import multiprocessing as mp
 import os
 import ssl
 import sys
-
+import jieba
+import langid
 from gpt import GPT
 '''
 如果没有这个包：
@@ -27,9 +28,21 @@ APP_KEY = '12a26fe7221551a3'
 APP_SECRET = 'o8QZOrfTI5nTAkDrW1n43EjzCSLbXfLa'
 data = 0
 lang = 'Chinese'
-mul = 5
+mul = 3
 blo = True
-path = "llama-v2.1-scoring/"
+path = "llama-ace-v5.0_vs._jais-13b-chat/"
+model1 = "llama-ace-v5.0"
+model2 =  "jais-13b-chat"
+def is_chinese(text):
+    # 将文本分词，因为中文分词对后续判断很重要
+    words = jieba.lcut(text)
+    # 判断分词后的列表中是否全为中文字符
+    return all(w.encode().isdigit() for w in words)
+def is_arabic(text):
+    # 使用langid库来判断文本所属的语言
+    language = langid.classify(text)
+    # 如果结果是“ar”，则表示该文本是阿拉伯文
+    return language == 'ar'
 def connect(idx,answer):
     text = answer[idx]
     prompt = "Help me translate the original text to {} following " \
@@ -45,6 +58,11 @@ def connect(idx,answer):
     # print(flag, trans_text)
     if not flag:
         raise ValueError(f"Failed: {trans_text}")
+    if is_arabic(trans_text):
+        connect(idx,answer)
+    # if not is_chinese(trans_text):
+    #     trans_text = connect(idx,answer)
+        # trans_text = connect(idx,answer)
     return trans_text
 # def connect():
 #     # text = answer[idx]
@@ -100,9 +118,6 @@ def get_jsonl_classification(i):#put results in a json
             da = {}
             da["id"] = int(i)
             da['label']=label[i]
-            da["query"] = query_trans
-            da["chatgpt"] = trans_answer1
-            da["ourmodel"] = trans_answer2
             s = output[i].split('\n')[0]
             s = output[i].split('\n')[-1]
             if s =='Assistant 1 is worse than Assistant 2':
@@ -111,6 +126,9 @@ def get_jsonl_classification(i):#put results in a json
                 da['winner'] = assistant1[i]
             else:
                 da["winner"] = "equal"
+            da["query"] = query_trans
+            da[model1] = trans_answer1
+            da[model2] = trans_answer2
             writer.write(da)
 
 def get_jsonl_scoring(i):#put results in a json 
@@ -125,21 +143,26 @@ def get_jsonl_scoring(i):#put results in a json
             da = {}
             da["id"] = int(i)
             da['label']=label[i]
-            da["query"] = query_trans
-            da["chatgpt"] = trans_answer1
-            da["ourmodel"] = trans_answer2
+
             s = output[i].split('\n')[0]
             s = s.split(' ')
             score1 = s[0]
             score2 = s[1]
-            da[f'{assistant1[i]} score'] = score1
-            da[f'{assistant2[i]} score'] = score2
+            if assistant1[i] ==model1:
+                da[f'{assistant1[i]} score'] = score1
+                da[f'{assistant2[i]} score'] = score2
+            else:
+                da[f'{assistant2[i]} score'] = score2
+                da[f'{assistant1[i]} score'] = score1
+            da["query"] = query_trans
+            da[model1] = trans_answer1
+            da[model2] = trans_answer2
             writer.write(da)
 
 def scoring():
     result = 0
     if not os.path.exists(path+"scoring.jsonl"):
-        with jsonlines.open(path+"scoring.jsonl",'a') as writer:
+        with jsonlines.open(path+"scoring.jsonl",'w') as writer:
             da = ""
     data = []
     with mp.Pool(processes=mul) as pool:
@@ -150,7 +173,7 @@ def scoring():
 def classification_cot():
     result = 0
     if not os.path.exists(path+"classification_cot.jsonl"):
-        with jsonlines.open(path+"classification_cot.jsonl",'a') as writer:
+        with jsonlines.open(path+"classification_cot.jsonl",'w') as writer:
             da = ""
     data = []
     with mp.Pool(processes=mul) as pool:
@@ -181,12 +204,11 @@ def create_json(file2):
     print("Finished!")
  
 if __name__ == '__main__':
-    # answer1,answer2,assistant1,assistant2,output,query,label= getqArray()
+    answer1,answer2,assistant1,assistant2,output,query,label= getqArray()
     # #要运行程序，需要修改处：
     # #1.修改path，path路径下存放两个jsonl文件：combine和outputs0
     # #2.若要处理classfication_cot结果，运行classification_cot(),处理scoring结果，运行scoring()
-    # # scoring()
-    # # sortup_scoring()
-    # # string1,string2=scoring()
-    # # sortup(string1,string2)
-    print(connect())
+    # #3.将model1 and model2修改，model1是combine里面answer1对应模型名字， model2是combine里面answer2对应模型名字，如果使用vs的命名方法，那么model1和model2分别是vs两边的名字
+    sortup(scoring())
+    # print(connect())
+    scoring()
