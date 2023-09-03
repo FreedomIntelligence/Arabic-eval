@@ -9,7 +9,7 @@ import html
 import logging
 import re
 from typing import List
-from farasa.segmenter import FarasaSegmenter
+#from farasa.segmenter import FarasaSegmenter
 PREFIX_LIST = [
     "ال",
     "و",
