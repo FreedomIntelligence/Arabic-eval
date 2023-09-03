@@ -1,0 +1,607 @@
+{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 1e-05,
+        "epoch": 6,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt1/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.998843227829301,
+        "spearman": 0.9981383820407191,
+        "lr": 1e-05,
+        "epoch": 6,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt1/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.8259683226271584,
+        "spearman": 0.8236276464864398,
+        "lr": 1e-05,
+        "epoch": 6,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt1/SVREG_original_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 1e-05,
+        "epoch": 9,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt2/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.9999999999999998,
+        "spearman": 1.0,
+        "lr": 1e-05,
+        "epoch": 9,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt2/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.7917826505603942,
+        "spearman": 0.7566133012964164,
+        "lr": 1e-05,
+        "epoch": 9,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt2/SVREG_original_dev.jsonl"
+    }
+}{
+    "MQ2Q_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 1e-06,
+        "epoch": 2,
+        "bsz": 64,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/MQ2Q/ckpt1/MQ2Q_test.jsonl"
+    }
+}{
+    "MQ2Q_train_dev.jsonl": {
+        "f1": 0.9645522388059701,
+        "acc": 0.9683069224353628,
+        "lr": 1e-06,
+        "epoch": 2,
+        "bsz": 64,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/MQ2Q/ckpt1/MQ2Q_train_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 1e-05,
+        "epoch": 12,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt3/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.9999999999999998,
+        "spearman": 1.0,
+        "lr": 1e-05,
+        "epoch": 12,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt3/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.8221953102249031,
+        "spearman": 0.7934114747625659,
+        "lr": 1e-05,
+        "epoch": 12,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt3/SVREG_original_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 2e-05,
+        "epoch": 6,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt4/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.9996163288656927,
+        "spearman": 0.9982684577344632,
+        "lr": 2e-05,
+        "epoch": 6,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt4/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.8268196410859413,
+        "spearman": 0.8142650508156141,
+        "lr": 2e-05,
+        "epoch": 6,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt4/SVREG_original_dev.jsonl"
+    }
+}{
+    "MQ2Q_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 2e-06,
+        "epoch": 2,
+        "bsz": 64,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/MQ2Q/ckpt2/MQ2Q_test.jsonl"
+    }
+}{
+    "MQ2Q_train_dev.jsonl": {
+        "f1": 0.9700374531835206,
+        "acc": 0.9733110925771477,
+        "lr": 2e-06,
+        "epoch": 2,
+        "bsz": 64,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/MQ2Q/ckpt2/MQ2Q_train_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 2e-05,
+        "epoch": 9,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt5/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.9999999999999998,
+        "spearman": 1.0,
+        "lr": 2e-05,
+        "epoch": 9,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt5/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.7961912045853228,
+        "spearman": 0.7837290968036469,
+        "lr": 2e-05,
+        "epoch": 9,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt5/SVREG_original_dev.jsonl"
+    }
+}{
+    "MQ2Q_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 1e-05,
+        "epoch": 2,
+        "bsz": 64,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/MQ2Q/ckpt3/MQ2Q_test.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 2e-05,
+        "epoch": 12,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt6/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.9999999999999998,
+        "spearman": 1.0,
+        "lr": 2e-05,
+        "epoch": 12,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt6/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.8190303163072348,
+        "spearman": 0.8116173838300937,
+        "lr": 2e-05,
+        "epoch": 12,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt6/SVREG_original_dev.jsonl"
+    }
+}{
+    "MQ2Q_train_dev.jsonl": {
+        "f1": 0.9681647940074907,
+        "acc": 0.9716430358632193,
+        "lr": 1e-05,
+        "epoch": 2,
+        "bsz": 64,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/MQ2Q/ckpt3/MQ2Q_train_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 5e-05,
+        "epoch": 6,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt7/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.9757287834001132,
+        "spearman": 0.9666639230240702,
+        "lr": 5e-05,
+        "epoch": 6,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt7/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.7146756240281296,
+        "spearman": 0.7131717592432771,
+        "lr": 5e-05,
+        "epoch": 6,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt7/SVREG_original_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 5e-05,
+        "epoch": 9,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt8/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.618803916705956,
+        "spearman": 0.6047928296745673,
+        "lr": 5e-05,
+        "epoch": 9,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt8/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.5453509429072392,
+        "spearman": 0.5208293846328202,
+        "lr": 5e-05,
+        "epoch": 9,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt8/SVREG_original_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 5e-05,
+        "epoch": 12,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt9/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.9999999999999998,
+        "spearman": 1.0,
+        "lr": 5e-05,
+        "epoch": 12,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt9/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.7434801080722538,
+        "spearman": 0.7371700954979749,
+        "lr": 5e-05,
+        "epoch": 12,
+        "bsz": 16,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt9/SVREG_original_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 1e-05,
+        "epoch": 6,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt10/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.998310406667372,
+        "spearman": 0.9963310390729091,
+        "lr": 1e-05,
+        "epoch": 6,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt10/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.8547043405006001,
+        "spearman": 0.8408219537239415,
+        "lr": 1e-05,
+        "epoch": 6,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt10/SVREG_original_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 1e-05,
+        "epoch": 9,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt11/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.9999999999999998,
+        "spearman": 1.0,
+        "lr": 1e-05,
+        "epoch": 9,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt11/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.8418965195751358,
+        "spearman": 0.8239266985887801,
+        "lr": 1e-05,
+        "epoch": 9,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt11/SVREG_original_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 1e-05,
+        "epoch": 12,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt12/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.9999999999999998,
+        "spearman": 1.0,
+        "lr": 1e-05,
+        "epoch": 12,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt12/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.8317364423140867,
+        "spearman": 0.8083167189369348,
+        "lr": 1e-05,
+        "epoch": 12,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt12/SVREG_original_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 2e-05,
+        "epoch": 6,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt13/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.9996312679375847,
+        "spearman": 0.999551786080006,
+        "lr": 2e-05,
+        "epoch": 6,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt13/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.8253241723945326,
+        "spearman": 0.8054553617673057,
+        "lr": 2e-05,
+        "epoch": 6,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt13/SVREG_original_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 2e-05,
+        "epoch": 9,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt14/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.9999999999999998,
+        "spearman": 1.0,
+        "lr": 2e-05,
+        "epoch": 9,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt14/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.7994923175656224,
+        "spearman": 0.7634323123888457,
+        "lr": 2e-05,
+        "epoch": 9,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt14/SVREG_original_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 2e-05,
+        "epoch": 12,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt15/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.9999999999999998,
+        "spearman": 1.0,
+        "lr": 2e-05,
+        "epoch": 12,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt15/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.8212226253635038,
+        "spearman": 0.7964472509398571,
+        "lr": 2e-05,
+        "epoch": 12,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt15/SVREG_original_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 5e-05,
+        "epoch": 6,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt16/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.7864526655334981,
+        "spearman": 0.7618013580936402,
+        "lr": 5e-05,
+        "epoch": 6,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt16/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.6928730609807633,
+        "spearman": 0.679422705358059,
+        "lr": 5e-05,
+        "epoch": 6,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt16/SVREG_original_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 5e-05,
+        "epoch": 9,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt17/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.9984040106893429,
+        "spearman": 0.9978310378744685,
+        "lr": 5e-05,
+        "epoch": 9,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt17/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.740529011666847,
+        "spearman": 0.7439202441097952,
+        "lr": 5e-05,
+        "epoch": 9,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt17/SVREG_original_dev.jsonl"
+    }
+}{
+    "SVREG_test.jsonl": {
+        "f1": 0,
+        "acc": 0,
+        "lr": 5e-05,
+        "epoch": 12,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt18/SVREG_test.jsonl"
+    }
+}{
+    "SVREG_train_dev.jsonl": {
+        "pearson": 0.9999999999999998,
+        "spearman": 1.0,
+        "lr": 5e-05,
+        "epoch": 12,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt18/SVREG_train_dev.jsonl"
+    }
+}{
+    "SVREG_original_dev.jsonl": {
+        "pearson": 0.7977387297807126,
+        "spearman": 0.7710382487070678,
+        "lr": 5e-05,
+        "epoch": 12,
+        "bsz": 32,
+        "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt18/SVREG_original_dev.jsonl"
+    }
+}{"f1": 0, "acc": 0, "lr": 1e-06, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt19/SVREG_test.jsonl"}
+{"pearson": 0.9487552788490303, "spearman": 0.928535783815456, "lr": 1e-06, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt19/SVREG_train_dev.jsonl"}
+{"pearson": 0.8801086791494408, "spearman": 0.8620583723006796, "lr": 1e-06, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt19/SVREG_original_dev.jsonl"}
+{"f1": 0, "acc": 0, "lr": 1e-06, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt20/SVREG_test.jsonl"}
+{"pearson": 0.9495821206730213, "spearman": 0.9281945192100565, "lr": 1e-06, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt20/SVREG_train_dev.jsonl"}
+{"pearson": 0.8800449467427961, "spearman": 0.8632001696508577, "lr": 1e-06, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt20/SVREG_original_dev.jsonl"}
+{"f1": 0, "acc": 0, "lr": 1e-06, "epoch": 6, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt21/SVREG_test.jsonl"}
+{"pearson": 0.9888058273057181, "spearman": 0.9832084033805019, "lr": 1e-06, "epoch": 6, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt21/SVREG_train_dev.jsonl"}
+{"pearson": 0.8596676849893614, "spearman": 0.8381031500237449, "lr": 1e-06, "epoch": 6, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt21/SVREG_original_dev.jsonl"}
+{"f1": 0, "acc": 0, "lr": 1e-06, "epoch": 3, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt22/SVREG_test.jsonl"}
+{"pearson": 0.9371736243094808, "spearman": 0.9225080309960249, "lr": 1e-06, "epoch": 3, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt22/SVREG_train_dev.jsonl"}
+{"pearson": 0.862104193192205, "spearman": 0.837805175288538, "lr": 1e-06, "epoch": 3, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt22/SVREG_original_dev.jsonl"}
+{"f1": 0, "acc": 0, "lr": 1e-06, "epoch": 6, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt23/SVREG_test.jsonl"}
+{"pearson": 0.980083616524543, "spearman": 0.9710823527670543, "lr": 1e-06, "epoch": 6, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt23/SVREG_train_dev.jsonl"}
+{"pearson": 0.8637391757215751, "spearman": 0.8459412291834308, "lr": 1e-06, "epoch": 6, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt23/SVREG_original_dev.jsonl"}
+{"f1": 0, "acc": 0, "lr": 2e-06, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt24/SVREG_test.jsonl"}
+{"pearson": 0.9784760638000614, "spearman": 0.960077944794822, "lr": 2e-06, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt24/SVREG_train_dev.jsonl"}
+{"pearson": 0.8631035274221505, "spearman": 0.8509555119837586, "lr": 2e-06, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt24/SVREG_original_dev.jsonl"}
+{"f1": 0, "acc": 0, "lr": 2e-06, "epoch": 6, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt25/SVREG_test.jsonl"}
+{"pearson": 0.9969779511642342, "spearman": 0.99536877021864, "lr": 2e-06, "epoch": 6, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt25/SVREG_train_dev.jsonl"}
+{"pearson": 0.8477922902706114, "spearman": 0.8355417584911061, "lr": 2e-06, "epoch": 6, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt25/SVREG_original_dev.jsonl"}
+{"f1": 0, "acc": 0, "lr": 2e-06, "epoch": 3, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt26/SVREG_test.jsonl"}
+{"pearson": 0.9623191855927515, "spearman": 0.9376891168966583, "lr": 2e-06, "epoch": 3, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt26/SVREG_train_dev.jsonl"}
+{"pearson": 0.8602241328553225, "spearman": 0.8381737187597124, "lr": 2e-06, "epoch": 3, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt26/SVREG_original_dev.jsonl"}
+{"f1": 0.3642646566639958, "acc": 0.37173076923076925, "lr": 1e-06, "epoch": 1, "bsz": 64, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/MDD/ckpt1/MDD_test.jsonl"}
+{"f1": 0.4179996947220958, "acc": 0.4216346153846154, "lr": 1e-06, "epoch": 1, "bsz": 64, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/MDD/ckpt1/MDD_train_dev.jsonl"}
+{"f1": 0.39207756604023125, "acc": 0.3948076923076923, "lr": 1e-06, "epoch": 1, "bsz": 64, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/MDD/ckpt1/MDD_original_dev.jsonl"}
+{"f1": 0, "acc": 0, "lr": 2e-06, "epoch": 6, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt27/SVREG_test.jsonl"}
+{"pearson": 0.9950241338173488, "spearman": 0.9911915831497063, "lr": 2e-06, "epoch": 6, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt27/SVREG_train_dev.jsonl"}
+{"pearson": 0.84804975003961, "spearman": 0.8384497886153045, "lr": 2e-06, "epoch": 6, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt27/SVREG_original_dev.jsonl"}
+{"SVREG_test.jsonl": {"f1": 0, "acc": 0, "lr": 5e-06, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt28/SVREG_test.jsonl"}}
+{"SVREG_train_dev.jsonl": {"pearson": 0.9696748038182674, "spearman": 0.9622767128014985, "lr": 5e-06, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt28/SVREG_train_dev.jsonl"}}
+{"SVREG_original_dev.jsonl": {"pearson": 0.8373074028376584, "spearman": 0.8115681061669104, "lr": 5e-06, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt28/SVREG_original_dev.jsonl"}}
+{"SVREG_test.jsonl": {"f1": 0, "acc": 0, "lr": 5e-06, "epoch": 6, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt29/SVREG_test.jsonl"}}
+{"SVREG_train_dev.jsonl": {"pearson": 0.9992513277977659, "spearman": 0.9980118062624628, "lr": 5e-06, "epoch": 6, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt29/SVREG_train_dev.jsonl"}}
+{"SVREG_original_dev.jsonl": {"pearson": 0.8363511381662225, "spearman": 0.8115763159391857, "lr": 5e-06, "epoch": 6, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt29/SVREG_original_dev.jsonl"}}
+{"SVREG_test.jsonl": {"f1": 0, "acc": 0, "lr": 5e-06, "epoch": 3, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt30/SVREG_test.jsonl"}}
+{"SVREG_train_dev.jsonl": {"pearson": 0.9646000505049639, "spearman": 0.9450600651544263, "lr": 5e-06, "epoch": 3, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt30/SVREG_train_dev.jsonl"}}
+{"SVREG_original_dev.jsonl": {"pearson": 0.8403312312520932, "spearman": 0.8238482663120306, "lr": 5e-06, "epoch": 3, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt30/SVREG_original_dev.jsonl"}}
+{"SVREG_test.jsonl": {"f1": 0, "acc": 0, "lr": 5e-06, "epoch": 6, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt31/SVREG_test.jsonl"}}
+{"SVREG_train_dev.jsonl": {"pearson": 0.996290711164419, "spearman": 0.9934641940757787, "lr": 5e-06, "epoch": 6, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt31/SVREG_train_dev.jsonl"}}
+{"SVREG_original_dev.jsonl": {"pearson": 0.8713245369785608, "spearman": 0.8623057860192596, "lr": 5e-06, "epoch": 6, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt31/SVREG_original_dev.jsonl"}}
+{"SVREG_test.jsonl": {"f1": 0, "acc": 0, "lr": 7e-06, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt32/SVREG_test.jsonl"}}
+{"SVREG_train_dev.jsonl": {"pearson": 0.983585358044895, "spearman": 0.977728340514267, "lr": 7e-06, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt32/SVREG_train_dev.jsonl"}}
+{"SVREG_original_dev.jsonl": {"pearson": 0.8433513219764823, "spearman": 0.8296450120029908, "lr": 7e-06, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt32/SVREG_original_dev.jsonl"}}
+{"SVREG_test.jsonl": {"f1": 0, "acc": 0, "lr": 7e-06, "epoch": 6, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt33/SVREG_test.jsonl"}}
+{"SVREG_train_dev.jsonl": {"pearson": 0.9996322367188516, "spearman": 0.9997433422686627, "lr": 7e-06, "epoch": 6, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt33/SVREG_train_dev.jsonl"}}
+{"SVREG_original_dev.jsonl": {"pearson": 0.8436004832654818, "spearman": 0.8166536486902961, "lr": 7e-06, "epoch": 6, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt33/SVREG_original_dev.jsonl"}}
+{"SVREG_test.jsonl": {"f1": 0, "acc": 0, "lr": 7e-06, "epoch": 3, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt34/SVREG_test.jsonl"}}
+{"SVREG_train_dev.jsonl": {"pearson": 0.9764735317114883, "spearman": 0.9549421534887409, "lr": 7e-06, "epoch": 3, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt34/SVREG_train_dev.jsonl"}}
+{"SVREG_original_dev.jsonl": {"pearson": 0.8429494589368881, "spearman": 0.8363172041066742, "lr": 7e-06, "epoch": 3, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt34/SVREG_original_dev.jsonl"}}
+{"f1": 0.5143281493938631, "acc": 0.5148076923076923, "lr": 5e-06, "epoch": 1, "bsz": 64, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/MDD/ckpt2/MDD_test.jsonl"}
+{"f1": 0.5980270973510816, "acc": 0.5980769230769231, "lr": 5e-06, "epoch": 1, "bsz": 64, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/MDD/ckpt2/MDD_train_dev.jsonl"}
+{"f1": 0.5261964205275627, "acc": 0.5248076923076923, "lr": 5e-06, "epoch": 1, "bsz": 64, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/MDD/ckpt2/MDD_original_dev.jsonl"}
+{"SVREG_test.jsonl": {"f1": 0, "acc": 0, "lr": 7e-06, "epoch": 6, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt35/SVREG_test.jsonl"}}
+{"SVREG_train_dev.jsonl": {"pearson": 0.9995093039564192, "spearman": 0.999381857018298, "lr": 7e-06, "epoch": 6, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt35/SVREG_train_dev.jsonl"}}
+{"SVREG_original_dev.jsonl": {"pearson": 0.828040917422186, "spearman": 0.8175738138185402, "lr": 7e-06, "epoch": 6, "bsz": 32, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt35/SVREG_original_dev.jsonl"}}
+{"SVREG_test.jsonl": {"f1": 0, "acc": 0, "lr": 1e-07, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt36/SVREG_test.jsonl"}}
+{"SVREG_test.jsonl": {"f1": 0, "acc": 0, "lr": 1e-07, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt37/SVREG_test.jsonl"}}
+{"SVREG_train_dev.jsonl": {"pearson": 0.037744052443029655, "spearman": -0.0191966356751952, "lr": 1e-07, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt37/SVREG_train_dev.jsonl"}}
+{"SVREG_original_dev.jsonl": {"pearson": -0.09889448307185231, "spearman": -0.1997046903216846, "lr": 1e-07, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt37/SVREG_original_dev.jsonl"}}
+{"SVREG_test.jsonl": {"f1": 0, "acc": 0, "lr": 2e-07, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt38/SVREG_test.jsonl"}}
+{"SVREG_train_dev.jsonl": {"pearson": 0.8382519059486183, "spearman": 0.8294693500313303, "lr": 2e-07, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt38/SVREG_train_dev.jsonl"}}
+{"SVREG_original_dev.jsonl": {"pearson": 0.7857462684468064, "spearman": 0.7666201258881917, "lr": 2e-07, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt38/SVREG_original_dev.jsonl"}}
+{"SVREG_test.jsonl": {"f1": 0, "acc": 0, "lr": 5e-07, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt39/SVREG_test.jsonl"}}
+{"SVREG_train_dev.jsonl": {"pearson": 0.9319281756384528, "spearman": 0.9154337182990566, "lr": 5e-07, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt39/SVREG_train_dev.jsonl"}}
+{"SVREG_original_dev.jsonl": {"pearson": 0.8646369280559141, "spearman": 0.8491222625922439, "lr": 5e-07, "epoch": 3, "bsz": 16, "file_path": "/home/xuj0h/hh/LLM-eval-pipeline_hh/Arabic-eval/ALUE_main/data_generate_all/SVREG/ckpt39/SVREG_original_dev.jsonl"}}
