@@ -322,4 +322,4 @@ def run(task_name,base_dir,generate_dir,output_dir):
 
 
 if __name__ == "__main__":
-    run('diag','./v2/DIAG_original_dev.jsonl','./v2/DIAG_original_dev.jsonl','./results/fd')
+    run('sec','./v2/SEC_original_dev.jsonl','./v2/SEC_original_dev.jsonl','./results/fd')
