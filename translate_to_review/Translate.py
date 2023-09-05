@@ -25,9 +25,6 @@ from gpt import GPT
 如果没有这个包：
 pip install git+https://github.com/FreedomIntelligence/GPT.git
 '''
-YOUDAO_URL = 'https://openapi.youdao.com/v2/api'
-APP_KEY = '12a26fe7221551a3'
-APP_SECRET = 'o8QZOrfTI5nTAkDrW1n43EjzCSLbXfLa'
 data = 0
 lang = 'Chinese'
 mul = 3
