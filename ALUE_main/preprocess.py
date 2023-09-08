@@ -89,7 +89,7 @@ EMAIL_REGEXES = [r"[\w-]+@([\w-]+\.)+[\w-]+", r"\S+@\S+"]
 REDUNDANT_PUNCT_PATTERN = (
     r"([!\"#\$%\'\(\)\*\+,\.:;\-<=·>?@\[\\\]\^_ـ`{\|}~—٪’،؟`୍“؛”ۚ【»؛\s+«–…‘]{2,})"
 )
-
+REJECTED_CHARS_REGEX = r"[^0-9\u0621-\u063A\u0640-\u066C\u0671-\u0674a-zA-Z\[\]!\"#\$%\'\(\)\*\+,\.:;\-<=·>?@\[\\\]\^_ـ`{\|}~—٪’،؟`୍“؛”ۚ»؛\s+«–…‘]"
 REGEX_TATWEEL = r"(\D)\1{2,}"
 MULTIPLE_CHAR_PATTERN = re.compile(r"(\D)\1{2,}", re.DOTALL)
 
@@ -227,7 +227,105 @@ def preprocess_v3(text: str) -> str:
         )
 
     # remove unwanted characters
-    # text = re.sub(self_REJECTED_CHARS_REGEX, " ", text)
+    text = re.sub(REJECTED_CHARS_REGEX, " ", text)
+
+    # remove extra spaces
+    text = " ".join(text.replace("\uFE0F", "").split())
+    # farasa_segmenter1 = FarasaSegmenter(interactive=True)
+    # if keep_emojis:
+    #     new_text = []
+    #     for word in text.split():
+    #         if word in list(self_emoji.get_emoji_unicode_dict("en").keys()):
+    #             new_text.append(word)
+    #         else:
+    #             new_text.append(farasa_segmenter1.segment(word))
+    #     text = " ".join(new_text)
+    norm_text = text
+    if not norm_text.strip():
+        norm_text = text1
+        # raise ValueError("Text `%s` cannot be processed!!!" % text)
+    norm_text = normalize_text(norm_text)
+    norm_text = norm_text.strip()
+    # ALl the other models dont require Farasa Segmentation
+    return norm_text
+
+def preprocess_v3(text: str) -> str:
+    text1 = text
+    remove_html_markup= True,
+    replace_urls_emails_mentions = True,
+    strip_tashkeel = True,
+    strip_tatweel = True,
+    insert_white_spaces = True,
+    remove_non_digit_repetition = True,
+    keep_emojis = True,
+    replace_slash_with_dash = True,
+    map_hindi_numbers_to_arabic = True,
+    apply_farasa_segmentation = True,
+    # if keep_emojis:
+    #     import emoji
+
+    #     self_emoji = emoji
+    #     emoji_regex = "".join(list(self_emoji.get_emoji_unicode_dict("en").keys()))
+
+    #     self_REJECTED_CHARS_REGEX = "[^%s%s]" % (CHARS_REGEXV2,emoji_regex)
+
+    text = str(text)
+    text = html.unescape(text)
+    if strip_tashkeel:
+        text = araby.strip_tashkeel(text)
+    if strip_tatweel:
+        text = araby.strip_tatweel(text)
+
+    if replace_urls_emails_mentions:
+        # replace all possible URLs
+        for reg in URL_REGEXES:
+            text = re.sub(reg, " [رابط] ", text)
+        # REplace Emails with [بريد]
+        for reg in EMAIL_REGEXES:
+            text = re.sub(reg, " [بريد] ", text)
+        # replace mentions with [مستخدم]
+        text = re.sub(USER_MENTION_REGEX, " [مستخدم] ", text)
+
+    if remove_html_markup:
+        # remove html line breaks
+        text = re.sub("<br />", " ", text)
+        # remove html markup
+        text = re.sub("</?[^>]+>", " ", text)
+    # print(text)
+    if map_hindi_numbers_to_arabic:
+        text = text.translate(HINDI_TO_ARABIC_MAP)
+    # remove repeated characters >2
+    # if remove_non_digit_repetition:
+    #     text = _remove_non_digit_repetition(text)   
+    # print(text)
+    # insert whitespace before and after all non Arabic digits or English Digits and Alphabet and the 2 brackets
+    if insert_white_spaces:
+        text = re.sub(
+            "([^0-9\u0621-\u063A\u0641-\u064A\u0660-\u0669a-zA-Z ])",
+            r" \1 ",
+            text,
+        )
+
+        # re-fix brackets
+        text = text.replace("[ رابط ]", "[رابط]")
+        text = text.replace("[ بريد ]", "[بريد]")
+        text = text.replace("[ مستخدم ]", "[مستخدم]")
+
+        # insert whitespace between words and numbers or numbers and words
+        text = re.sub(
+            "(\d+)([\u0621-\u063A\u0641-\u064A\u066A-\u066C\u0654-\u0655]+)",
+            r" \1 \2 ",
+            text,
+        )
+        text = re.sub(
+            "([\u0621-\u063A\u0641-\u064A\u066A-\u066C\u0654-\u0655]+)(\d+)",
+            r" \1 \2 ",
+            text,
+        )
+
+    # remove unwanted characters
+    #这句决定保不保留emoji，注释掉就会保留
+    text = re.sub(REJECTED_CHARS_REGEX, " ", text)
 
     # remove extra spaces
     text = " ".join(text.replace("\uFE0F", "").split())
