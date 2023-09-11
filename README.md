@@ -5,3 +5,5 @@ This folder has ALUE datasets and programs which can  process datasets into suit
 This program aims to translate the GPTreview results into English or Chinese.
 ## bert-baselines
 This program aims to get metrics by ourselves.You can get more detail in this folder.
+## eval_human
+This program aims to let native speakers to compare which model's generation is better. 
