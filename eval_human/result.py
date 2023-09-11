@@ -2,20 +2,42 @@ import json
 import pandas as pd
 import os
 import jsonlines
-path1 = "data/combine.jsonl"#原始数据路径
-dirs  =  os.listdir("./")
-for dir in dirs:
-    p = dir 
-    if len(dir.split('vs'))>=2:
-        break
-path2 = p+"/combine.jsonl_saved.json"#输出结果路径
+from streamli_qa_1 import *
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    '--path1',
+    default="./data/combine",
+    # required= True,
+    type=str,
+)
+parser.add_argument(
+    '--path2',
+    default="",
+    # required=True,
+    type=str,
+)
+parser.add_argument(
+    '--modela_name',
+    default="./data/combine",
+    # required= True,
+    type=str,
+)
+parser.add_argument(
+    '--modelb_name',
+    default="",
+    # required=True,
+    type=str,
+)
+args = parser.parse_args()
+path1 = args.path1#原始数据路径
+path2 = args.path2#结果统计文件路径
+modela_name = args.modela_name
+modelb_name = args.modelb_name
 with open(path2,'r',encoding = 'utf-8') as read_file:
     data = json.load(read_file)
 name_a = data["model_a_name"]
 name_b = data["model_b_name"]
-modela_name = input("请输入产生answer1的模型名字：")
-modelb_name = input("请输入产生answer2的模型名字：")
-path3 = modela_name + ' vs. '+modelb_name+"_processed_results"#输出结果文件夹
+path3 = 'processed_'+ modela_name +'vs'+modelb_name#输出结果文件夹
 if not os.path.isdir(path3):
     os.mkdir(path3)
 select = data["user_choices"]
@@ -29,10 +51,12 @@ winner_draw = []
 for item in (select.items()):
     if item[1] == 'model B':
         winner.append(name_b[int(item[0])])
-    else:
+    elif item[1]=='model A':
         winner.append(name_a[int(item[0])])
+    else:
+        winner.append('draw')
 for idx,i in enumerate(winner):
-    if (i=='chatgpt'):
+    if (i==modela_name):
         num_a+=1
         winner_a.append(idx)
     elif i =="draw":
