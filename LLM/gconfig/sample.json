@@ -1,0 +1,11 @@
+{
+  "do_sample": true,
+  "max_length": 2048,
+  "min_length": 20,
+  "min_new_tokens": 0,
+  "temperature": 1,
+  "top_k": 50,
+  "top_p": 1.0,
+  "repetition_penalty": 1.0,
+  "transformers_version": "4.29.0.dev0"
+}

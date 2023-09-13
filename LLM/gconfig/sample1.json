@@ -1,0 +1,6 @@
+{
+  "do_sample": true,
+  "max_length": 2048,
+  "temperature": 1,
+  "transformers_version": "4.29.0.dev0"
+}

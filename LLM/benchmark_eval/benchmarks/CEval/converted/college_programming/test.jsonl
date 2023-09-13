@@ -1,0 +1,342 @@
+{"query_id": 0, "query": "对于以下结构定义，++p->str中的++加在____\nstruct{\nint len;\nchar*str;\n}*P;.\nA. 指针 p 上\nB. 指针 str 上\nC. str 指的内容上\nD. 语法错误", "answer": ""}
+{"query_id": 1, "query": "下面关于m阶B树说法正确的是____①每个结点至少有两棵非空子树②树中每个结点至多有m-1个关键字；③所有叶子在同一层上；④当插入一个数据项引起B树结点分裂后，树长高一层。.\nA. ① ② ③\nB. ② ③\nC. ② ③ ④\nD. ③", "answer": ""}
+{"query_id": 2, "query": "对于具有n个项点的图，若采用邻接矩阵表示，则该矩阵的大小为____。.\nA. n\nB. n^2\nC. n-1\nD. (n-1)^2", "answer": ""}
+{"query_id": 3, "query": "置换-选择排序的作用是：____.\nA. 置换-选择排序是完成将一个磁盘文件排序成有序文件的有效的外排序算法\nB. 置换-选择排序生成的初始归并段长度是内存工作区的 2 倍\nC. 置换-选择排序用于生成外排序的初始归并段\nD. 置换-选择排序是对外排序中输入/归并/输出的并行处理", "answer": ""}
+{"query_id": 4, "query": "以下说法不正确的是____.\nA. public继承中派生类的成员函数可以访问基类中的私有成员\nB. private继承中派生类对象不允许向上转换\nC. 显式调用基类构造函数只能在派生类构造函数的初始化成员列表中进行\nD. 如果基类的某个构造函数被声明为私有，则不能在派生类中调用该私有构造函数", "answer": ""}
+{"query_id": 5, "query": "以下时间复杂度，____不是O(Nlog_2N).\nA. 快速挂序的最坏情况\nB. 堆排序的平均情况\nC. 归并排序的最坏情况\nD. 归并排序的最好情况", "answer": ""}
+{"query_id": 6, "query": "C++中，下列关于继承的描述，____是错误的。.\nA. 继承是基于对象操作的层面而不是类设计的层面上的\nB. 子类可以继承父类的公共行为\nC. 继承是通过重用现有的类来构建新的类的一个过程\nD. 将相关的类组织起来，从而可以共享类中的共同的数据和操作", "answer": ""}
+{"query_id": 7, "query": "一个顺序栈S,其栈顶指针为top,则将元素e入栈的操作是____。.\nA. *S->top=e;S->top++;\nB. S->top++;*S->top=e;\nC. *S->top=e;\nD. S->top=e;", "answer": ""}
+{"query_id": 8, "query": "假定在C++程序中有如下说明：\ndouble image[10][20];\n那么，下列c表达式会得到image数组的最后一个元素的地址？____.\nA. image[10][19]\nB. image[10][20]\nC. &image[9][19]\nD. &image[10][19]", "answer": ""}
+{"query_id": 9, "query": "在最坏情况下，二分查找算法的时间复杂度是____.\nA. O(1)\nB. O(N)\nC. O(log(N))\nD. $O(N^2)$", "answer": ""}
+{"query_id": 10, "query": "将长度为N的单链表链接在长度为M的单链表之后的算法的时间复杂度为____.\nA. O(1)\nB. O(N)\nC. O(M)\nD. O(M+N)", "answer": ""}
+{"query_id": 11, "query": "下列关于重载函数和虚函数的说法中，错误的是____.\nA. 重载函数在类型和参数数量上一定不相同，而覆盖的虚函数则要求参数的类型和个数、函数返回类型相同。\nB. 只有类的成员函数可以是虚函数，重载函数既可以是成员函数之间重载，也可以是全局函数之间重载。\nC. 构造函数可以重载，但不能是虚函数。\nD. 析构函数不能作为虚函数。", "answer": ""}
+{"query_id": 12, "query": "以下说法正确的是____.\nA. 同一个运算符可以被重载多次；\nB. C++已有的运算符都可以重载;\nC. 自增运算符重载时，重载函数不允许有输入参数；\nD. 运算符函数的返回类型不能声明为基本数据类型。", "answer": ""}
+{"query_id": 13, "query": "下面程序段的时间复杂度是____。\nfor(i=0;i<m;i++)\nfor(j=0;j<n;j++)\na[i][j]=i*j;.\nA. O(m^2)\nB. O(n^2)\nC. O(m*n)\nD. O(m+n)", "answer": ""}
+{"query_id": 14, "query": "某二叉树有N个节点，高度为，在其中插入一个新的节点，高度发生改变的节点个数最多为____.\nA. O(1)\nB. O(N)\nC. O(h)\nD. O(hlog_2N)", "answer": ""}
+{"query_id": 15, "query": "对已十分接近按键值排序的初始序列，插入法、归并法和一般的快速分类法对其排序，算法的时间复杂度各为____。.\nA. O(N)，O(N)，O(N)\nB. O(N)，O(Nlog_2N)，O(Nlog_2N)\nC. O(N)，O(Nlog_2N) O(N^2)\nD. O(N^2)，O(Nlog_2N)，O(N^2)", "answer": ""}
+{"query_id": 16, "query": "分别按照下列序列构造二叉查找树，与用其它三个序列所构造的结果不同的是____.\nA. ( 105, 84, 97， 63， 122, 118, 131 )\nB. ( 105, 122, 118, 131, 84, 63, 97 )\nC. ( 105, 63, 84, 97, 122, 118, 131 )\nD. ( 105, 84, 63, 97, 122, 131, 118 )", "answer": ""}
+{"query_id": 17, "query": "以下代码能够通过编译的是____.\nA. class A {\npublic:\nA* a; \n};\nint main() {A a; return 0;}\nB. class B {\npublic:\nB& b;\n};\nint main() {B b; return 0;}\nC. class C {\npublic:\n\t\tC c;\n};\nint main() {C c; return 0;}\nD. class E {};\nclass D {\n\tpublic:\n\t\t\tE& d;\n};\nint main() {D d; return 0;}", "answer": ""}
+{"query_id": 18, "query": "在C++语言中，自定义的标识符____.\nA. 能使用关键字并且不区分大小写\nB. 能使用关键字并且区分大小写\nC. 不能使用关键字并且不区分大小写\nD. 不能使用关键字并且区分大小写", "answer": ""}
+{"query_id": 19, "query": "若以一个大小为6的数组来实现循环队列，当前的rear和front的位置分别为0和3，当依次执行：两次出队、两次入队、一次出队后，当前rear和front位置分别是____.\nA. 5,1\nB. 2,5\nC. 2,0\nD. 4,0", "answer": ""}
+{"query_id": 20, "query": "已知函数定义的形式如下：\nstruct data f(void)\n{…}\n则函数f____.\nA. 没有参数，返回值是一个结构\nB. 有一个参数void,返回值是一个结构\nC. 没有参数，返回值是一个结构指针\nD. 有一个参数void,返回值是一个结构指针", "answer": ""}
+{"query_id": 21, "query": "下列关于哈希查找的说法正确的是____.\nA. 哈希函数构造得越复杂越好， 因为这样随机性好， 冲突小\nB. 除留余数法是所存哈希函数中最好的。\nC. 不存在特别好与坏的哈希函数， 视情况而定。\nD. 在哈希表中删除一个元素， 不管用何种方法解决冲突都只需简单地将该元素刪去即司", "answer": ""}
+{"query_id": 22, "query": "快速构建适用于不同场景的程序框架____.\nA. 行为型\nB. 结构型\nC. 组合型\nD. 创建型", "answer": ""}
+{"query_id": 23, "query": "在常用的描述二叉查找树的存储结构中，关键字值最大的结点____。.\nA. 左指针一定为空\nB. 右指针一定为空\nC. 左右指针均为空\nD. 左右指针均不为空", "answer": ""}
+{"query_id": 24, "query": "在C语言中，下列表达式的值最大的是____.\nA. sizeof('a');\nB. sizeof(97);\nC. sizeof(\"aaaa\");\nD. sizeof(97.0);", "answer": ""}
+{"query_id": 25, "query": "对于一个具有n个顶点和e条边的无向图，进行拓扑排序时，总的时间为____.\nA. n\nB. n+1\nC. n-1\nD. n+e", "answer": ""}
+{"query_id": 26, "query": "C++语言建立类族是通过____.\nA. 类的嵌套\nB. 类的继承\nC. 虚函数\nD. 抽象类", "answer": ""}
+{"query_id": 27, "query": "对于一个头指针为head的带头结点的单链表，判定该表为空表的条件是____.\nA. head==NULL\nB. head->next=NULL\nC. head->next==head\nD. head!=NULL", "answer": ""}
+{"query_id": 28, "query": "在public继承的情况下，派生类对象对基类中的public成员、protected成员和private成员的访问特性是____.\nA. 只有 public 成员可以访问\nB. 只有 private 成员不可以访问\nC. public 成员和 protected 成员可以访问\nD. 三种成员都可以访问", "answer": ""}
+{"query_id": 29, "query": "在c++中，定义了以下的一个类\nclass example\n{\nprivate:\nint data;\npublic:\nint set(int param);\n};\n下列操作____是正确的.\nA. example object;\nobject.data=10;\nB. example object;\ndata=object.set(10);\nC. example object;\nobject.data=object.set(10)\nD. example object;", "answer": ""}
+{"query_id": 30, "query": "#include<iostream.h>\nclass One\n{\npublic:\nvoid display(){cout<<\"1\"<<\"\";}\n};\nclass Two:public One\n{\npublic:\nvoid display(){cout<<\"2\"<<\"\";}\n};\nvoid main()\n{\nOne first;\nTwo second;\nfirst.display();\nsecond.display();\nOne *p=&first;\np->display();\np=&second;\np->display();\n}在\nC++中，以上程序的运行结果为____。.\nA. 1 1 1 2\nB. 1 2 1 2\nC. 1 2 1 1\nD. 2 1 1 2", "answer": ""}
+{"query_id": 31, "query": "以下对模板方法和策略模式说法不正确的是：____.\nA. 在设计思路上，模板方法模式优先考虑组合，策略模式优先考虑继承\nB. 使用模板方法可以定义抽象概念，拥有不同的实现\nC. 使用策略模式可以减小单一类承担的指责\nD. 使用模板方法和策略模式定义的抽象概念时，都直接使用接口类来引用这一概念", "answer": ""}
+{"query_id": 32, "query": "一个文件中的全局变量，如果不允许其他的文件引用，则需要在声明时加上____关键词。.\nA. auto\nB. register\nC. extern\nD. static", "answer": ""}
+{"query_id": 33, "query": "时间复杂度不受数据初始状态影响而恒为O(Nlog_2N)的是____.\nA. 堆排序\nB. 冒泡排序\nC. 希尔排序\nD. 快速排序", "answer": ""}
+{"query_id": 34, "query": "下列语句正确的是____.\nA. char a[2]={a};\nB. char 3a=\\0';\nC. char a[]='abc';\nD. char a= \"\\0\";", "answer": ""}
+{"query_id": 35, "query": "有如下程序段，则以下选项中哪一项不可能导致it失效：\n\t#include<vector>\n\tusing namespace std;\n\tint main(){\n\t\tvector<int>vec;\n\t\t...\n\t\tauto it=vec.begin()+5;//假设此时vec的长度大于5\n\t\t...\n\t}____.\nA. vec.push_back(2);\nB. vec.erase(vec.begin());\nC. vec.insert(it, 2);\nD. vec[5] = 2;", "answer": ""}
+{"query_id": 36, "query": "以下说法正确的是____.\nA. 在 二叉査找树中， 最大的元素一定存放在叶结点中\nB. 已知二叉树的前序遍历序列和后序遍历序列， 可以唯一确定这棵二叉树\nC. 若初始森林中共有 n 棵二叉树， 最终求得的哈夫曼树共有 2n+1 个结点\nD. 已知树的前序遍历序列和后序遍历序列, 可以唯一确定这棵树", "answer": ""}
+{"query_id": 37, "query": "广义表((a),a)的表尾是____..\nA. a\nB. (a)\nC. ()\nD. ((a))", "answer": ""}
+{"query_id": 38, "query": "若某线性表最常用的操作是读取第i个元素和第i个元素的前趋元素，则采用下面哪种存储方式最节省运算时间？____.\nA. 单链表\nB. 顺序表\nC. 双链表\nD. 单循环链表", "answer": ""}
+{"query_id": 39, "query": "下列说法是在描述适配器模式的是____.\nA. 将一个类的接口转换成客户希望的另外一个接口。本模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作；\nB. 定义一个用于创建对象的接口，让子类决定实例化哪一个类；\nC. 表示一个作用于某对象结构中的各元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作；\nD. 将一个请求封装为一个对象，从而可用不同的请求对客户进行参数化；对请求排队或记录请求日志，以及支持可撤消的操作。", "answer": ""}
+{"query_id": 40, "query": "下面关于虚函数的描述，错误的是____.\nA. 在成员函数声明的前面加上 virtual 修饰，就可把该函数声明为虚函数\nB. 基类中说明了虚函数后，派生类中对应的函数也必须说明为虚函数\nC. 虚函数可以是另一个类的友元函数，但不能是静态成员函数\nD. 基类中说明的纯虚函数在其任何派生类中都必须实现", "answer": ""}
+{"query_id": 41, "query": "正常情况下，删除非空的顺序存储结构的堆栈的栈项元素，栈顶指针top的变化是____。.\nA. top不变\nB. top=0\nC. top=top+1\nD. top=top-1", "answer": ""}
+{"query_id": 42, "query": "若类B是从类A派生而来，而语句p.Do();在被多次执行时，有的时候调用的是类A的Do成员函数，有的时候调用的是类B的Do成员函数，那么p的类型可以是____.\nA. A &\nB. A *\nC. B\nD. A", "answer": ""}
+{"query_id": 43, "query": "深度为5的二叉树其结点数最多为____.\nA. 16\nB. 30\nC. 31\nD. 32", "answer": ""}
+{"query_id": 44, "query": "下列关于图遍历的说法不正确的是____.\nA. 连通图的深度优先搜索是一个递归过程\nB. 图的广度优先搜索中邻接点的寻找具有“ 先进先出” 的特征\nC. 非连通图不能用深度优先搜索法\nD. 图的遍历要求每一顶点仅被访问一次", "answer": ""}
+{"query_id": 45, "query": "设有50000个待排序的记录关键字，如果需要用最快的方法选出其中最小的10个记录关键字，则用下列____方法可以达到此目的。.\nA. 快速排序\nB. 选择排序\nC. 归并排序\nD. 插入排序", "answer": ""}
+{"query_id": 46, "query": "以下说法正确的是____.\nA. 派生类会继承基类的数据成员、函数成员和重载赋值运算符；\nB. 基类中没有指定访问说明符时，编译器将默认该说明符是public；\nC. 派生类不会继承基类的构造函数，因此不能用于创建派生类对象的基类部分；\nD. 派生类的构造函数可以调用特定的基类构造函数，间接访问基类的私有成员。", "answer": ""}
+{"query_id": 47, "query": "以下关于迭代器模式的说法不正确的是：____.\nA. 迭代器是对“数据访问”设计的接口\nB. 迭代器提供一种方法访问一个聚合对象中各个元素，而不用关心具体存储类的算法\nC. 迭代器模式中，编写上层代码时需要根据使用需求和性能需求同时使用迭代器和存储类的方法对存储的数据进行访问\nD. 迭代器类通常设计为存储类的友元，从而迭代器类可以访问存储类内部的数据", "answer": ""}
+{"query_id": 48, "query": "在10阶B-树中根结点所包含的关键码个数最多为____.\nA. 1\nB. 2\nC. 9\nD. 10", "answer": ""}
+{"query_id": 49, "query": "字符指针和字符数组均可以作为C风格字符串首地址，但是二者是有区别的。观察以下程序\nint main(){\nchar*a=\"Hello\";\nchar b[]=\"World\";\ncout<<a[0]<<endl;//①\na[0]='h';//②\ncout<<b[0]<<endl;//③\nb[0]='w';//④\nreturn 0;\n}\n则下列说法正确的是____.\nA. 程序无法通过编译\nB. 程序在执行到第②条语句会有运行错误\nC. 程序在执行到第④条语句会有运行错误\nD. 程序可以正常运行", "answer": ""}
+{"query_id": 50, "query": "int a[4][5];则和a[3][2]的值等价的表达式为____.\nA. *(*a[3]+2)\nB. *(a+17)\nC. *((a+3)+2)\nD. *(a[3]+2)", "answer": ""}
+{"query_id": 51, "query": "静态链表中指针表示的是____.\nA. 内存地址\nB. 数组下标\nC. 下一元素地址\nD. 左、右孩子地址", "answer": ""}
+{"query_id": 52, "query": "下列关于类对象说法错误的是：____.\nA. 函数静态对象，在程序执行到该局部静态对象的代码时被初始化；程序第二次执行到该对象代码时，不再初始化\nB. 在不同编译单元中，全局对象的初始化顺序不确定\nC. 当A类对象是B类的常量静态成员时，可以在B类内初始化\nD. 当A类对象是B类的静态非常量成员变量时，只能在B类外初始化", "answer": ""}
+{"query_id": 53, "query": "设一组初始记录关键字序列为（25,50,15,35,80,85,20,40,36,70)，其中含有5个长度为2的有序子表，则用归并排序的方法对该记录关键字序列进行一趟归并后的结果为____.\nA. 15， 25， 35， 50， 20， 40， 80， 85， 36， 70\nB. 15， 25， 35， 50， 80， 20， 85， 40， 70， 36\nC. 15， 25， 35， 50， 80， 85, 20， 36， 40, 70\nD. 15, 25, 35, 50, 80, 20, 36, 40, 70, 85", "answer": ""}
+{"query_id": 54, "query": "若B知一个栈的入找序列是1,2,3,...,n.其输出序列为pi,p2.p3,…,pN,若pN是n,则pi是____.\nA. i\nB. n-i\nC. n-i+1\nD. 不确定", "answer": ""}
+{"query_id": 55, "query": "稳定的排序方法是：____.\nA. 直接插入排序和快速排序\nB. 二分插入排序和冒泡排序\nC. 直接选择排序和四路归并排序\nD. 堆排序和希尔排序", "answer": ""}
+{"query_id": 56, "query": "如果class类中的所有成员在定义时都没有使用关键字pubilc,private,protected，则所有成员缺省定义为：____。.\nA. public\nB. protected\nC. private\nD. static", "answer": ""}
+{"query_id": 57, "query": "下列关于AOE网的叙述中，不正确的是____。.\nA. 某些关键活动提前，则整个工程将会提前完成\nB. 任一关键活动提前，则整个工程将会提前完成\nC. 所有关键活动提前，则整个工程将会提前完成\nD. 关键活动不按期完成会影响整个工程的完成时间", "answer": ""}
+{"query_id": 58, "query": "具有线性结构的数据结构是____。.\nA. 图\nB. 树\nC. 广义表\nD. 栈", "answer": ""}
+{"query_id": 59, "query": "设有一个递归算法如下\nint x(int n){\nif(n<=3)return 1;\nelse return x(n-2)+x(n-4)+1;}\n试问计算x(x(8))时需要计算____次x函数。.\nA. 8次\nB. 9次\nC. 16次\nD. 18次", "answer": ""}
+{"query_id": 60, "query": "静态成员函数不能说明为____。.\nA. 整型函数\nB. 浮点函数\nC. 虚函数\nD. 字符型函数", "answer": ""}
+{"query_id": 61, "query": "二叉查找树的查找效率与二叉树的____有关。.\nA. 高度\nB. 结点的多少\nC. 树型\nD. 结点的位置", "answer": ""}
+{"query_id": 62, "query": "广义表G=(a,b(c,d,(e,f)),g)的长度是____。.\nA. 3\nB. 4\nC. 7\nD. 8", "answer": ""}
+{"query_id": 63, "query": "当使用ifstream流类定义一个流对象并打开一个磁盘文件file时，与语句：ifstream infile; infile.open(\"file”)；等价的文件的打开方式为____.\nA. ofstream infile; infile.open(\"file\");\nB. ifstream infile; infile.open(\"file\", ifstream::out );\nC. ifstream infile(\"file\");\nD. fstream infile; infile.open(\"file\");", "answer": ""}
+{"query_id": 64, "query": "用函数H(k)=key%17构造散列表，则链地址法解决冲突需____个链表。.\nA. 17\nB. 13\nC. 16\nD. 任意", "answer": ""}
+{"query_id": 65, "query": "二叉树先序遍历x在y之前，后序遍历x在y之后，则x是y的____。.\nA. 左兄弟\nB. 右兄弟\nC. 祖先\nD. 后裔", "answer": ""}
+{"query_id": 66, "query": "依次在初始为空的队列中插入元素a,b,c,d以后，紧接若做了两次删除操作，此时的队头元素是____。.\nA. a\nB. b\nC. c\nD. d", "answer": ""}
+{"query_id": 67, "query": "五节车厢以编号1,2,3,4,5顺序进入铁路调度站（栈），可以得到____的编组。.\nA. 3,4,5,1,2\nB. 2,4,1,3,5\nC. 3,5,4,2,1\nD. 1,3,5,2,4", "answer": ""}
+{"query_id": 68, "query": "C++对C语言作了很多改进，下列描述中____使得C语言发生了质变，从面向过程变成了面向对象。.\nA. 增加了一些新的运算符；\nB. 允许函数重载， 并允许设置缺省参数:\nC. 规定函数说明必须用原型；\nD. 弓I进了类和对象的概念；", "answer": ""}
+{"query_id": 69, "query": "若有以下定义和语句，则不能合法表示a数组元素的是:____\nchar a[]=\"abcdefg\";\nint *p=a;.\nA. p[7]\nB. a[p-a]\nC. *a\nD. a[8]", "answer": ""}
+{"query_id": 70, "query": "若某线性表最常用的操作是存取任一指定序号的元素和在最后进行插入和删除运算，则利用____存储方式最节省时间。.\nA. 顺序表\nB. 双链表\nC. 带头结点的双循环链表\nD. 单循环链表", "answer": ""}
+{"query_id": 71, "query": "一个图有30个结点，这些结点的平均度数为10，那么该图拥有多少条边？____.\nA. 75\nB. 150\nC. 300\nD. 600", "answer": ""}
+{"query_id": 72, "query": "下列不能作为类的成员的是____.\nA. 自身类对象的指针\nB. 自身类对象\nC. 自身类对象的引用\nD. 另一个类的对象", "answer": ""}
+{"query_id": 73, "query": "12个数据有序顺序存储，采用二分查找，查找失败时的ASL值是____。.\nA. 13850\nB. 63/13\nC. Dec-39\nD. 49/13", "answer": ""}
+{"query_id": 74, "query": "在一个有向图中，所有顶点的入度之和等于所有顶点的出度之和的____倍。.\nA. 1月2日\nB. 1\nC. 2\nD. 4", "answer": ""}
+{"query_id": 75, "query": "设二叉树的先序遍历序列和后序遍历序列正好相反，则该二叉树满足的条件是____.\nA. 空或只有一个结点\nB. 高度等于其结点数\nC. 任一结点无左孩子\nD. 任一结点无右孩子", "answer": ""}
+{"query_id": 76, "query": "类Sample的拷贝构造函数的声明语句为____.\nA. Sample (Sample other)\nB. Sample Sample (Sample other)\nC. Sample (const Samplet &other)\nD. Sample Sample (const Sample &other)", "answer": ""}
+{"query_id": 77, "query": "在操作系统内部，函数调用是用下面哪种数据结构来实现的？____.\nA. 线性表\nB. 队列\nC. 栈\nD. 树", "answer": ""}
+{"query_id": 78, "query": "设给定权值总数有n个，其哈夫曼树的结点总数为____.\nA. 不确定\nB. 2n\nC. 2n+1\nD. 2n-1", "answer": ""}
+{"query_id": 79, "query": "以下关于工厂模式和抽象工厂模式说法正确的是：____.\nA. 工厂方法的目的是构造单个类的对象\nB. 在工厂方法中，构造多个有特定组合方式的对象，应当为每一个组成成分单独设立工厂\nC. 工厂方法不能处理不同重载的构造函数\nD. 工厂模式中，对象的删除不可以交由用户负责", "answer": ""}
+{"query_id": 80, "query": "关于纯虚函数和抽象类的描述中，错误的是____.\nA. 抽象类只能作为基类使用， 其纯虚函数的实现由派生类给出\nB. 纯虚函数是一个特殊的虚函数， 它没有具体的实现\nC. 一个基类中说明有纯虚函数， 该基类的派生类一定不再是抽象类。\nD. 抽象类是指具有纯虚函数的类", "answer": ""}
+{"query_id": 81, "query": "己知一个线性表中最常用的操作是删除第一个元素和在最后一个元素之后插入一个元素，则采用____存储方式最节省运算时间。.\nA. 双链表\nB. 仅有头指针的单循环链表\nC. 单链表\nD. 仅有尾指针的单循环链表", "answer": ""}
+{"query_id": 82, "query": "数组可以使用花括号进行初始化，则对于以下程序\nint main(){\nint a[10]={1,2,3,4};\nint b[10];\nreturn 0;\n}\n其中a[8]和b[8]的值为____.\nA. a[8]为 0， b[8]为随机值\nB. 二者均为 0\nC. 二者均为随机值\nD. 以上代码段不能通过编译", "answer": ""}
+{"query_id": 83, "query": "将递归算法转换成对应的非递归算法时，通常需要使用____来保存中间结果。.\nA. 队列\nB. 栈\nC. 链表\nD. 树", "answer": ""}
+{"query_id": 84, "query": "以下关于复制构造函数的说法错误的是____.\nA. 系统默认的复制构造函数实现的是深层复制\nB. 类成员有指针类型时，浅层复制存在着隐患\nC. 一个对象以值传递的方式传入函数时会调用复制构造函数\nD. 一个对象以值传递的方式作为函数返回值时会调用复制构造函数", "answer": ""}
+{"query_id": 85, "query": "下列选项中，不能构成折半查找中关键字比较序列的是____.\nA. 500， 200， 450， 180\nB. 500， 450， 200， 180\nC. 180， 500， 200， 450\nD. 180， 200， 500， 450", "answer": ""}
+{"query_id": 86, "query": "#include<iostream.h>\nint& func(int&num)\n{\nnum++;\nreturn num;\n}\nvoid main()\n{\nint n1,n2=5;\nn1=func(n2);\ncout<<n1<<\"\"<<n2<<endl;\n}\n上面C++程序运行结果是____.\nA. 56\nB. 65\nC. 66\nD. 55", "answer": ""}
+{"query_id": 87, "query": "快速排序在下列哪种情况下最不利于发挥其长处____。.\nA. 要排序的数据量很大\nB. 要排序的数据中含有多个相同值\nC. 要排序的数据个数为奇数\nD. 要排序的数据已基本有序", "answer": ""}
+{"query_id": 88, "query": "对某二叉树进行先序遍历的结果为ABDEFC,中序遍历的结果为DBFEAC,则后序遍历的结果是____。.\nA. DBFEAC\nB. DFEBCA\nC. BDFECA\nD. BDEFAC", "answer": ""}
+{"query_id": 89, "query": "用某种排序方法对线性表{4,9,3,7,1,5,8,6,2}进行排序时，元素序列的变化情况如下：\n1）4,9,3,7,1,5,8,6,2\n2）2,1,3,4,7,5,8,6,9\n3）1,2,3,4,6,5,7,8,9\n4）1,2,3,4,5,6,7,8,9\n所采用的排序方法是____.\nA. 插入排序\nB. 选择排序\nC. 快速排序\nD. 二路归并排序", "answer": ""}
+{"query_id": 90, "query": "对于下列关键字序列，不可能构成某二叉排序树中一条查找路径的序列是____.\nA. 98,22,91,24,94,71\nB. 92,18,90,34,86,35\nC. 23,89,77,29,36,38\nD. 10,25,71,68,33,34", "answer": ""}
+{"query_id": 91, "query": "假定A是一个类的名字，下面哪个语句不会引发类A构造函数的调用____.\nA. A * p = new A;\nB. A a;\nC. A a[10];\nD. A * a[10];", "answer": ""}
+{"query_id": 92, "query": "classwheel\n{\nint num;\npublic:\nwheel(int w){num=w;}\n};\nclass car\n{\nwheel carWheel;\npublic:\n____//写出car的构造函数\n}在\nC++中，上面程序中，空白处正确的语句是____。.\nA. void car(int n)::carWheel(n){}\nB. car(int n): carWheel(n){}\nC. void car(int n):: carWheel(n){}\nD. car(int n):: carWheel(n){}", "answer": ""}
+{"query_id": 93, "query": "顺序存储的线性表，其长度为n。假设在任何位置上插入或删除操作都是等概率的。插入一个元素时平均要移动表中元素个数为____.\nA. n/2\nB. (n+1)/2\nC. (n-1)/2\nD. n", "answer": ""}
+{"query_id": 94, "query": "ch为char类型，判断ch为小写字符的表达式是____.\nA. a'<=ch<='z'\nB. (ch>='a')&(ch<='z')\nC. (ch>='a')&&(ch<='z')\nD. (ch>='a')l(ch<='z')", "answer": ""}
+{"query_id": 95, "query": "下列程序的运行结果为____\n#include<iostream.h>\nint i=0;\nclass A\n{\npublic:\nA(){i++;}\n};\nvoid main()\n{\nA a,b[3],*c;\nc=b;\ncout<<i<<endl;}.\nA. 2\nB. 3\nC. 4\nD. 5", "answer": ""}
+{"query_id": 96, "query": "#include<iostream.h>\nclass A\n{\npublic:\nA(){cout<<\"A construct\";}\n};\nclass B:public A\n{\npublic:\nB():A(){cout<<\"B construct\"<<endl;}\n};\nvoid main(){B obj;}\n上面的C++程序运行的结果是____。.\nA. B construct A construct\nB. A construct B construct\nC. A construct\nD. B construct", "answer": ""}
+{"query_id": 97, "query": "下列关于对象概念的描述中____是错误的.\nA. 对象就是 C 语言中的结构变量\nB. 对象代表着正在创建的系统中的一个实体\nC. 对象是一个状态和操作（或方法）的封装体\nD. 对象之间的信息传递是通过消息进行的", "answer": ""}
+{"query_id": 98, "query": "假定M为一个类，int a()为该类的一个成员函数，若该成员函数在类定义体外定义,则函数头为____.\nA. AA::a();\nB. int AA:a();\nC. int AA::a();\nD. AA::int a() ;", "answer": ""}
+{"query_id": 99, "query": "#include<iostream.h>\n#include<iomanip.h>\nvoid main()\n{\ncout.fill('*');\ncout.width(10);\ncout<<\"123.45\"<<endl;\ncout.width(8);\ncout<<\"1234.45\"<<endl;\ncout.width(4);\ncout<<\"1234.45\"<<endl;\n}\n程序运行的结果是____。.\nA. ****123.45 **1234.45 *1234.45\nB. ****123.45 *1234.45 1234.45\nC. ****123.45 **1234.45 *1234.45\nD. *****123.45 ***1234.45 *1234.45", "answer": ""}
+{"query_id": 100, "query": "C++语言的跳转语句中，对于break和continue说法正确的是____.\nA. break语句只应用于循环体中\nB. continue语句用于跳出循环语句\nC. continue语句用于跳出当前的循环周期\nD. break语句用于跳出当前的循环周期", "answer": ""}
+{"query_id": 101, "query": "下面描述中正确的是____.\nA. virtual 可以用来声明虚函数\nB. 含有纯虚函数的类是不能用来创建对象的， 因为它是虚基类\nC. 即使基类的构造函数没有参数， 派生类也必须建立构造函数\nD. 静态数据成员可以通过成员初始化列表来初始化", "answer": ""}
+{"query_id": 102, "query": "函数：void f(void)\n{int i=12,j;\nfor(j=0;j<20;j++)\ni++;}\n当f执行完退出后，i的值为____.\nA. 12\nB. 32\nC. 29\nD. 无定义", "answer": ""}
+{"query_id": 103, "query": "与后置++不同，前置++运算符在C++语法中可以连续对变量使用，即可以++(++a)，这也是在重载前置++运算符时需要返回引用的原因。那么观察以下计时器类Timer的定义\n#include<iostream>\nusing namespace std;\nclass Timer{\nprivate:\nint sec;\npublic:\nTimer(){\nsec=0;\n}\nTimer operator++(){//注意返回值不是引用\nsec++;\nreturn *this;\n}\nvoid show(){\ncout<<sec<<endl;\n}\n};\nint main(){\nTimer t;\n++(++(++t));//连续调用三次前置++\nt.show();\nreturn 0;\n}\n其中在重载前置++中，代码错误地没有返回Timer类的引用，那么下列说法正确的是____.\nA. 程序无法通过编译\nB. 程序可以通过编译，程序仍然正确，输出 3\nC. 程序可以通过编译，程序逻辑错误，输出 0\nD. 程序可以通过编译，程序逻辑错误，输出 1", "answer": ""}
+{"query_id": 104, "query": "哪个是类test的复制构造函数的合法原型？____.\nA. test::test()\nB. test::test (test other)\nC. test::test(const test &other)\nD. void test::test(const test &other)", "answer": ""}
+{"query_id": 105, "query": "有如下程序段：\n#include<iostream>\nusing namespace std;\nclass A{\npublic:\n\tvirtual void f(){cout<<\"A::f\"<<endl;}\n};\nclass B:publicA{\npublic:\n\tvoid f(){cout<<\"B::f\"<<endl;}\n};\nint main()\n{\n A *pa, a;\n B *pb, b;\n pa = &b;\n pb = static_cast<B*>(&a);\npa->f();\n pb->f();\n return 0;\n}\n执行上面的程序将输出（\\n表示换行）____.\nA. A::f\\nB::f\t\\n\nB. B::f\\nA::f\\n\nC. A::f\\nA::f\t\\n\nD. B::f\\nB::f\\n", "answer": ""}
+{"query_id": 106, "query": "灵活使用const关键字使程序的可读性和严谨性增强，观察如下程序\nint main(){\nint a=10;\nint b=20;\nconst int*p=&a;\nint* const q=&a;\n*p=15;//①\np=&b;//②\n*q=15;//③\nq=&b;//④:\nreturn 0;\n}\n其中会出现编译错误的语句是____.\nA. ①和③\nB. ②和④\nC. ②和③\nD. ①和④", "answer": ""}
+{"query_id": 107, "query": "一个栈的入栈序列为1,2,3,...,n，其出栈序列是p1,p2,p3,…,pn。若p2=3，则p3可能取值的个数是____.\nA. n-3\nB. n-2\nC. n-1\nD. 无法确定", "answer": ""}
+{"query_id": 108, "query": "下面这段代码的运行结果为____(\\n表示换行)\n#include<iostream>\nusing namespace std;\nclass Base{\npublic:\nvirtual void foo(int){cout<<\"Base::foo(int)\"<<endl;}\n};\nclass Derived:public Base{\npublic:\nvoid foo(float){cout<<\"Derived::foo(float)\"<<endl;}\n};\nint main(){\nDerived d;\nBase *p=&d;\nd.foo(3,0);\np->foo(3,0);\n}.\nA. Base::foo(int)\\nBase::foo(int)\\n\nB. Base::foo(int)\\nDerived::foo(float)\\n\nC. Derived::foo(float)\\nBase::foo(int)\\n\nD. Derived::foo(float)\\nDerived::foo(float)\\n", "answer": ""}
+{"query_id": 109, "query": "继承的主要目的是____.\nA. 增加数据成员\nB. 增加成员函数\nC. 实现函数的重载\nD. 实现代码重用", "answer": ""}
+{"query_id": 110, "query": "有六个元素6，5，4，3，2，1的顺序进栈，问下列哪一个不是合法的出栈序列？____.\nA. 5 4 3 6 1 2\nB. 4 5 3 1 2 6\nC. 3 4 6 5 2 1\nD. 2 3 4 1 5 6", "answer": ""}
+{"query_id": 111, "query": "稀疏矩阵的常见压缩存储方法有____两种。.\nA. 二维数组和三维数组\nB. 三元组和散列表\nC. 三元组和十字链表\nD. 散列表和十字链表", "answer": ""}
+{"query_id": 112, "query": "在一个长度为的顺序表中，在第1个元素之前插入一个新元素时，需向后移动____个元素。.\nA. n-i\nB. n-i+1\nC. n-i-1\nD. i", "answer": ""}
+{"query_id": 113, "query": "建立派生类对象时,3种构造函数分别是a(基类的构造函数)、b(成员对象的构造函数)、c(派生类的构造函数)这3种构造函数的调用顺序为____.\nA. abc\nB. acb\nC. cab\nD. cba", "answer": ""}
+{"query_id": 114, "query": "下列描述中，不属于抽象类特性的是____.\nA. 可以声明虚函数\nB. 可以重载构造函数\nC. 可以定义友元函数\nD. 可以定义其对象", "answer": ""}
+{"query_id": 115, "query": "一个n个顶点的连通无向图，其边数至少为____。.\nA. n-1\nB. n\nC. n+1\nD. n*logn", "answer": ""}
+{"query_id": 116, "query": "下列说法错误的是____.\nA. 公有继承的基类中的 public 成员在派生类中仍是 public 的\nB. 公有继承的基类中的 private 成员在派生类中仍是 private 的\nC. 私有继承的基类中的 public 成员在派生类中变成 private 的\nD. 保护继承的基类中的 public 成员在派生类中变成 protected 的", "answer": ""}
+{"query_id": 117, "query": "对于线性表(7,34,55,25,64,46,20,10)进行做列存储时，若远用HK)=K%9作为散列函数，则散列地址为1的元素有____个。.\nA. 1\nB. 2\nC. 3\nD. 4", "answer": ""}
+{"query_id": 118, "query": "对于类模板Base,执行语句Base<int>object(2,3);后____.\nA. 产生的模板类为 Base\nB. 产生的模板类为 object\nC. 产生的模板类为 Base<int>\nD. 直接定义了类模板的对象 object", "answer": ""}
+{"query_id": 119, "query": "下面____可以判断出一个有向图中是否有环（回路）。.\nA. 广度优先遍历\nB. 拓扑排序\nC. 求最短路径\nD. 求关键路径", "answer": ""}
+{"query_id": 120, "query": "Dijkstra算法不适用于寻找以下____种图的最短路径。.\nA. 所有边权重均为1的有向图\nB. 边的权重均为正数的有向图\nC. 边的权重均为正数的无向图\nD. 边的权重可能出现负数的有向图", "answer": ""}
+{"query_id": 121, "query": "在二叉树结点的前序序列，中序序列和后序序列中，所有叶子结点的先后顺序____.\nA. 完全相同\nB. 前序和中序相同，而与后序不同\nC. 都不相同\nD. 中序和后序相同，而与前序不同", "answer": ""}
+{"query_id": 122, "query": "下面关于模板的描述，错误的是____.\nA. 函数模板和类模板的参数可以是任意的数据类型\nB. 类模板不能直接使用，必须先实例化为相应的模板类．然后定义了模板类的对象后才能使用\nC. 函数模板不能直接使用，需要实例化为模板函数后才能使用\nD. 类模板的成员函数都是模板函数", "answer": ""}
+{"query_id": 123, "query": "对于一棵M阶B+树，下列哪个选项是正确的？____.\nA. 根节点一定有 2~M 个子节点\nB. 一个叶节点和一个非叶节点之间可以有相同的关键值\nC. 任意两个叶节点的深度不一定相同\nD. 所有的非叶节点都有M/2~M 个子节点", "answer": ""}
+{"query_id": 124, "query": "类的成员函数中，不能为virtual函数的是____.\nA. static函数\nB. const函数\nC. 析构函数\nD. 运算符重载函数", "answer": ""}
+{"query_id": 125, "query": "如果>被重载成友元函数，则表达式objl>obj2被C++编译器解释为：____.\nA. operator>(obj1,obj2)\nB. >(objl,obj2)\nC. obj2.operator>(objl)\nD. obj1.operator>(obj2)", "answer": ""}
+{"query_id": 126, "query": "下面哪一种设计原则可以提高代码的可复用性和可维护性____.\nA. 对继承开放，对重载关闭；\nB. 对重载开放，对继承关闭；\nC. 对修改开放，对扩展关闭；\nD. 对扩展开放，对修改关闭。", "answer": ""}
+{"query_id": 127, "query": "深度为k的满二叉树若按自上而下，从左到右的顺序给结点进行编号（从1开始），则编号最小的叶子结点编号是____.\nA. 2^(k-1)\nB. 2^(k-1)-1\nC. 2^(k-1)+1\nD. 2^k-1", "answer": ""}
+{"query_id": 128, "query": "#include<iostream.h>\nclass A\n{\npublic:\nvirtual~A(){cout<<\"A\"<<\"\";}\n};\nclass B:public A\n{\n~B(){cout<<\"B\"<<\"\";}\n};\nvoid main()\n{\nA *pObj=new B;\ndelete pObj;\n}\n上面的C++程序的运行结果是____.\nA. A\nB. B\nC. A B\nD. B A", "answer": ""}
+{"query_id": 129, "query": "采用邻接表存储的图的广度优先遍历算法类似于二叉树的____.\nA. 先序遍历；\nB. 中序遍历；\nC. 后序遍历\nD. 按层遍历", "answer": ""}
+{"query_id": 130, "query": "定义析构函数时，应该注意____。.\nA. 其名与类名完全相同\nB. 返回类型是 void 类型\nC. 无形参，也不可重载\nD. 函数体中必须有 delete 语句", "answer": ""}
+{"query_id": 131, "query": "设int a=9,b=8,c=7,x=1;则执行语句 if(a>7)if(b>8)if(c>9)x=2;else x=3;后x的值是____.\nA. 0\nB. 1\nC. 2\nD. 3", "answer": ""}
+{"query_id": 132, "query": "设指针变量P指向单链表中结点A，若删除单链表中结点A,则需要修改指针的操作序列为____.\nA. q = p->next; p->data = q->data; p->next = q->next; free(q);\nB. q = p->next; q->data = p->data;p->next=q->next; free(q);\nC. q=p->next;p->next=q->next;free(q);\nD. q=p->next;p->data=q->data;free(q);", "answer": ""}
+{"query_id": 133, "query": "假定AB为一个类，则执行AB x；语句时将自动调用该类的____。.\nA. 有参构造函数\nB. 无参构造函数\nC. 拷贝构造函数\nD. 赋值构造函数", "answer": ""}
+{"query_id": 134, "query": "对顺序存储的线性表，设其长度为20,容量足够大。在任何位置上插入或删除操作都是等概率的。插入一个元素时平均要移动表中的____个元素.\nA. 9.5\nB. 10\nC. 10.5\nD. 11", "answer": ""}
+{"query_id": 135, "query": "类的友元函数能访问该类的____.\nA. 私有成员\nB. 保护成员\nC. 所有成员\nD. 公有成员", "answer": ""}
+{"query_id": 136, "query": "一个栈的输入序列为123…n，若输出序列的第一个元素是n，输出第i（1<=i<=n）个元素是____。.\nA. 不确定\nB. n-i+1\nC. i\nD. n-i", "answer": ""}
+{"query_id": 137, "query": "设一组权值集合W={2,3,4,5,6}，则由该权值集合构造的哈夫曼树中带权路径长度之和为____.\nA. 20\nB. 30\nC. 40\nD. 45", "answer": ""}
+{"query_id": 138, "query": "系统中的文本显示类（TextView）和图片显示类（PictureView）都继承了组件类（Component），分别显示文本和图片内容，现需要构造带有滚动条或者带有黑色边框、或者既有滚动条又有黑色边框的文本显示控件和图片显示控件，但希望最多只增加三个类，____可以实现该目的。.\nA. 代理模式\nB. 继承\nC. 策略模式\nD. 装饰模式", "answer": ""}
+{"query_id": 139, "query": "队列的插入操作是在____。.\nA. 队尾\nB. 队头\nC. 队列任意位置\nD. 队头元素后", "answer": ""}
+{"query_id": 140, "query": "下列关于getline()和read()函数的叙述中，错误的是____.\nA. 都可用于从键盘或文件读取字符串\nB. getline()读取字符串长度是受限制的\nC. read()读取字节数是受限制的\nD. getline()终止符默认是换行符，也可以指定其他终止符", "answer": ""}
+{"query_id": 141, "query": "以下哪个不是使用设计模式进行编程的特点____.\nA. 牺牲了代码维护的代价，降低模型复杂程度\nB. 不优先使用继承\nC. 指导经验不足的程序员灵活运用面向对象的特性\nD. 快速构建适用于不同场景的程序框架", "answer": ""}
+{"query_id": 142, "query": "从表中任一结点出发，都能扫描整个表的是____。.\nA. 单链表\nB. 顺序表\nC. 循环链表\nD. 静态链表", "answer": ""}
+{"query_id": 143, "query": "设广义表L=((a,b,c)),则L的长度和深度分别为____.\nA. 1和1\nB. 1和3\nC. 1和2\nD. 2和3", "answer": ""}
+{"query_id": 144, "query": "下面____是死循环。.\nA. for(i=0;i<10;i++) cout<<i<<\" \";\nB. for(i=10;i>=1;i--) cout<<i<<\" \";\nC. i=10;do cout<<i--<<\" \";while(i>0);\nD. i=0;while(i<=10);cout<<++i<<\" \";", "answer": ""}
+{"query_id": 145, "query": "在最大化堆中，不正确的是____.\nA. 任何节点的数值不超过其父亲\nB. 兄弟节点之间具有确定的大小关系\nC. 节点的数值不超过其任何一个祖先\nD. 整个堆中的最大元素在根节点", "answer": ""}
+{"query_id": 146, "query": "若C1是一个抽象类，下列语句中错误的是____.\nA. C1 *pC;\nB. void fun(C1 arg);\nC. void fun(C1 *arg);\nD. void fun(C1 &arg);", "answer": ""}
+{"query_id": 147, "query": "关键路径是事件结点网络中____。.\nA. 从源点到汇点的最长路径\nB. 从源点到汇点的最短路径\nC. 最长的回路\nD. 最短的回路", "answer": ""}
+{"query_id": 148, "query": "若一个图的边集为{<1,2>，<1,4>，<2,5>，<3,1>，<3,5>，<4,3>}，则从顶点1开始对该图进行深度优先搜索，得到的顶点序列可能为____.\nA. 1,2,5,4,3\nB. 1,2,3,4,5\nC. 1,2,5,3,4\nD. 1,4,3,2,5", "answer": ""}
+{"query_id": 149, "query": "线性表既可以用带头结点的链表表示，也可以用不带头结点的链表表示，前者最主要的好处是____。.\nA. 使空表和非空表的处理统一\nB. 可以加快对表的遍历\nC. 节省存储空间\nD. 可以提高存取表元素的速度", "answer": ""}
+{"query_id": 150, "query": "在以下运算符中，优先级最低的是____.\nA. !\nB. >=\nC. *\nD. ||", "answer": ""}
+{"query_id": 151, "query": "对于下面定义的类\nclass Base {\nprotected: int x;\npublic: Base(int val = 1) { x = val; }\nvirtual void disp(){cout<< x<< endl; }\nvoid print() {cout<<x<< endl; }\n};\nclass Derived: public Base { int y;\npublic:\nDerived(int vail = 0, int val2 = 0): Base(vall) { y = val2; }\nvoid disp(){ cout<< \"x=\"<< x<< \" y=\"<< y<< endl; }\nvoid print() { cout<<\"x=\"<<x<<\" y=\"<< y<< endl; }\n};\n有定义Derived dd(3,4);\nBase *bp=&dd,bb=dd;\n则dd.disp()执行的是____.\nA. 派生类的 disp 函数\nB. 派生类的 pririt 函数\nC. 基类的 disp 函数\nD. 基类的 print 函数", "answer": ""}
+{"query_id": 152, "query": "下面有关重载函数的说法中正确的是____.\nA. 重载函数必须具有不同的返回值类型；\nB. 重载函数形参个数必须相同\nC. 重载函数必须有不同的形参列表；\nD. 重载函数名可以不同；", "answer": ""}
+{"query_id": 153, "query": "在快速排序过程中，下列结论正确的是____。.\nA. 左、右两个子表都已各自排好序\nB. 左边的元素都不大于右边的元素\nC. 左边子表长度小于右边子表长度\nD. 左、右两边元素的平均值相等", "answer": ""}
+{"query_id": 154, "query": "公有成员提供了类对外部的接口，私有成员是类的内部实现，而____不许外界访问,但允许派生类的成员访问，这样既有一定的隐藏能力，也提供了开放的接口。.\nA. 私有成员\nB. 私有成员函数\nC. 保护成员\nD. 公有成员", "answer": ""}
+{"query_id": 155, "query": "链表不具有的特点是____.\nA. 插入、删除不需要移动元素\nB. 可随机访问任一元素\nC. 不必事先估计存储空间\nD. 所需空间与线性长度成正比", "answer": ""}
+{"query_id": 156, "query": "在派生类中重新定义虚函数时，除了____方面,其他方面都必须与基类中相应的虚函数保持一致。.\nA. 参数个数和类型\nB. 函数体\nC. 函数名称\nD. 返回类型", "answer": ""}
+{"query_id": 157, "query": "对二叉树T中的某个结点x，它在先根序列、中根序列、后根序列中的序号分别为pre（x），in（x）、post（x），a和b是T中的任意两个结点，下列选项一定错误的是____。.\nA. a 是 b 的后代且 pre（a）<pre（b）\nB. a 是 b 的祖先且 post（a）>post（b）\nC. a 是 b 的后代且 in（a）<in（b）\nD. a 在 b 的左边且 in（a）<in（b）", "answer": ""}
+{"query_id": 158, "query": "当图中各条边的权值____时，广度优先搜索算法可用来解决单源最短路径问题。.\nA. 不一定相等\nB. 均互不相等\nC. 均相等\nD. 对权值无特别要求", "answer": ""}
+{"query_id": 159, "query": "对友元(friend)不正确的描述是____.\nA. 友元关系既不对称也不传递。\nB. 友元声明可以出现在 private 部分， 也可以山现在 public 部分\nC. 整个类都可以声明为另一个类的友元。\nD. 类的友元函数必须在类的作WJ 域以外被定义。", "answer": ""}
+{"query_id": 160, "query": "在有向图的逆邻接表中，每个顶点邻接表链接着该顶点所有____邻接点。.\nA. 入边\nB. 出边\nC. 入边和出边\nD. 不是出边也不是入边", "answer": ""}
+{"query_id": 161, "query": "对于如下定义的两个类模板，____中的模板实例化是无效的。Template<classT,int size> classArray{/**/} template<int hi,int wid>classScreen{/*…*/}.\nA. const int hi = 40; const int wi = 80; Screen <hi, wi + 32> Sobj;\nB. const int arr_size = 1024; Array<string, arr_size> al;\nC. double db = 3.1415; Array <double,db> a3;\nD. Array <double,12> a3;", "answer": ""}
+{"query_id": 162, "query": "判断一个有向图中是否存在回路，下列选项中两种算法均可行的是____.\nA. Dijkstra算法和深度优先遍历算法\nB. 深度优先遍历算法和拓扑排序方法\nC. 拓扑排序方法和Kruskal算法\nD. Kruskal算法和Floyd算法", "answer": ""}
+{"query_id": 163, "query": "请问下面的代码的输出是____\n#include<iostream>\nusing namespace std;\nclass A{\n\t\tpublic:\n\t\t\tvoid work(){cout<<\"A\";}\n};\nclass B:public A{\n\t\tpublic:\n\t\t\tvoid work(){cout<<\"B\";}\n};\nint main(){\n\t\tB*c=newB();\n\t\tA*d=newB();\n\t\tc->work();\n\t\td->work();\n}.\nA. AA\nB. AB\nC. BA\nD. BB", "answer": ""}
+{"query_id": 164, "query": "C++类体系中，不能被派生类继承的有____。.\nA. 转换函数\nB. 构造函数\nC. 虚函数\nD. 静态成员函数", "answer": ""}
+{"query_id": 165, "query": "class Employee\n{\nprivate:\nint a;\nprotected:\nint b;\npublic:\nint c;\nvoid display();\n};\nclass Director:public Employee\n{\npublic:\nvoid show();\n};\n在C++中，以下操作正确的是____。.\nA. void Employee::show(){cout<<a<<b<<c<<endl;}\nB. void Director::display(){cout<<a<<b<<c<<endl;}\nC. void Director::show(){cout<<a<<b<<c<<endl;}\nD. void Director::show(){cout<<b<<c<<endl;};", "answer": ""}
+{"query_id": 166, "query": "当使用fstream流类定义一个流对象并打开一个磁盘文件时,文件的隐含打开方式为____.\nA. ios::in\nB. ios::out\nC. fstream::in| fstream::out\nD. 没有指定打开方式", "answer": ""}
+{"query_id": 167, "query": "以下说法不正确的是____.\nA. sum为自定义类的一个变量，可以通过 sum.operator()(5, 6);去调用()运算符重载函数\nB. 通过重载[]运算符: int operator[] (const char* name);使得我们可以像map一样使用 beijing[\"mon\"] = -3;\nC. ClassName& operator++();为前缀自增运算符的重载声明\nD. 运算符()必须作为成员函数重载", "answer": ""}
+{"query_id": 168, "query": "设有关键字初始序列{Q,H,C,Y,P,A,M,S,R,D,F,X}，新序列（F,H,C,D,P,A,M,Q,R,S,Y,X}是采用____方法对初始序列进行第一趟扫描的结果。.\nA. 直接插入排序\nB. 二路归并排序\nC. 以第一元素为标准元素的快速排序\nD. 冒泡排序", "answer": ""}
+{"query_id": 169, "query": "二叉树在线索化后，仍不能有效求解的问题是____。.\nA. 前序线索二叉树中求前序后继\nB. 中序线索二叉树中求中序后继\nC. 中序线索二叉树中求中序前驱\nD. 后序线索二叉树中求后序后继", "answer": ""}
+{"query_id": 170, "query": "若将n个顶点e条弧的有向图采用邻接表存储，则拓扑排序算法的时间复杂度是____.\nA. O(n)\nB. O(n+e)\nC. O(n^2)\nD. O(ne)", "answer": ""}
+{"query_id": 171, "query": "在具有n个结点的单链表上查找值为x的元素时，其时间复朵度为____。.\nA. O(n)\nB. O(1)\nC. O(n^2)\nD. O(n-1)", "answer": ""}
+{"query_id": 172, "query": "如果从无向图的任一顶点出发进行一次深度优先搜索即可访问所有顶点，则该图一定是____.\nA. 完全图\nB. 连通图\nC. 有回路\nD. 一棵树", "answer": ""}
+{"query_id": 173, "query": "下面几个符号串编码集合中，不是前缀编码的是____。.\nA. {0,10,110,1111}\nB. {11,10,001,101,0001}\nC. {00,010,0110,1000}\nD. {b,c,aa,ac,aba,abb,abc}", "answer": ""}
+{"query_id": 174, "query": "下面关于静态数据成员的描述中，正确的是____.\nA. 静态数据成员可以直接用类名调用\nB. 静态数据成员可以在类体内进行初始化\nC. 静态数据成员不能受 private 控制符的作用\nD. 类的不同对象有不同的静态数据成员值", "answer": ""}
+{"query_id": 175, "query": "设森林中有三棵树，第一、第二和第三颗树中的结点个数分别为m1、m2和m3。那么在由该森林转化成的二叉树中根结点的右子树上有____个结点。.\nA. m1+m2\nB. m2+m3\nC. m1+m3\nD. m1+m2+m3", "answer": ""}
+{"query_id": 176, "query": "下列专门用于读取单个字符的是____.\nA. cin.read()\nB. cin.get()\nC. cin.put()\nD. cin.getline()", "answer": ""}
+{"query_id": 177, "query": "任一个有向图的拓扑序列____。.\nA. 不存在\nB. 有一个\nC. 一定有多个\nD. 有一个或多个", "answer": ""}
+{"query_id": 178, "query": "若char p[20]=”helloworld”;则输出该字符串正确的语句是____.\nA. cout<<p[20];\nB. cout<<&p;\nC. cout<<*p;\nD. cout<< P;", "answer": ""}
+{"query_id": 179, "query": "分析下面的C++代码段：\nclass Employee\n{\nprivate:\nint a;\nprotected:\nint b;\npublic:\nint c;\n};\nclass Director:public Employee{};\n在main()中，下列____操作是正确的。.\nA. Employee obj;\nobj.b=1;\nB. Director boj;\nobj.b=10;\nC. Employee obj;\nobj.c=3;\nD. Director obj;\nobj.a=20;", "answer": ""}
+{"query_id": 180, "query": "下列关于虚函数的描述中，正确的是____.\nA. 派生类中要覆盖基类的虚函数， 必须使用 virtual\nB. 静态函数不得声明为虚函数\nC. 虚函数不得声明为另一个类的友元函数\nD. 派生类必须-覆盖基类的虚函数", "answer": ""}
+{"query_id": 181, "query": "下列选项给出的是从根分别到达两个叶结点路径上的权值序列,能属于同一棵哈夫曼树的是____.\nA. 24， 10， 5 和 24， 10， 7\nB. 24， 10， 5 和 24， 12， 7\nC. 24， 10， 10 和 24， 14， 11\nD. 24， 10， 5 和 24， 14， 6", "answer": ""}
+{"query_id": 182, "query": "非递归后序遍历二叉树时，考察栈中的数据：若当前结点为x,且x没有右儿子，这时栈顶的结点为y,且它的TimesPop值为2.则栈顶结点y必是x的____.\nA. 前序的后件\nB. 中序的后件\nC. 后序的前件\nD. 后序的后件", "answer": ""}
+{"query_id": 183, "query": "下列对派生类的描述中错误的是____.\nA. 基类中成员访问权限继承到派生类中都保持不变\nB. .派生类至少有一个基类。\nC. 一个派生类可以作为另一个派生类的基类。\nD. 派生类的成员除了自己定义的成员外， 还包含了它的基类成员。", "answer": ""}
+{"query_id": 184, "query": "在函数明中，____是不必要的.\nA. 形式参数的类型\nB. 形式参数名\nC. 函数的返回类型\nD. 函数名", "answer": ""}
+{"query_id": 185, "query": "关于重载运算符，下列说法正确的是____.\nA. 同一个运算符不可以被重载多次；\nB. C++已有的运算符都可以重载;\nC. 运算符重载函数只能作为类的成员函数;\nD. 运算符函数的返回类型可以声明为基本数据类型。", "answer": ""}
+{"query_id": 186, "query": "要输出整形二维数组inta[5][5]中第i行第j列的元素，则对以下三条语句，\ncout<<a[i][j]<<endl;//①\ncout<<*(*(a+i)+j)<<endl;//②\ncout<<*(*a+i*5+j)<<endl;//③\n说法正确的是____.\nA. 语句①有错误\nB. 语句②有错误\nC. 语句③有错误\nD. 语句①②③都是正确的", "answer": ""}
+{"query_id": 187, "query": "以下说法不正确的是____.\nA. 被声明为友元的函数或类，具有对出具友元声明的类的一切成员有访问权限。\nB. A函数是B类的友元函数，B类是C类的友元类，A函数对C类没有特殊访问权限\nC. 编译器认为某个函数不值得内联，就会忽略内联修饰符\nD. 编译期间建立虚函数表VTABLE和虚函数指针VPTR", "answer": ""}
+{"query_id": 188, "query": "若有以下说明：\nint a[10]={1,2,3,4,5,6,7,8,9,10},*p=a;\n则对数组元素地址的正确表示是____.\nA. &(a+1)\nB. a++\nC. &p\nD. a+1", "answer": ""}
+{"query_id": 189, "query": "用邻接表来存储图，则常见的操作的算法复杂度____。.\nA. 与图的结点数和边数都有关\nB. 只与图的边数有关\nC. 只与图的结点数有关\nD. 与结点数和边数都无关", "answer": ""}
+{"query_id": 190, "query": "顺序搜索算法适合于存储结构为____的线性表。.\nA. 散列存储\nB. 顺序存储或链接存储\nC. 压缩存储\nD. 索引存储", "answer": ""}
+{"query_id": 191, "query": "读下面C++程序：\n#include<iostream.h>\nclass line\n{\npublic:\nint color;\n};\nint startx;\nclass box\n{\nprivate:\nint upx,upy;\nint lowx,lowy;\npublic:\nint color;\nint same_color(line a,box b);\nvoid set_color(int c)\n{\ncolor=c;\n}\nvoid define_line(int x,int y)\n{\nstartx=x;\n}\n};\nint (在此添入答案)same_color(linea,boxb)\n{\nif(a.color==b.color)\nreturn 1;\nreturn 0;\n}\n在括号中添入____,该程序才能正常运行..\nA. line::\nB. box::\nC. line->\nD. box->", "answer": ""}
+{"query_id": 192, "query": "在循环单链表中，head指向头结点，设P为指向结点的指针，则判断P为尾结点的条件____.\nA. P==NULL\nB. P->next==NULL\nC. P->next==head\nD. p==head", "answer": ""}
+{"query_id": 193, "query": "下面____方法可以判断出一个有向图中是否有环（回路）？.\nA. 深度优先遍历\nB. 求最短路径\nC. 拓朴排序\nD. 求关键路径", "answer": ""}
+{"query_id": 194, "query": "以下程序经过编译连接后的可执行文件名是How.exe，执行Howareyou!<回车>，输出结果是int main(int argc,char*argv[])\n{int len=0;\nprintf(\"%c\",*(*(argv+1)+1)+1);\nwhile(--argc>0) len+=strlen(argv[argc]);\nprintf(“%d,\"len);\n}____.\nA. s,5\nB. s,7\nC. w,5\nD. w,7", "answer": ""}
+{"query_id": 195, "query": "阅读以下程序：\n#include<iostream>\nusing namespace std;\nclass Base{\npublic:\nvoid fun(){cout<<\"Base::fun\"<<endl;}\n};\nclass Derived:public Base{\npublic:\nvoid fun(){cout<<\"Derived::fun\"<<endl;}\n};\nint main(int argc,const char *argv[]){\nBase a,*pb;\nDerived b;\n;\npb->fun();\nreturn 0;\n}\n要使以上程序的输出为“Base::fun”，横线上可以填的语句为____.\nA. pb=a\nB. pb=b\nC. pb=&b\nD. pb=&Base", "answer": ""}
+{"query_id": 196, "query": "图的广度优先队列遍历算法中使用队列作为其辅助数据结构，那么在算法执行过程中每个结点最多进队____。.\nA. 1 次\nB. 2 次\nC. 3 次\nD. 4 次", "answer": ""}
+{"query_id": 197, "query": "如果基类A和A的派生类B中都有成员函数func()；要在派生类的func()中调用同名的基类的func()成员函数，下列____操作下正确的。.\nA. func();\nB. A::func();\nC. B::func();\nD. A.func();", "answer": ""}
+{"query_id": 198, "query": "下列关键字序列中____是最大堆。.\nA. 94,23,31,12,16,13\nB. 16,72,31,23,94,53\nC. 16,23,53,31,94,72\nD. 16,53,23,94,31,72", "answer": ""}
+{"query_id": 199, "query": "#include<iostream.h>\nclass example\n{\nprivate:\nstatic int num;\npublic:\nexample(){num++;cout<<num<<\"\";}\n~example(){num--;cout<<num<<\"\";}\n};\nint example::num=1;\nvoid main()\n{\nexample object1;\nexample object2;\n}\n上面c++程序的输出结果是____。.\nA. 1 1 1 1\nB. 2 1 2 1\nC. 2 2 3 2\nD. 2 3 2 1", "answer": ""}
+{"query_id": 200, "query": "某二叉树的前序和后序序列正好相反，则该二叉树一定是____的二叉树。.\nA. 空或只有一个结点\nB. 高度等于其结点数\nC. 任一结点无左孩子\nD. 任一结点无右孩子", "answer": ""}
+{"query_id": 201, "query": "下面对静态数据成员的描述中，正确的是____.\nA. 静态数据成员是类的所有对象共享的数据\nB. 类的每个对象都有自己的静态数据成员\nC. 类的不同对象有不同的静态数据成员值\nD. 静态数据成员不能通过类的对象调用", "answer": ""}
+{"query_id": 202, "query": "假定对元素序列(7,3,5,9,1,12)进行堆排序，并且采用小根堆，则由初始数据构成的初始堆为____.\nA. 1,3,5,7,9,12\nB. 1,3,5,9,7,12\nC. 1,5,3,7,9,12\nD. 1,5,3,9,12,7", "answer": ""}
+{"query_id": 203, "query": "计算机中的算法指的是解决某一个问题的有限运算序列，它必须具备输入、输出、____等5个特性。.\nA. 可执行性、可移植性和可扩充性\nB. 可执行性、有穷性和确定性\nC. 确定性、有穷性和稳定性\nD. 易读性、稳定性和确定性", "answer": ""}
+{"query_id": 204, "query": "在一株高度为2的5阶B树中，根结点所含关键字的个数最少是____.\nA. 5\nB. 7\nC. 8\nD. 1", "answer": ""}
+{"query_id": 205, "query": "设有两个串S1和S2,求串S2在S1中首次出现位置的运算称作____。.\nA. 连接\nB. 求子串\nC. 模式匹配\nD. 判断子串", "answer": ""}
+{"query_id": 206, "query": "用哈希（散列）方法处理冲突（碰撞）时可能出现堆积（聚集）现象，下列选项中，会受堆积现象直接影响的是____.\nA. 存储效率\nB. 散列函数\nC. 装填(装载)因子\nD. 平均查找长度", "answer": ""}
+{"query_id": 207, "query": "下面关于线性表的叙述中，错误的是哪一个？____.\nA. 线性表采用顺序存储，必须占用一片连续的存储单元。\nB. 线性表采用顺序存储，便于进行插入和删除操作。\nC. 线性表采用链接存储，不必占用一片连续的存储单元。\nD. 线性表采用链接存储，便于插入和删除操作。", "answer": ""}
+{"query_id": 208, "query": "已知程序如下：\nint S(int n)\n{return(n<=0)?0:s(n-1)+n;}\nvoid main()\n{cout<<S(1);}\n程序运行时使用栈来保存调用过程的信息，自栈底到栈顶保存的信息依次对应的是____.\nA. main( )→S(1)→S(0)\nB. S(0)→S(1)→main()\nC. main( )→S(0)→S(1)\nD. S(1)→S(0)→main( )", "answer": ""}
+{"query_id": 209, "query": "对类的构造函数和析构函数描述正确的是____.\nA. 构造函数可以重载， 析构函数不能重载\nB. 构造函数不能重载， 析构函数可以重载\nC. 构造函数可以重载， 析构函数也能重载\nD. 构造函数不能重载， 析构函数也不能重载", "answer": ""}
+{"query_id": 210, "query": "以下类定义不能通过编译的是____.\nA. class A {\n\tpublic:\n\t\t\tvoid func(int a,int b) {}; \n};\nB. class B {\n\tpublic:\n\t\t\tvoid func(int a,int b=1){}\n};\nC. class C {\n\t\tpublic:\n\t\t\tvoid func(int a=3,int b){}\n};\nD. class D {\npublic:\nvoid func(int a=3,int b=1){}\n};", "answer": ""}
+{"query_id": 211, "query": "数据的逻辑结构可以分为____。.\nA. 静态结构和动态结构\nB. 物理结构和存储结构\nC. 线性结构和非线性结构\nD. 虚拟结构和抽象结构", "answer": ""}
+{"query_id": 212, "query": "若二叉树的前序序列和后序序列正好相反，则该二叉树一定是____的二叉树。.\nA. 空或只有一个结点\nB. 任一结点无左子树\nC. 任一结点无右子树\nD. 高度等于其结点数", "answer": ""}
+{"query_id": 213, "query": "空串和空格串____。.\nA. 相同\nB. 不相同\nC. 可能相同\nD. 无法确定", "answer": ""}
+{"query_id": 214, "query": "以下关于装饰模式和代理模式说法错误的是：____.\nA. 可以把“装饰”看成是一连串的“代理”。\nB. 在对类进行装饰时，被装饰对象增加的行为通常重新实现原有功能。\nC. 代理模式中少见多重嵌套。\nD. 装饰模式通过对象的组合修改对象的功能。", "answer": ""}
+{"query_id": 215, "query": "当输入为”12345c6”后敲回车键，下列函数的输出为：____\n#include<iostream>\nusing namespace std;\nint main(){\nint i=0,a=0;\nwhile(cin>>a){\ncout<<a;\n++i;\n}\ncout<<\"*\"<<i;\nreturn 0;\n}.\nA. 1234*2\nB. 12 34 5*1\nC. 12345*3\nD. 12 34 *4", "answer": ""}
+{"query_id": 216, "query": "下列叙述错误的是____.\nA. 派生类一般都用公有派生；\nB. 对基类成员的访问必须是无二义性的；\nC. 基类的公有成员在派生类中仍然是公有的;\nD. 赋值兼容规则也适用于多重继承的组合。", "answer": ""}
+{"query_id": 217, "query": "C++基类中的private成员通过____类型的继承，可以被派生类访问。.\nA. public\nB. protected\nC. private\nD. 任何类型的继承都不能使得派生类可以访问基类的 private 成员", "answer": ""}
+{"query_id": 218, "query": "设有100个结点，用二分法查找时，最大比较次数是____。.\nA. 25\nB. 50\nC. 10\nD. 7", "answer": ""}
+{"query_id": 219, "query": "观察以下程序片段\nint a[5]={1,2,4,8,16};\nint*p=&a[0];\nint*q=&a[4];\ncout<<q-p<<endl;\n其输出为____.\nA. 15\nB. 4\nC. 16\nD. 程序片段中存在语法错误", "answer": ""}
+{"query_id": 220, "query": "循环队列的队头和队尾指针分别为front和rear,则判断循环队列为空的条件是____。.\nA. front==rear\nB. front==0\nC. rear==0\nD. front=rear+1", "answer": ""}
+{"query_id": 221, "query": "派生类的对象对它的基类成员中什么是可访问的____.\nA. 公有继承的公有成员\nB. 公有继承的私有成员\nC. 公有继承的保护成员\nD. 私有继承的公有成员", "answer": ""}
+{"query_id": 222, "query": "观察以下程序段\nstring a=\"abcd\";\nstring b=\"bcd\";\nif(a>b)cout<<\"a>b\"<<a.length()<<endl;\nelse cout<<\"a<b\"<<a.length()<<endl;\n那么程序的输出为____.\nA. a>b 4\nB. a<b 4\nC. a>b 5\nD. a<b 5", "answer": ""}
+{"query_id": 223, "query": "已知字符集{a，b，c，d，e，f，g，h}，若各字符的哈夫曼编码依次是0100，10，0000，0101，001，011，11，0001，则编码序列0100011001001011110101的译码结果是：____.\nA. a c g a b f h\nB. a d b a g b b\nC. a f b e a g d\nD. a f e e f g d", "answer": ""}
+{"query_id": 224, "query": "下列关于图的描述，错误的是____。.\nA. 在一个无向图中，所有结点的度数之和等于所有边数的 2 倍\nB. 在一个有向图中，所以结点的入度或出度之和均等于所有边的数目\nC. n 个结点的完全有向图包含n (n-1)条边\nD. 若要连通具有n 个结点的无向图，至少需要n 条边", "answer": ""}
+{"query_id": 225, "query": "下列程序输出结果是：____\n#include<iostream>\n#include<iomanip>\nusing namespace std;\nint main(){\ncout<<\"hello\"<<setw(4)<<\"dear\"<<\"friends!\"<<endl;\ncout<<22<<\"\"<<hex<<33<<\"\"<<44<<endl;\nreturn 0;\n}.\nA. hellodearfriends!\n22 21 2c\nB. hello dearfriends!\n22 21 2c\nC. hello dear friends!\n22 21 44\nD. hello dearfriends!\n22 21 44", "answer": ""}
+{"query_id": 226, "query": "静态查找表与动态查找表二者的根本差别在于____。.\nA. 它们的逻辑结构不一样\nB. 施加在其上的操作不同\nC. 包含的数据元素的类型不一样\nD. 存储实现不一样", "answer": ""}
+{"query_id": 227, "query": "有如下程序段：\n#include<iostream>\nusing namespace std;\nclass A{\npublic:\n\tstatic int num;\n\tA(){num++;}\n};\nint A::num=0;\nint main(){\n\tA a,*b,d[2];\n\tcout<<A::num<<endl;\n\treturn 0;\n}\n执行上面的程序将输出____.\nA. 0\nB. 1\nC. 3\nD. 4", "answer": ""}
+{"query_id": 228, "query": "现有一棵无重复关键字的平衡二叉树(AVL树)，对其进行中序遍历可得到一个升序序列。下列关于该平衡二叉树的叙述中，正确的是____.\nA. 根结点的度一定为 2\nB. 树中最小元素一定是叶结点\nC. 最后插入的元素一定是叶结点\nD. 树中最大元素一定无右子树", "answer": ""}
+{"query_id": 229, "query": "在C++中，下列类的成员函数____属于纯虚函数。.\nA. void display();\nB. Virtual void display();\nC. Virtual void display()=0;\nD. Virtual void display(){int a=0};", "answer": ""}
+{"query_id": 230, "query": "设一组初始记录关键字序列为(50,40,95,20,15,70,60,45)，则以增量d=4的一趟希尔排序结束后前4条记录关键字为____.\nA. 40,50,20,95\nB. 15,40,60,20\nC. 15,20,40,45\nD. 45,40,15,20", "answer": ""}
+{"query_id": 231, "query": "下面叙述正确的是____.\nA. 抽象基类中所有的virtual函数都必须声明为纯virtual函数\nB. 使用基类指针引用一个派生类的对象是非常危险的\nC. 如果基类申明了一个纯virtual函数， 派生类只有实现该函数才能成为具体类。\nD. 一个类中有virtual函数， 该类就成为抽象类。", "answer": ""}
+{"query_id": 232, "query": "以下说法不正确的是____.\nA. 静态成员函数可以调用静态成员函数；\nB. 静态成员函数可以调用非静态成员函数；\nC. 非静态成员函数可以调用静态成员函数；\nD. 非静态成员函数可以调用非静态成员函数。", "answer": ""}
+{"query_id": 233, "query": "若平衡二叉树的高度为6，且所有非叶子结点的平衡因子均为-1，则该平衡二叉树的结点总数为：____.\nA. 12\nB. 20\nC. 32\nD. 33", "answer": ""}
+{"query_id": 234, "query": "语句ofstreamf(\"SALARY.DAT\",ios::appiios::binary);的功能是建立流对象f,试图打开文件SALARY.DAT并与之连接，并且____.\nA. 若文件存在，将文件写指针定位于文件尾;若文件不存在，建立一个新文件\nB. 若文件存在，将其置为空文件;若文件不存在，打开失败\nC. 若文件存在，将文件写指针定位于文件首;若文件不存在，建立一个新文件\nD. 若文件存在，打开失败;若文件不存在，建立一个新文件", "answer": ""}
+{"query_id": 235, "query": "以下程序段的时间复杂度为____。\nvoid main(){\nint n=10,x=n,y=0;\nwhile(x>=(y+1)*(y+1))\ny++;\n}.\nA. O( n^(1/2))\nB. O(n)\nC. O(1)\nD. O(n^2)", "answer": ""}
+{"query_id": 236, "query": "在____情况下适宜采用inline定义内联函数。.\nA. 函数体含有循环语句\nB. 函数体含有递归语句\nC. 函数代码少、频繁调用\nD. 函数代码多、不常调用", "answer": ""}
+{"query_id": 237, "query": "有如下定义语句：int a[]={1,2,3,4,5};则对语句int *p=a;正确的描述是____.\nA. 语句int *p=a;定义不正确\nB. 语句int *p=a;初始化变量p,使其指向数组对象a的首元素\nC. 语句int *p=a;是把数组a的值赋给变量p\nD. 语句int *p=a;是把a[0]的值赋给变量p", "answer": ""}
+{"query_id": 238, "query": "在双向循环链表中，在P指针所指向的结点前插入一个指针q所指向的新结点，其格改指针的操作是____备注：双向链表的结点结构为(prev,data,next)..\nA. p->prev=q;q->next=p;p->prev->next=q;q->prev =q;\nB. p->prev=q;p->prev->next=q;q->next=p;q->prev=p->prev;\nC. q->prev=p->prev;q->next=p;p->prev=q;p->prev =q\nD. q->next=p;q->prev=p->prev;p->prev->next=q;p->prev =q;", "answer": ""}
+{"query_id": 239, "query": "下面这段代码的运行结果为____\n#include<iostream>\nusing namespace std;\nclass A{\npublic:\nvoid f(){cout<<\"A::f\"<<endl;}\n};\nclass B:public A{\npublic:\nvoid f(){cout<<\"B::f\"<<endl;}\n};\nint main()\n{\n\tA *p=new B();\n\tp->f();\n\tdelete p;\n\treturn 0;\n}.\nA. A::f\nB. B::f\nC. A::f\\nB::f（\\n表示换行）\nD. 不产生输出", "answer": ""}
+{"query_id": 240, "query": "对给定的关键字序列110，119，007，911，114，120，122进行基数排序，则第2趟分配收集后得到的关键字序列是____.\nA. 007， 110， 119， 114， 911， 120， 122\nB. 007， 110， 119， 114， 911， 122， 120\nC. 007， 110， 911， 114， 119， 120， 122\nD. 110， 120， 911， 122， 114， 007， 119", "answer": ""}
+{"query_id": 241, "query": "如果图用邻接表结构存储，则常见操作的算法时间复杂度____.\nA. 只和顶点的个数有关\nB. 只和边的条数有关\nC. 和顶点的个数、 边的条数都可能有关\nD. 和两者都无关", "answer": ""}
+{"query_id": 242, "query": "C++支持两种多态，包括编译时多态和运行时多态，编译时多态和运行时多态分别通过____来实现.\nA. 重 载 和 虚 函数\nB. 重 载 和 重 载\nC. 虚 函 数 和 重 载\nD. 虚函数和虚函数", "answer": ""}
+{"query_id": 243, "query": "下面关于B树和B+树的叙述中，不正确的是____.\nA. 都是平衡的多叉树\nB. 都能有效地支持顺序检索\nC. 都可以用于文件的索引结构\nD. 都能有效地支持随机检索", "answer": ""}
+{"query_id": 244, "query": "对于拷贝构造函数和赋值操作的关系，正确的描述是____.\nA. 进行赋值操作时， 会调用类的构造函数。\nB. 当调用拷贝构造函数时， 类的对象正在被建立并被初始化。\nC. 拷贝构造函数和赋值操作是完全一样的操作\nD. 拷贝构造函数和赋值操作不能在同一个类中被同时定义", "answer": ""}
+{"query_id": 245, "query": "树最适合用来表示____。.\nA. 有序数据元素\nB. 无序数据元素\nC. 元素之间具有分支层次关系的数据\nD. 元素之间无联系的数", "answer": ""}
+{"query_id": 246, "query": "下述对C++语言字符数组的描述中错误的是____.\nA. 字符数组可以存放字符串\nB. 字符数组中的字符串可以整体输入、输出\nC. 可以在赋值语句中通过赋值运算符”=\"对字符数组整体赋值\nD. 不可以用关系运算符对字符数组中的字符串进行比较", "answer": ""}
+{"query_id": 247, "query": "一个队列的入队序列是1,2,3,4，则队列的出队序列是____。.\nA. 1,2,3,4\nB. 4,3,2,1\nC. 1,4,3,2\nD. 3,4,1,2", "answer": ""}
+{"query_id": 248, "query": "阅读代码，下列说法错误的是：____\n #include <iostream> \n #include <string.h> \n using namespace std; \n class A { \n  int *m_arr; \n  int m_size; \n public: \n  A(int i):m_size(i) {\n   m_arr = new int[m_size]; \n   memset(m_arr, 0, m_size*sizeof(int)); \n  } \n  ~A() {\n   delete []m_arr; //(2)\n  } \n  void set(int index, int value) { \n   m_arr[index] = value; \n  } \n  void print() {\n   cout << \"m_arr: \";\n   for (int i = 0; i < m_size; ++ i) {\n    cout << \" \" << m_arr[i];\n   }\n   cout << endl;\n  }\n };\n int main() {\n  A a(5);\n  A b = a; //(1)\n  b.set(3, 10);\n  a.print(); //(3)\n  return 0;\n }.\nA. (3)执行完之后，该程序的输出为: m_arr: 0 0 0 10 0\nB. 程序中的语句(1)调用了编译器自动合成的拷贝构造函数\nC. 该程序可以正常执行，且程序的返回值为0\nD. 如果将程序中的语句(2)改成delete m_arr，则可能会出现内存泄漏", "answer": ""}
+{"query_id": 249, "query": "下面的叙述中____是正确的。.\nA. 若有一个结点是二叉树中某个子树的中序遍历结果序列的最后一个结点，则它一定是该子\nB. 若有一个结点是二叉树中某个子树的前序遍历结果序列的最后一个结点，则它一定是该子\nC. 若有一个叶子结点是二叉树中某个子树的中序遍历结果序列的最后一个结点，则它一定是\nD. 若有一个叶子结点是二叉树中某个子树的前序遍历结果序列的最后一个结点，则它一定是", "answer": ""}
+{"query_id": 250, "query": "对于std::string和std::vector<char>定义的字符串str，以下选项正确的是：____.\nA. 都可以使用str.length();获得字符串长度\nB. 都可以使用for(char c: str)遍历字符串中的所有字符\nC. 都可以使用cin>>str;从标准输入输入字符串\nD. 都可以使用str+=\"abc\";向字符串尾部添加字符", "answer": ""}
+{"query_id": 251, "query": "设入栈顺序为A,B,C,D,E,则出栈序列不可能是____.\nA. EDCBA\nB. ABCDE\nC. ADEBC\nD. ABDEC", "answer": ""}
+{"query_id": 252, "query": "在无向图中定义顶点vi与vj之间的路径为从vi到vj的一个____。.\nA. 顶点序列\nB. 边序列\nC. 权值总和\nD. 边的条数", "answer": ""}
+{"query_id": 253, "query": "下面程序的运行结果是____\n#include<iostream.h>\nvoid main()\n{\nint num=1;\nint& ref=num;\nref=ref+2;\ncout<<num;\nnum=num+3;\ncout<<ref<<endl;\n}.\nA. 13\nB. 16\nC. 36\nD. 33", "answer": ""}
+{"query_id": 254, "query": "判定一个顺序栈s(栈空间大小为n)为空的条件是____。.\nA. S->top==0\nB. S->top!=0\nC. S->top==n\nD. S->top!=n", "answer": ""}
+{"query_id": 255, "query": "在一个单链表中，删除P指向的结点后的结点s,则执行____.\nA. delete s;\nB. P->next=s-next;\nC. P->next=NULL;\nD. P->next=S->next; delete s;", "answer": ""}
+{"query_id": 256, "query": "若已知char str[10];有语句cin>>str; 当输入为：This is a program,所得到的结果是str=____.\nA. This is a program\nB. T\nC. This\nD. This is a", "answer": ""}
+{"query_id": 257, "query": "当利用大小为n的数组顺序存储一个栈时，假定用top==n表示栈空，则向这个栈插入一个元素时,首先应执行____语句修改top指针。.\nA. top++\nB. top--\nC. top=0\nD. top", "answer": ""}
+{"query_id": 258, "query": "下述文件中适合于磁带存储的是____.\nA. 顺序文件\nB. 索引文件\nC. 散列文件\nD. 多关键字文件", "answer": ""}
+{"query_id": 259, "query": "一棵深度为10的完全二叉树，从根结点开始，对所有结点按照层次依次编号:0,1,2…，则编号为18的结点，其父结点编号为____.\nA. 10\nB. 9\nC. 8\nD. 5", "answer": ""}
+{"query_id": 260, "query": "下列程序输出结果是：____\n#include<iostream>\nusing namespace std;\nclass AA{\npublic:\nvoid fun(){cout<<\"AA\";}\n};\nclass BB:public AA{\npublic:\nBB(){cout<<\"BB\";}\n};\nclass CC:public BB{\nvoid fun(){\nBB::fun();\ncout<<\"CC\";\n}\n};\nint main(int argc,const char*argv[]){\nAA aa,*p;\nBB bb;\nCC cc;\np=&cc;\np->fun();\nreturn 0;\n}.\nA. BBBBAA\nB. BBBBCC\nC. BBBBAACC\nD. BBCC", "answer": ""}
+{"query_id": 261, "query": "在c++中，下列关于友元函数和成员函数的区别，____是正确的。.\nA. 都具有 this 指针\nB. 友员函数不具有 this 指针，而成员函数则具有。\nC. 友员函数的定义和成员函数的定义相同，都需要类名加上作用域算符::为前纵\nD. 友员函数的定义与成员函数一样需要以类名加上作用域运算符::为前纵", "answer": ""}
+{"query_id": 262, "query": "由权值分别为11,8,6,2,5的叶子结点生成一棵哈夫曼树，它的带权路径长度为____.\nA. 24\nB. 73\nC. 48\nD. 53", "answer": ""}
+{"query_id": 263, "query": "若一个栈的输入序列为1,2,3,…,n，输出序列的第一个元素是i，则第j个输出元素是____。.\nA. i-j-1\nB. i-j\nC. j-i+1\nD. 不确定的", "answer": ""}
+{"query_id": 264, "query": "以下正确的描述是____.\nA. 预处理指令只能位于 C 源程序文件的首部。\nB. 凡是 C 源程序中行首以“#” 标识的控制行都是预处理指令。\nC. C +语言的编译预处理就是对源程序进行初步的语法检查。\nD. C 语言的预处理功能是指完成宏替换和包含文件的调用。", "answer": ""}
+{"query_id": 265, "query": "定义如下的Test类，下列说法正确的是____ \nclass Test{\n\t\tconst int member;\n\t\tfloat another_member;\n\tpublic:\n\t\tTest(int mem):member(mem){another_member=1.0;}\n\t\tint MyMember()const{return member;}\n\t\tfloat MyAnotherMember(){return another_member;}\n\t}.\nA. member的值在不同的Test对象中可以不同\nB. 初始化数据成员member时，可以采用类似于another_member的初始化方式，在构造函数的函数体中赋值\nC. 成员函数MyMember的函数体内可以增加语句，修改another_member的值\nD. 定义一个Test类的常量对象，其可以调用MyMember和MyAnotherMember两个成员函数", "answer": ""}
+{"query_id": 266, "query": "设输入序列为1,2,3,4,5,6,则通过栈的作用后可以得到的输出序列为____.\nA. 5, 3, 4, 6, 1, 2\nB. 3， 2， 5， 6， 4， 1\nC. 3, 1, 2, 5, 4, 6\nD. 1， 5， 4， 6, 2， 3", "answer": ""}
+{"query_id": 267, "query": "一个非空广义表的表头____。.\nA. 不可能是子表\nB. 只能是子表\nC. 只能是原子\nD. 可以是子表或原子", "answer": ""}
+{"query_id": 268, "query": "以下类定义不正确的是____.\nA. class A {   Public:  void Func(int x){…};int Func(int x){…}; };\nB. class B {public:void Func( int x){…};void Func( double x){…};};\nC. class C {public: void Func(int x,int y){…};void Func( int x){…}; };\nD. class D {public:int  Func( int x){…};char*  Func( char x){…};};", "answer": ""}
+{"query_id": 269, "query": "二叉查找树的查找时间复杂度最差为____.\nA. O(n^2)\nB. O(nlogn)\nC. 0(n)\nD. 0(log_2n)", "answer": ""}
+{"query_id": 270, "query": "如果类A被说明成类B的友元，则____.\nA. 类 A 的成员即类 B 的成员\nB. 类 B 的成员即类 A 的成员\nC. 类 A 的成员函数不得访问类 B 的成员\nD. 类 B 不一定是类 A 的友元", "answer": ""}
+{"query_id": 271, "query": "若完全二叉树的结点总数为1001，则度为1的结点有____个。.\nA. 0\nB. 1\nC. 500\nD. 501", "answer": ""}
+{"query_id": 272, "query": "后缀表达式823+-62/-的计算结果是____.\nA. -1\nB. 1\nC. 0\nD. 2", "answer": ""}
+{"query_id": 273, "query": "设一组初始关键字记录关键字为(20,15,14,18,21,36,40,10)，则以20为基准记录的一趟快速排序结束后的结果为____.\nA. 10,15,14,18,20,36,40,21\nB. 10,15,14,18,20,40,36,21\nC. 10,15,14,20,18,40,36,21\nD. 15,10,14,18,20,36,40,21", "answer": ""}
+{"query_id": 274, "query": "在C++中,____一定不能创建类的对象和实例..\nA. 虚基类\nB. 抽象类\nC. 基类\nD. 派生类", "answer": ""}
+{"query_id": 275, "query": "下列输出字符'A'的方法中，错误的是____.\nA. char A = 'A'; cout<<A;\nB. cout<<'A';\nC. cout<<put('A');\nD. cout.put('A');", "answer": ""}
+{"query_id": 276, "query": "现有一个实现数据结构“栈”的需求，程序员X对栈的设计进行了如下思考，其中你认为有问题的是：____.\nA. 可以利用C++ STL中的vector，使用适配器模式将其适配为符合栈的抽象接口的类\nB. 对于栈中元素的内存分配和释放，可以使用策略模式来实现不同内存分配/释放算法\nC. 如果使用装饰器模式对一个栈数据结构进行多次功能扩展，就不会出现多重嵌套的问题\nD. 可以使用代理/委托模式设计智能指针，对栈中元素进行内存分配和释放", "answer": ""}
+{"query_id": 277, "query": "设计一个判别表达式中左右括号是否配对出现的算法，采用____数据结构最佳。.\nA. 线性表的顺序存储结构\nB. 队列\nC. 栈\nD. 线性表的链式存储结构", "answer": ""}
+{"query_id": 278, "query": "通过____调用虚函数时，采用动态束定。.\nA. 对象指针\nB. 对象名\nC. 成员名限定\nD. 派生类名", "answer": ""}
+{"query_id": 279, "query": "一组纪录的关键字序列为(33,66,43,25,27,71)，为排序非递减序列利用堆排序的方法建立的初始堆为____.\nA. (66,33,43,25,27,71)\nB. (71,66,43,33,27,25)\nC. (71,66,43,25,27,33)\nD. (71,43,66,27,33,25)", "answer": ""}
+{"query_id": 280, "query": "在类的说明符中，被指定为私有的数据可以被以下____访问。.\nA. 程序中的任何函数\nB. 其他类的成员函数\nC. 类中的成员函数\nD. 派生类中的成员函数", "answer": ""}
+{"query_id": 281, "query": "内排和外排的不同在于____.\nA. 内排数据元素的类型简单，外排数据类型复杂\nB. 内排数据元素在内存中能全部放下，外排不能，一部分要存在外存储器上\nC. 内排数据存储用顺序结构，外排数据存储用链式结构\nD. 内排是稳定排序，外排是不稳定排序", "answer": ""}
+{"query_id": 282, "query": "设某散列表的长度为100,散列函数H(k)=k%P,则P通常情况下最好选择____.\nA. 99\nB. 97\nC. 91\nD. 93", "answer": ""}
+{"query_id": 283, "query": "图的邻接矩阵表示法适用于表示____.\nA. 无向图\nB. 有向图\nC. 稠密图\nD. 稀疏图", "answer": ""}
+{"query_id": 284, "query": "有如下程序段：\n#include<iostream>\nusing namespace std;\nclass BASE{\n\tchar c;\npublic:\n\tBASE(char n):c(n){}\n\tvirtual~BASE(){cout<<c;}\n};\nclass DERIVED:public BASE{\n\tchar c;\npublic:\n\tDERIVED(char n):BASE(n+1),c(n){}\n\t~DERIVED(){cout<<c;}\n};\n\nint main()\n{\n\tDERIVED('X');\n\treturn 0;\n}\n执行上面的程序将输出____.\nA. XY\nB. YX\nC. X\nD. Y", "answer": ""}
+{"query_id": 285, "query": "在类中说明的成员可以使用关键字____进行修饰。.\nA. private\nB. extern\nC. auto\nD. register", "answer": ""}
+{"query_id": 286, "query": "表达式a*(b+c)-d的前缀表达式是____.\nA. abcdd+-\nB. -*a+bcd\nC. abc*+d-\nD. -+*abcd", "answer": ""}
+{"query_id": 287, "query": "从空栈开始依次将字符A、B、C、D、E入栈，在所有可能的出栈序列中，最后一个出栈元素是C的序列的个数是____.\nA. 5\nB. 1\nC. 4\nD. 3", "answer": ""}
+{"query_id": 288, "query": "结构类型Date作为函数的参数，如果该参数在函数中只读不写,则以下参数说明中最好的是____.\nA. const Date &d\nB. const Date d\nC. Date &d\nD. Date d", "answer": ""}
+{"query_id": 289, "query": "以下序列不是堆的是____。.\nA. 100,85,98,77,80,60,82,40,20,10,66\nB. 100,98,85,80,77,82,66,60,40,20,10\nC. 10,20,40,60,66,77,80,82,85,98,100\nD. 100,85,40,77,80,60,66,98,82,10,20", "answer": ""}
+{"query_id": 290, "query": "下列说法正确的是____.\nA. 非常量左值引用与常量左值引用既可以绑定左值，也可以绑定右值\nB. int y=2,z=3;int &&w = y * z;不能够正常运行\nC. int y=3,z=3;const int &w = y * z;能够正常运行\nD. 在函数中的临时左值引用可以先定义，再赋值", "answer": ""}
+{"query_id": 291, "query": "链表结点的结构类型为struct linkRec{int data;linkRec *next;},如果指针rear指向尾结点，将节点p链入表尾，并将p作为新的表尾可用语句____.\nA. rear->next=p->next;rear=p;\nB. rear->next=p;rear=p;\nC. rear->next=rear;p->next=p;\nD. (*rear ).next=rear;(*p).next=p;", "answer": ""}
+{"query_id": 292, "query": "设一个链表最常用的操作是在末尾插入结点和删除尾结点，则选用____最节省时间。.\nA. 单链表\nB. 单循环链表\nC. 带尾指针的单循环链表\nD. 带头结点的双循环链表", "answer": ""}
+{"query_id": 293, "query": "下列不属于责任链模式的优点的是____.\nA. 提高系统性能；\nB. 便于增加新的处理请求类；\nC. 降低耦合度；\nD. 简化对象。", "answer": ""}
+{"query_id": 294, "query": "若用一个大小为6的数组来实现循环队列，且当前rear和front的值分别为0和3。当从队列中删除一个元素，再加入两个元素后，rear和front的值分别为____。.\nA. 1 和 5\nB. 2 和 4\nC. 4 和 2\nD. 5 和 1", "answer": ""}
+{"query_id": 295, "query": "char s, *p=&s,&ch=s; 则等价于 s='#'的语句为____.\nA. p='#'\nB. *p='#'\nC. *ch='#'\nD. &dr='#'", "answer": ""}
+{"query_id": 296, "query": "定义如下所示的Base类和Derive类，下列说法错误的是：____\n #include <iostream>\n using namespace std;\n class Base {\n  int data;\n public:\n  Base() : data(0) { cout << \"Base::Base(\" << data << \")\\n\"; }\n  Base(int i) : data(i) { cout << \"Base::Base(\" << i << \")\\n\"; }\n };\n class Derive : public Base {\n  int data{2018};\n public: \n  Derive() {}\n  Derive(int i) : Base(i) {}\n  void print() { cout << \"data = \" << data << endl; }\n };\n int main() {\n  Derive obj1;\n  Derive obj2(2019);\n  obj1.print();\n  obj2.print();\n  return 0;\n }.\nA. Derive类的默认构造函数没有显式调用Base类的构造函数，此时编译器会自动调用Base类的默认构造函数\nB. Derive类的普通构造函数可以在初始化列表中显式调用Base类的普通构造函数\nC. 该程序的输出为Base::Base(0)\\nBase::Base(2019)\\ndata = 2018\\ndata = 2019\\n\nD. obj1析构时先执行Derive类的析构函数，再执行Base类的析构函数", "answer": ""}
+{"query_id": 297, "query": "类CStudent的拷贝构造函数的声明语句为____.\nA. CStudent &CStudent (const CStudent other)\nB. CStudent CStudent(const CStudent other)\nC. CStudent (CStudent *other)\nD. CStudent (const CStudent &other)", "answer": ""}
+{"query_id": 298, "query": "下列说法错误的是____.\nA. 求最短路径的Dijkstra算法中边的权值不可以为负\nB. Dijkstra算法允许图中有回路\nC. Floyd算法中边的权值不可以为负\nD. 深度优先搜索算法可用于判断有向图中是否存在回路", "answer": ""}
+{"query_id": 299, "query": "下面的循环体执行的次数与其它不同的是____.\nA. i=0;while(++i<100){cout<i<\" \";}\nB. for(i=0;i<100;++i){cout<<i<<” \";}\nC. for(i=100;i>=1;--i){cout<i<\" \";}\nD. i=0;while(i++<100){cout<<i<<\" \";}", "answer": ""}
+{"query_id": 300, "query": "在按层次遍历二叉树的算法中，需要借助的辅助数据结构是____.\nA. 队列\nB. 栈\nC. 线性表\nD. 有序表", "answer": ""}
+{"query_id": 301, "query": "类模板定义如下：\ntemplate<classT,int low,int high>\nclass Array{....};\n对该类模板实例化正确的是____.\nA. Array<float,0,20> x;\nB. Array<int,int,int> x;\nC. template<int,0,20> x;\nD. Array<int,0,int> x;", "answer": ""}
+{"query_id": 302, "query": "采用稀疏矩阵的三元组表形式进行压缩存储，若要完成对三元组表进行转置，只要将行和列对换，这种说法____。.\nA. 正确\nB. 错误\nC. 无法确定\nD. 以上均不对", "answer": ""}
+{"query_id": 303, "query": "Sample是用户定义的某个类，obj是Sample类的对象，p是Sample类的指针，则执行语句p=new Sample时会调用____.\nA. Sample 类的构造函数\nB. Sample 类的析构函数\nC. Sample 类的赋值运算符重载函数\nD. Sample 类的拷贝构造函数", "answer": ""}
+{"query_id": 304, "query": "在C++中，可以重载的运算符有____。.\nA. sizeof()\nB. ::\nC. .*\nD. ++", "answer": ""}
+{"query_id": 305, "query": "#include<iostream.h>\n{\n//This is my first program\ncout<<\"My first program in C++\";\n}\n这段C++程序的输出是____。.\nA. My first program in C++\nB. This is my first program\nC. My first Program in C\nD. None of the above", "answer": ""}
+{"query_id": 306, "query": "用某种排序方法对关键字序列(25,84,21,47,15,27,68,35,20)进行排序时，序列的变化情况如下：\n20,15,21,25,47,27,68,35,84\n15,20,21,25,35,27,47,68,84\n15,20,21,25,27,35,47,68,84\n则所采用的排序方法是____.\nA. 选择排序\nB. 希尔排序\nC. 归并排序\nD. 快速排序", "answer": ""}
+{"query_id": 307, "query": "对10TB的数据文件进行排序，应使用的方法是____.\nA. 希尔排序\nB. 堆排序\nC. 快速排序\nD. 归并排序", "answer": ""}
+{"query_id": 308, "query": "快速排序在最坏情况下的时间复杂度为____.\nA. O(log2n)\nB. O(nlog2n)\nC. O(n)\nD. O(n^2)", "answer": ""}
+{"query_id": 309, "query": "若将关键字1，2，3，4，5，6，7依次插入到初始为空的平衡二叉树T中，则T中平衡因子为0的非叶子结点的个数是____.\nA. 0\nB. 1\nC. 2\nD. 3", "answer": ""}
+{"query_id": 310, "query": "对初始数据序列｛8，3，9，11，2，1，4，7，5，10，6｝进行希尔排序。若第一趟排序结果为｛1，3，7，5，2，6，4，9，11，10，8｝，第二趟排序结果为｛1，2，6，4，3，7，5，8，11，10，9｝，则两趟排序采用的增量分别是____。.\nA. 3，1\nB. 3，2\nC. 5，2\nD. 5，3", "answer": ""}
+{"query_id": 311, "query": "函数f声明为void f(int *n),在主程序中定义变量m为int m=10,则下面调用正确的是____.\nA. f(*m)\nB. f(&m)\nC. f(m)\nD. f(10+m)", "answer": ""}
+{"query_id": 312, "query": "下列关于无向连通图特性的叙述中，正确的是____。\n（1）所有顶点的度数之和为偶数。\n（2）边数比顶点个数减1要大。\n（3）至少有1个顶点的度为1。.\nA. 只有（1）\nB. 只有（2）\nC. （1）和（2）\nD. （1）和（3）", "answer": ""}
+{"query_id": 313, "query": "int a=10,b=11,c=12,x=(a+b)<c&&(b=7):则此时b的值是____.\nA. 11\nB. 0\nC. 7\nD. 1", "answer": ""}
+{"query_id": 314, "query": "下列排序算法中，____算法可能会出现下面情况：初始数据有序时，花费时间反而更多。.\nA. 堆排序\nB. 冒泡排序\nC. 快速排序\nD. 希尔排序", "answer": ""}
+{"query_id": 315, "query": "以下说法正确的是____。.\nA. 数据元素是数据的最小单位\nB. 数据项是数据的基本单位\nC. 数据结构是带有结构的各数据项的集合\nD. 一些表面上很不相同的数据可以有相同的逻辑结构", "answer": ""}
+{"query_id": 316, "query": "已知各变量的类型说明如下：\nint a=0;\ndouble x=1.42;\nchar ch;\n则以下不符合C+语言语法的表达式是____.\nA. a+=0x123fd\nB. x=12e-8\nC. ch=\"y\"\nD. ch='\\0'", "answer": ""}
+{"query_id": 317, "query": "在C++中,运算符new的作用是____.\nA. 创建名为 new 的对象\nB. 获取一个新类的内存\nC. 返回指向所创建对象的指针，并为创建的对象分配内存空间\nD. 返回为所创建的对象分配内存的大小", "answer": ""}
+{"query_id": 318, "query": "以下关于单例模式说法不正确的是：____.\nA. 单例模式只需要显式删除构造函数与拷贝构造函数即可保证只能构造一份类的实例\nB. CRPT模式与虚函数不同，实现了编译时多态\nC. 静态虚函数可以实现和单例模式类似的“全局访问”功能\nD. 我们可以使用惰性初始化，返回单例实例的引用。但这种方法仍然存在用户自行delete所生成单例实例，引发错误的可能", "answer": ""}
+{"query_id": 319, "query": "判断一个有向图是否存在回路，除了可以利用拓扑排序方法外，还可以利用____。.\nA. 求关键路径的方法\nB. 求最短路径的Dijkstra方法\nC. 深度优先遍历算法\nD. 广度优先遍历算法", "answer": ""}
+{"query_id": 320, "query": "在含n个顶点和e条边的无向图的邻接矩阵中，空元素的个数为____.\nA. e\nB. 2e\nC. n^2-e\nD. n^2-2e", "answer": ""}
+{"query_id": 321, "query": "B+树不同于B树的特点之一是____.\nA. 能支持顺序查找\nB. 结点中含有关键字\nC. 根结点至少有两个分支\nD. 不适合外部文件建立索引用", "answer": ""}
+{"query_id": 322, "query": "以下说法不正确的是____.\nA. 类的静态成员（数据、函数）既可以通过对象来访问，也可以通过类名来访问\nB. 非静态成员函数可以调用静态成员函数\nC. 静态数据成员可以在.h文件中声明，在.cpp文件中初始化\nD. 常量静态数据成员必须在类外进行初始化", "answer": ""}
+{"query_id": 323, "query": "如果A是已经定义好的一个类，函数f的原型为A f()，r2是A类的一个对象，在函数f中执行return r2时，系统将自动调用____.\nA. 缺省的构造函数\nB. 拷贝构造函数\nC. 赋值运算符重载函数\nD. 不调用任何函数", "answer": ""}
+{"query_id": 324, "query": "在int a=3,*p=&a;中，*p的值是____。.\nA. 变量 a 的地址值\nB. 无意义\nC. 变量 p 的地址值\nD. 3", "answer": ""}
+{"query_id": 325, "query": "比较次数与排序的初始状态无关的排序方法是____.\nA. 直接插入排序\nB. 起泡排序\nC. 快速排序\nD. 简单选择排序", "answer": ""}
+{"query_id": 326, "query": "线性表采用链式存储时，结点的存储地址____.\nA. 必须是不连续的\nB. 连续与否均可\nC. 必须是连续的\nD. 和头结点的存储地址相连续", "answer": ""}
+{"query_id": 327, "query": "设栈S和队列Q的初始状态为空，元素a,b,c,d,e,f依次通过栈S,—个元素出站后即进队列Q。若6个元岽出队的序列为b,d,c,f,e,a,则栈的容量至少应为____.\nA. 6\nB. 4\nC. 3\nD. 2", "answer": ""}
+{"query_id": 328, "query": "由两个栈共享一个向量空间的好处是____.\nA. 减少存取时间，降低下滥发生的机率\nB. 节省存储空间，降低上溢发生的机率\nC. 减少存取时间，降低上溢发生的机率\nD. 节省存储空间。降低下溢发生的机率", "answer": ""}
+{"query_id": 329, "query": "若表达式y*x++中，“*”是作为成员函数重载的运算符，“++”是作为友元函数重载的运算符，采用运算符函数调用格式，该表达式还可以表达为____.\nA. x.operator++(0).operator*(y)\nB. operator*(x.operator++(0),y)\nC. y.operator*(operator++(x,0))\nD. operator*(operator++(x,0),y)", "answer": ""}
+{"query_id": 330, "query": "某二叉树的前序遍历序列和后序遍历序列正好相反，则该二叉树一定是____的二叉树。.\nA. 空或只有一个结点\nB. 叶子结点数至多为1\nC. 任一结点无左儿子\nD. 任一结点无右儿子", "answer": ""}
+{"query_id": 331, "query": "一个具有N个顶点的连通无向图的最小生成树中有____条边.\nA. N-1\nB. N\nC. N/2\nD. N+1", "answer": ""}
+{"query_id": 332, "query": "根据下面程序，判断下列说法不正确的是：\n\t#include<iostream>\n\tusing namespace std;\n\tclass X{\n\tprivate:\n\t\tint data=0;\n\t\tfriend class Y;\n\t\tfriend void print(X&x);\n\t};\n\tclass X_Son:public X{\n\tprivate:\n\t\tint data=1;\n\t};\n\tclass Y{\n\tprivate:\n\t\tint data=2;\n\t\tfriend class Z;\n\t};\n\tclass Z{\n\tprivate:\n\t\tint data=3;\n\t};\n\tvoid print(X&x){\n\t\tcout<<x.data<<endl;\n\t}____.\nA. print是X的友元函数\nB. Z是Y的友元类\nC. Y是X的友元类\nD. Z是X的友元类", "answer": ""}
+{"query_id": 333, "query": "#include<iostream.h>\nclass X\n{\nprivate:\nint num;\npublic:\nX(int intx){num=intx;}\nX(X &Y)\n{\nnum=++Y.num;\n}\nvoid disp(){cout<<num<<\"\";}\n};\nvoid main()\n{\nX a(10);\nX b(a);\na.disp();\nb.disp();\n}在\nC++中，以上程序的运行结果为____。.\nA. 10 10\nB. 10 11\nC. 11 11\nD. 11 10", "answer": ""}
+{"query_id": 334, "query": "可以用p.a的形式访问派生类对象p的基类成员a,其中a是____.\nA. 私有继承的公有成员\nB. 公有继承的私有成员\nC. 公有继承的保护成员\nD. 公有继承的公有成员", "answer": ""}
+{"query_id": 335, "query": "表达式a*(b+c)-d的后缀表达式是____。.\nA. abcd+-\nB. abc+*d-\nC. abc*+d-\nD. -+*abcd", "answer": ""}
+{"query_id": 336, "query": "#include<iostream.h>\nclass A\n{\npublic:\nA(){}\n~A(){cout<<\"A destroy\";}\n};\nclass B:public A\n{public:\nB():A(){}\n~B(){cout<<\"B destroy\";}\n};\nvoid main(){B obj;}\n上面的C++程序运行的结果是____。.\nA. B destroy A destroy\nB. A destroy B destroy\nC. A destroy\nD. B destroy", "answer": ""}
+{"query_id": 337, "query": "在任意一棵非空二叉查找树T1中，删除某结点v之后形成二叉查找树T2，再将v插入T2形成二叉查找树T3。下列关于T1与T3的叙述中，正确的是____\nI.若v是T1的叶结点，则T1与T3不同\nII.若v是T1的叶结点，则T1与T3相同\nIII.若v不是T1的叶结点，则T1与T3不同\nIV.若v不是T1的叶结点，则T1与T3相同.\nA. 仅 I、III\nB. 仅 I、IV\nC. 仅 II、III\nD. 仅 II、IV", "answer": ""}
+{"query_id": 338, "query": "下列二叉树哪种满足以下性质:从任意一个结点出发到根的路径上所经过的结点序列按其关键字有序____.\nA. 二叉查找树\nB. 哈夫曼树\nC. 伸展树\nD. 堆", "answer": ""}
+{"query_id": 339, "query": "下列关于静态成员说法正确的是____.\nA. 同一个类的所有类对象，共享该类的静态数据成员，即所有对象中的该数据成员存储在同一内存位置\nB. 类的常量静态成员数据只能在类外进行初始化\nC. 类的静态成员数据只能通过类名来访问\nD. 静态成员函数属于整个类，在第一个类实例化对象创建的时候分配它的内存空间", "answer": ""}
+{"query_id": 340, "query": "无向图G有22条边，度为5的顶点有3个，度为3的顶点有5个，其余都是度为2的顶点，则图G最多有多少个顶点？____.\nA. 11\nB. 12\nC. 15\nD. 16", "answer": ""}
+{"query_id": 341, "query": "如果A是已经定义好的一个类，有如下定义语句：A*p[5];则当类对象数组指针p离开它的作用域时，系统自动调用类A的析构函数____次.\nA. 5\nB. 1\nC. 0\nD. 10", "answer": ""}

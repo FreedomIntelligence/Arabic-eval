@@ -1,0 +1,47 @@
+bloomz:
+    bloomz-7b1-mt:
+        config_dir: /workspace2/zhihong/workspace/models/base_models/bloomz-7b1-mt
+        prompt: "{question}"
+        precision: 'fp16'
+
+    phoenix-inst-chat-7b:
+        config_dir: /workspace2/zhihong/workspace/models/pretrained_llmzoo/phoenix-inst-chat-7b
+        prompt: "A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions.\n\nHuman: <s>{question}</s>Assistant: <s>"
+        precision: 'fp16'
+
+
+llama:
+    llama-7b-hf:
+        config_dir: /workspace2/zhihong/workspace/models/base_models/llama_hf_7b
+        prompt: "{question}"
+        precision: 'fp16'
+
+    vicuna-7b-v0:
+        config_dir: /workspace2/guiming/models/vicuna-7b-v0
+        prompt: "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER: {question} ASSISTANT:"
+        precision: 'fp16'
+    vicuna-13b-v1.1:
+        config_dir: /workspace2/guiming/models/vicuna-13b-v1.1
+        prompt: "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER: {question} ASSISTANT:"
+        precision: 'fp16'
+
+    chimera-inst-chat-13b:
+        config_dir: /workspace2/zhihong/workspace/models/pretrained_llmzoo/chimera-inst-chat-13b
+        prompt: "A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions.\n\nHuman: <s>{question}</s>Assistant: <s>"
+        precision: 'fp16'
+
+    
+llama-lora:
+    guanaco-7b-leh-v2:
+        config_dir: /workspace2/guiming/models/guanaco_v2/guanaco-7b-leh-v2
+        lora_dir: /workspace2/guiming/models/guanaco_v2/guanaco-7b-leh-v2/guanaco-leh-7b-v2-adapter
+        prompt: "### Instruction: \n{question}\n\n### Response:"
+        precision: 'fp16'
+
+
+chatglm:
+    chatglm-6b:
+        config_dir: /workspace2/hongbo/ChatGLM_6B
+        prompt: "[Round 0]\n问：{question}\n答："
+        precision: 'fp16'
+

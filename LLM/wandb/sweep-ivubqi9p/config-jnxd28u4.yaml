@@ -1,0 +1,8 @@
+wandb_version: 1
+
+acc_step:
+  value: 4
+epoch:
+  value: 6
+lr:
+  value: 2.573202993667851e-07

@@ -1,0 +1,160 @@
+bloomz:
+    bloomz-7b1-mt:
+        config_dir: /mntcephfs/data/med/zhihong/workspace/chimera/bloomz-7b1-mt
+        prompt: "{question}"
+        stage: 2
+        precision: 'fp16'
+
+    phoenix-inst-chat-7b:
+        config_dir: /mntcephfs/data/med/zhihong/workspace/chimera/phoenix-inst-chat-7b
+        prompt: "A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions.\n\nHuman: <s>{question}</s>Assistant: <s>"
+        stage: 2
+        precision: 'fp16'
+
+    phoenix-multiple-langs-v1:
+        config_dir: /mntcephfs/data/med/zhihong/workspace/chimera/phoenix-multiple-langs-v1
+        prompt: "A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions.\n\nHuman: <s>{question}</s>Assistant: <s>"
+        stage: 2
+        precision: 'fp16'
+
+
+llama:
+    llama-7b-hf:
+        config_dir: /mntcephfs/data/med/zhihong/workspace/chimera/llama_hf_7b
+        prompt: "{question}"
+        stage: 1
+        precision: 'fp16'
+    llama-2-7b-hf:
+        config_dir: /mntnfs/med_data5/fanyaxin/Llama-2-7b-hf/
+        prompt: "{question}"
+        stage: 1
+        precision: 'fp16'
+
+    vicuna-7b-v1.1:
+        config_dir: /mntcephfs/lab_data/guimingchen/models/vicuna-7b-v1.1
+        prompt: "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER: {question} ASSISTANT:"
+        stage: 2
+        precision: 'fp16'
+    vicuna-13b-v1.1:
+        config_dir: /mntcephfs/lab_data/guimingchen/models/vicuna-13b-v1.1
+        prompt: "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER: {question} ASSISTANT:"
+        stage: 2
+        precision: 'fp16'
+
+    chimera-inst-chat-7b:
+        config_dir: /mntcephfs/data/med/zhihong/workspace/chimera/chimera-inst-chat-7b
+        prompt: "A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions.\n\nHuman: <s>{question}</s>Assistant: <s>"
+        stage: 2
+        precision: 'fp16'
+    chimera-inst-chat-13b:
+        config_dir: /mntcephfs/data/med/zhihong/workspace/chimera/chimera-inst-chat-13b
+        prompt: "A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions.\n\nHuman: <s>{question}</s>Assistant: <s>"
+        stage: 2
+        precision: 'fp16'
+
+
+llama-lora:
+    huatuo-llama-med-chinese:
+        config_dir: /mntcephfs/data/med/zhihong/workspace/chimera/llama_hf_7b
+        lora_dir: /mntcephfs/data/med/zhanghongbo/Huatuo-Llama-Med-Chinese/lora-llama-med
+        prompt: "下面是一个问题，运用医学知识来正确回答提问.\n### 问题:\n{question}\n### 回答:\n"
+        stage: 2
+        precision: 'fp16'
+
+    guanaco-7b-leh-v2:
+        config_dir: /mntcephfs/lab_data/yufei/models/guanaco-7b-leh-v2
+        lora_dir: /mntcephfs/lab_data/yufei/models/guanaco-7b-leh-v2/guanaco-leh-7b-v2-adapter
+        prompt: "### Instruction: \n{question}\n\n### Response:"
+        stage: 2
+        precision: 'fp16'
+
+
+chatglm:
+    chatglm-6b:
+        config_dir: /mntcephfs/data/med/zhanghongbo/chatglm-6b
+        prompt: "[Round 0]\n问：{question}\n答："
+        stage: 2
+        precision: 'fp16'
+
+    doctor-glm:
+        config_dir: /mntcephfs/data/med/zhanghongbo/chatglm-6b
+        prefix_config_dir: /mntcephfs/data/med/zhanghongbo/DoctorGLM/Doctor_GLM/ckpt/ptuningv2/ptuningv2/pytorch_model.bin
+        prompt: "[Round 0]\n问：{question}\n答："
+        stage: 2
+        precision: 'fp16'
+
+
+jais:
+    jais-13b:
+        config_dir: /mntcephfs/lab_data/yufei/models/jais-13b
+        prompt: "{question}"
+        stage: 1
+        precision: 'fp32'
+
+
+acegpt:
+    llama-ace-v4.0:
+        config_dir: /mntcephfs/lab_data/yufei/arabic/llama-SRIBD-sft-v2/llama-ace-v4.0/checkpoint-0-14292
+        prompt: "[INST] <<SYS>>\nأنت مساعد مفيد ومحترم وصادق. أجب دائما بأكبر قدر ممكن من المساعدة بينما تكون آمنا.  يجب ألا تتضمن إجاباتك أي محتوى ضار أو غير أخلاقي أو عنصري أو جنسي أو سام أو خطير أو غير قانوني. يرجى التأكد من أن ردودك غير متحيزة اجتماعيا وإيجابية بطبيعتها.\n\nإذا كان السؤال لا معنى له أو لم يكن متماسكا من الناحية الواقعية، اشرح السبب بدلا من الإجابة على شيء غير صحيح. إذا كنت لا تعرف إجابة سؤال ما، فيرجى عدم مشاركة معلومات خاطئة.\n<</SYS>>\n\n{question} [/INST]"
+        stage: 2
+        precision: 'fp16'
+
+    llama-ace-v5.0:
+        config_dir: /mntcephfs/data/med/yufei/models/final_sft/llama-ace-v5.0/checkpoint-0-52240
+        prompt: "[INST] <<SYS>>\nأنت مساعد مفيد ومحترم وصادق. أجب دائما بأكبر قدر ممكن من المساعدة بينما تكون آمنا.  يجب ألا تتضمن إجاباتك أي محتوى ضار أو غير أخلاقي أو عنصري أو جنسي أو سام أو خطير أو غير قانوني. يرجى التأكد من أن ردودك غير متحيزة اجتماعيا وإيجابية بطبيعتها.\n\nإذا كان السؤال لا معنى له أو لم يكن متماسكا من الناحية الواقعية، اشرح السبب بدلا من الإجابة على شيء غير صحيح. إذا كنت لا تعرف إجابة سؤال ما، فيرجى عدم مشاركة معلومات خاطئة.\n<</SYS>>\n\n{question} [/INST]"
+        stage: 2
+        precision: 'fp16'
+
+    llama-pretrained-v5.0:
+        config_dir: /mntcephfs/data/med/yufei/models/final_sft/llama-pretrained-ace-v5.0/checkpoint-0-52240
+        prompt: "[INST] <<SYS>>\nأنت مساعد مفيد ومحترم وصادق. أجب دائما بأكبر قدر ممكن من المساعدة بينما تكون آمنا.  يجب ألا تتضمن إجاباتك أي محتوى ضار أو غير أخلاقي أو عنصري أو جنسي أو سام أو خطير أو غير قانوني. يرجى التأكد من أن ردودك غير متحيزة اجتماعيا وإيجابية بطبيعتها.\n\nإذا كان السؤال لا معنى له أو لم يكن متماسكا من الناحية الواقعية، اشرح السبب بدلا من الإجابة على شيء غير صحيح. إذا كنت لا تعرف إجابة سؤال ما، فيرجى عدم مشاركة معلومات خاطئة.\n<</SYS>>\n\n{question} [/INST]"
+        stage: 2
+        precision: 'fp16'
+
+    llama-pretrained-v5.2:
+        config_dir: /mntcephfs/lab_data/chenjunying/zhujianqing/llm_train/yufei/final_sft/llama-pretrained-v5.2/checkpoint-0-26120
+        prompt: "[INST] <<SYS>>\nأنت مساعد مفيد ومحترم وصادق. أجب دائما بأكبر قدر ممكن من المساعدة بينما تكون آمنا.  يجب ألا تتضمن إجاباتك أي محتوى ضار أو غير أخلاقي أو عنصري أو جنسي أو سام أو خطير أو غير قانوني. يرجى التأكد من أن ردودك غير متحيزة اجتماعيا وإيجابية بطبيعتها.\n\nإذا كان السؤال لا معنى له أو لم يكن متماسكا من الناحية الواقعية، اشرح السبب بدلا من الإجابة على شيء غير صحيح. إذا كنت لا تعرف إجابة سؤال ما، فيرجى عدم مشاركة معلومات خاطئة.\n<</SYS>>\n\n{question} [/INST]"
+        stage: 2
+        precision: 'fp16'
+
+    llama-pretrained-13b:
+        config_dir: /mntcephfs/lab_data/chenjunying/zhujianqing/llm_train/yufei/final_sft/llama-pretrained-13b/checkpoint-0-26120
+        prompt: "[INST] <<SYS>>\nأنت مساعد مفيد ومحترم وصادق. أجب دائما بأكبر قدر ممكن من المساعدة بينما تكون آمنا.  يجب ألا تتضمن إجاباتك أي محتوى ضار أو غير أخلاقي أو عنصري أو جنسي أو سام أو خطير أو غير قانوني. يرجى التأكد من أن ردودك غير متحيزة اجتماعيا وإيجابية بطبيعتها.\n\nإذا كان السؤال لا معنى له أو لم يكن متماسكا من الناحية الواقعية، اشرح السبب بدلا من الإجابة على شيء غير صحيح. إذا كنت لا تعرف إجابة سؤال ما، فيرجى عدم مشاركة معلومات خاطئة.\n<</SYS>>\n\n{question} [/INST]"
+        stage: 2
+        precision: 'fp16'
+
+    llama-raw-pretrained-ckpt0-227566:
+        config_dir: /mntcephfs/lab_data/chenjunying/zhujianqing/llm_train/llama-SRIBD-pretrain-raw/milestone/first_round_ckpt0-227566
+        prompt: "{question}"
+        stage: 1
+        precision: 'fp16'
+
+    llama-raw-pretrained-sencondround-ckpt0-430000:
+        config_dir: /mntcephfs/lab_data/chenjunying/zhujianqing/llm_train/llama-SRIBD-pretrain-raw/llama-7b-continue1.1-data_v4/checkpoint-0-430000/tfmr32
+        prompt: "{question}"
+        stage: 1
+        precision: 'fp16'
+
+    llama-raw-pretrained-sencondround-ckpt0-430000-fp32:
+        config_dir: /mntcephfs/lab_data/chenjunying/zhujianqing/llm_train/llama-SRIBD-pretrain-raw/llama-7b-continue1.1-data_v4/checkpoint-0-430000/tfmr32
+        prompt: "{question}"
+        stage: 1
+        precision: 'fp32'
+
+    llama13b-SRIBD-pretrained-raw-check0-227566:
+        config_dir: /mntcephfs/lab_data/chenjunying/zhujianqing/llm_train/yufei/llama-SRIBD-pretrain-raw/llama-13b-data_v3-continue1/checkpoint-0-227566/tfmr16
+        prompt: "{question}"
+        stage: 1
+        precision: 'fp16'
+
+    bloomz-ace-v4.0:
+        config_dir: /mntcephfs/lab_data/yufei/arabic/llama-SRIBD-sft-v2/bloomz-ace-v4.0/checkpoint-0-14292
+        prompt: "[INST] <<SYS>>\nأنت مساعد مفيد ومحترم وصادق. أجب دائما بأكبر قدر ممكن من المساعدة بينما تكون آمنا.  يجب ألا تتضمن إجاباتك أي محتوى ضار أو غير أخلاقي أو عنصري أو جنسي أو سام أو خطير أو غير قانوني. يرجى التأكد من أن ردودك غير متحيزة اجتماعيا وإيجابية بطبيعتها.\n\nإذا كان السؤال لا معنى له أو لم يكن متماسكا من الناحية الواقعية، اشرح السبب بدلا من الإجابة على شيء غير صحيح. إذا كنت لا تعرف إجابة سؤال ما، فيرجى عدم مشاركة معلومات خاطئة.\n<</SYS>>\n\n{question} [/INST]"
+        stage: 2
+        precision: 'fp16'
+
+    bloomz-ace-v5.0:
+        config_dir: /mntcephfs/lab_data/chenjunying/zhujianqing/llm_train/yufei/final_sft/bloomz-ace-v5.0/checkpoint-0-25237
+        prompt: "[INST] <<SYS>>\nأنت مساعد مفيد ومحترم وصادق. أجب دائما بأكبر قدر ممكن من المساعدة بينما تكون آمنا.  يجب ألا تتضمن إجاباتك أي محتوى ضار أو غير أخلاقي أو عنصري أو جنسي أو سام أو خطير أو غير قانوني. يرجى التأكد من أن ردودك غير متحيزة اجتماعيا وإيجابية بطبيعتها.\n\nإذا كان السؤال لا معنى له أو لم يكن متماسكا من الناحية الواقعية، اشرح السبب بدلا من الإجابة على شيء غير صحيح. إذا كنت لا تعرف إجابة سؤال ما، فيرجى عدم مشاركة معلومات خاطئة.\n<</SYS>>\n\n{question} [/INST]"
+        stage: 2
+        precision: 'fp16'
